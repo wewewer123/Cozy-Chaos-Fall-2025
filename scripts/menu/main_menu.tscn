@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5h0614qa13mh"]
 
-[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_c67eb"]
+[ext_resource type="Script" uid="uid://36la5hxulw6c" path="res://scripts/menu/main_menu.gd" id="1_c67eb"]
 [ext_resource type="Theme" uid="uid://dvmur811eqaun" path="res://assets/themes/menu_button_list.tres" id="3_hh8cs"]
-[ext_resource type="Script" path="res://scripts/menu/menu.gd" id="3_rdx8w"]
+[ext_resource type="Script" uid="uid://dpkek3ls343it" path="res://scripts/menu/menu.gd" id="3_rdx8w"]
 [ext_resource type="FontFile" uid="uid://5g0c1fwbh4w5" path="res://assets/fonts/AtlantisText-Bold.ttf" id="5_b6xvh"]
-[ext_resource type="Script" path="res://scripts/menu/options.gd" id="5_cwgiw"]
+[ext_resource type="Script" uid="uid://coackst1gtgo2" path="res://scripts/menu/options.gd" id="5_cwgiw"]
 [ext_resource type="Theme" uid="uid://dt0x4ngoh82te" path="res://assets/themes/grid_menu.tres" id="6_ohy3q"]
 
 [sub_resource type="Theme" id="Theme_cwgiw"]
@@ -74,7 +74,6 @@ theme = ExtResource("3_hh8cs")
 
 [node name="Start" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_mode = 0
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "start"
@@ -83,7 +82,6 @@ flat = true
 [node name="Continue" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 visible = false
 layout_mode = 2
-focus_mode = 0
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Continue
@@ -92,7 +90,6 @@ flat = true
 
 [node name="Options" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_mode = 0
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Options
@@ -101,7 +98,6 @@ flat = true
 
 [node name="Exit" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_mode = 0
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "exit
@@ -150,6 +146,8 @@ theme_override_constants/margin_left = 4
 
 [node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+focus_mode = 2
+accessibility_description = "Options Section"
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 32
 text = "Graphic"
@@ -181,6 +179,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
+accessibility_name = "b"
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "V-sync"
@@ -188,7 +187,8 @@ vertical_alignment = 1
 
 [node name="CheckBox" type="CheckBox" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer"]
 layout_mode = 2
-focus_mode = 0
+accessibility_name = "b"
+accessibility_description = "V-Sync"
 button_pressed = true
 expand_icon = true
 
@@ -208,7 +208,6 @@ theme_override_constants/margin_left = 8
 
 [node name="OptionButton" type="OptionButton" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/MarginContainer"]
 layout_mode = 2
-focus_mode = 0
 theme = SubResource("Theme_cwgiw")
 theme_override_colors/font_pressed_color = Color(0.94902, 0.686275, 0.407843, 1)
 theme_override_colors/font_hover_color = Color(0.94902, 0.686275, 0.407843, 1)
@@ -240,6 +239,8 @@ theme_override_constants/margin_left = 4
 
 [node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+focus_mode = 2
+accessibility_description = "Options Section"
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 32
 text = "Audio"
@@ -281,7 +282,7 @@ theme_override_constants/margin_left = 40
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
-accessibility_description = "Master value slider"
+accessibility_description = "Master volume"
 value = 100.0
 rounded = true
 
@@ -310,7 +311,7 @@ theme_override_constants/margin_left = 41
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
-accessibility_description = "Music value slider"
+accessibility_description = "Music volume"
 value = 50.0
 rounded = true
 
@@ -339,7 +340,7 @@ theme_override_constants/margin_left = 44
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
-accessibility_description = "Exit value slider"
+accessibility_description = "SFX volume"
 value = 100.0
 rounded = true
 
@@ -352,7 +353,7 @@ text = "100%"
 
 [node name="MenuBack" type="Button" parent="CenterContainer/Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
+accessibility_name = "Back to menu button"
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "< Menu"
@@ -383,8 +384,8 @@ layout_mode = 2
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Exit" to="CenterContainer/Menu" method="_on_exit_pressed"]
 [connection signal="toggled" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/CheckBox" to="CenterContainer/Options" method="_on_check_box_toggled"]
 [connection signal="item_selected" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/MarginContainer/OptionButton" to="CenterContainer/Options" method="_on_option_button_item_selected"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVolSlider" to="CenterContainer/Options" method="_on_master_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MusicVolSlider" to="CenterContainer/Options" method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/SFXVolSlider" to="CenterContainer/Options" method="_on_sfx_vol_slider_value_changed"]
 [connection signal="pressed" from="CenterContainer/Options/MarginContainer/VBoxContainer/MenuBack" to="." method="_on_menu_back_pressed"]
 [connection signal="pressed" from="MarginContainer/TextureButton" to="CenterContainer/Menu" method="_on_texture_button_pressed"]
