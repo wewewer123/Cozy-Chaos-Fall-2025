@@ -378,10 +378,12 @@ theme_override_constants/margin_bottom = 10
 visible = false
 layout_mode = 2
 
+[connection signal="visibility_changed" from="CenterContainer/Menu" to="CenterContainer/Menu" method="_on_visibility_changed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Start" to="CenterContainer/Menu" method="_on_start_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Continue" to="CenterContainer/Menu" method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Exit" to="CenterContainer/Menu" method="_on_exit_pressed"]
+[connection signal="visibility_changed" from="CenterContainer/Options" to="CenterContainer/Options" method="_on_visibility_changed"]
 [connection signal="toggled" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/CheckBox" to="CenterContainer/Options" method="_on_check_box_toggled"]
 [connection signal="item_selected" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/MarginContainer/OptionButton" to="CenterContainer/Options" method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVolSlider" to="CenterContainer/Options" method="_on_master_vol_slider_value_changed"]

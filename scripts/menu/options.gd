@@ -44,3 +44,7 @@ func _on_sfx_vol_slider_value_changed(value: float) -> void:
 	var bus_index = AudioServer.get_bus_index("SFX")
 	
 	AudioServer.set_bus_volume_linear(bus_index, value/100.0)
+
+
+func _on_visibility_changed() -> void:
+	$MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer2/Label.grab_focus()
