@@ -51,8 +51,7 @@ func add_leaf(value:int) -> void:
 func incrementHealth() -> void:
 	_changeHealth(1)
 	witch_audio_manager.playHealSound()
-	
-	
+
 func decrementHealth() -> void:
 	_changeHealth(-1)
 

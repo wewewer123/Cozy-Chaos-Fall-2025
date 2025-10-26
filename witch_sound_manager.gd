@@ -3,6 +3,9 @@ extends Node2D
 var audioPlayers := []
 var currentPlayerIndex = 0
 
+var curr_time = 5
+var interval = 5
+
 @export var switchLanesSound : AudioStream
 @export var bumpTreeSound : AudioStream
 @export var bumpOnGhostSound : AudioStream
