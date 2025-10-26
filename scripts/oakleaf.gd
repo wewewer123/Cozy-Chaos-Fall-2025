@@ -5,4 +5,4 @@ func _ready():
 	type = CollisionType.LEAF
 
 func apply_effect(player: Node3D) -> void:
-	print("oakLeaf collision effect needs to be implemented")
+	GameManager.player.add_leaf(1)

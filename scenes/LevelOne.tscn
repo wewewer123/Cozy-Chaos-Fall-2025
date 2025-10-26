@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyftg85otyil"]
+[gd_scene load_steps=15 format=3 uid="uid://dyftg85otyil"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_dpppr"]
+[ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/summer path resize400.png" id="2_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player.tscn" id="2_estr2"]
+[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://scenes/LevelOne.gdshader" id="3_0t3xx"]
 [ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="3_8671u"]
 [ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/summerTrees.tscn" id="4_f0icx"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/ghost.tscn" id="5_8dw8u"]
@@ -22,6 +24,14 @@ tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gie0j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_0t3xx")
+shader_parameter/albedo_texture = ExtResource("2_8dw8u")
+shader_parameter/uv_scroll = Vector2(0, -0.5)
+shader_parameter/tiling = 1.0
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dpppr")
 
@@ -32,6 +42,7 @@ environment = SubResource("Environment_h2yge")
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
