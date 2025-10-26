@@ -46,7 +46,7 @@ func _set_menu() -> void:
 	call_deferred("_set_new_scene", new_scene)
 
 func _set_level() -> void:
-	var res:PackedScene = load("res://scenes/main.tscn")
+	var res:PackedScene = load("res://scenes/LevelOne.tscn")
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
