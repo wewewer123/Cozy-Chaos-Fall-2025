@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6x58ka0h6o5x"
+path="res://.godot/imported/heart is ahead.mp3-fb46ff02c3a9f522be2663cc7a0ebe99.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/heart is ahead.mp3"
+dest_files=["res://.godot/imported/heart is ahead.mp3-fb46ff02c3a9f522be2663cc7a0ebe99.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -6,3 +6,4 @@ func _ready():
 
 func apply_effect(player: Node3D) -> void:
 	GameManager.player.add_leaf(1)
+	player.witch_audio_manager.playPickUpLeaf()

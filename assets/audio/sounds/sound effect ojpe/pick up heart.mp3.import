@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8ehtn3cggfgy"
+path="res://.godot/imported/pick up heart.mp3-9b858b9523a3be6680fca88257a0f8a1.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/pick up heart.mp3"
+dest_files=["res://.godot/imported/pick up heart.mp3-9b858b9523a3be6680fca88257a0f8a1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

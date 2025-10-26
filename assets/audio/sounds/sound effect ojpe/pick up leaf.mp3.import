@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpunk5pfcqlwq"
+path="res://.godot/imported/pick up leaf.mp3-e27f421b34d19b89e539d516ece0e8fa.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/pick up leaf.mp3"
+dest_files=["res://.godot/imported/pick up leaf.mp3-e27f421b34d19b89e539d516ece0e8fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
