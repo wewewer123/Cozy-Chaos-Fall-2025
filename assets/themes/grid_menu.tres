@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dt0x4ngoh82te"]
+
+[ext_resource type="FontFile" uid="uid://5g0c1fwbh4w5" path="res://assets/fonts/Atlantis/AtlantisText-Bold.ttf" id="1_uw2t8"]
+
+[resource]
+default_font = ExtResource("1_uw2t8")
+default_font_size = 16
