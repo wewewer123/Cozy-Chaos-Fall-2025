@@ -75,7 +75,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
 [node name="Lane2" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.978491, 0.20628957, 0, -0.20628957, 0.978491, 0, 6.5727158, 25.120068)
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
