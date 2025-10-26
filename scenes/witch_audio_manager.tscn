@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://f8842u8jr5o6"]
+
+[ext_resource type="Script" uid="uid://6umufkp7vx8k" path="res://witch_sound_manager.gd" id="1_y6na0"]
+[ext_resource type="AudioStream" uid="uid://dank1wgo7ded7" path="res://assets/audio/sounds/witch/Swish-DOWN.wav" id="2_nar58"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" node_paths=PackedStringArray("audioPlayer")]
+script = ExtResource("1_y6na0")
+audioPlayer = NodePath(".")
+switchLanesSound = ExtResource("2_nar58")

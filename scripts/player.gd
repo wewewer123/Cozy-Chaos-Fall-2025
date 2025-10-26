@@ -4,6 +4,7 @@ class_name PlayerObject
 var max_health:int = 5
 var curr_health:int = max_health
 
+@export var witch_audio_manager:Node
 @export var leaf = 0
 @export var max_velocity = 10
 @export var move_speed: float = 15.0  
@@ -41,6 +42,7 @@ func consume_movement(direction: int) -> void:
 	if new_lane >= 0 and new_lane < max_lanes:
 		curr_lane = new_lane
 		target_x = spawner.get_lane_position(curr_lane).x
+		witch_audio_manager.playSwitchLaneSound()
 
 func add_leaf(value:int) -> void:
 	leaf += value

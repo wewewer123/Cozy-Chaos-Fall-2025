@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvb63in03s66x"
+path="res://.godot/imported/swoosh up.mp3-b0a86d07d7f0758c2f341f5fb02c9c03.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/witch/swoosh up.mp3"
+dest_files=["res://.godot/imported/swoosh up.mp3-b0a86d07d7f0758c2f341f5fb02c9c03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
