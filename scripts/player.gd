@@ -50,6 +50,8 @@ func add_leaf(value:int) -> void:
 
 func incrementHealth() -> void:
 	_changeHealth(1)
+	witch_audio_manager.playHealSound()
+	
 	
 func decrementHealth() -> void:
 	_changeHealth(-1)
@@ -60,6 +62,9 @@ func _changeHealth(value: int) -> void:
 	if(curr_health > Globals.max_player_health):
 		curr_health = Globals.max_player_health
 		return
+	
+	if(curr_health == 1):
+		witch_audio_manager.playOnHealthLeftSound()
 	
 	if(curr_health > 0):
 		health_changed.emit(value)

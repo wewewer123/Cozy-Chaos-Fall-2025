@@ -6,3 +6,4 @@ func _ready():
 
 func apply_effect(player: Node3D) -> void:
 	player.incrementHealth()
+	player.witch_audio_manager.playpickUpHeartSound()

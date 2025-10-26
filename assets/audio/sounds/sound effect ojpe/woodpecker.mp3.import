@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccp45bxb8x0x0"
+path="res://.godot/imported/woodpecker.mp3-69731baaa62b0650571ff453017212c4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/woodpecker.mp3"
+dest_files=["res://.godot/imported/woodpecker.mp3-69731baaa62b0650571ff453017212c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

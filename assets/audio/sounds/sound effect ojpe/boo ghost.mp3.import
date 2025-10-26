@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bge3ds3vruy1n"
+path="res://.godot/imported/boo ghost.mp3-9778b4c94dd944ec496979721c673e2a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/boo ghost.mp3"
+dest_files=["res://.godot/imported/boo ghost.mp3-9778b4c94dd944ec496979721c673e2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
