@@ -2,7 +2,9 @@ extends CharacterBody3D
 
 var max_lanes: int
 var curr_lane: int
-@export var max_velocity = 40
+@export var lives = 5
+@export var max_velocity = 10
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
@@ -20,4 +22,3 @@ func consume_movement(direction: int) -> void:
 	if velocity.x == 0 and new_lane >= 0 and new_lane < max_lanes:
 			velocity.x = sign(direction) * max_velocity
 			curr_lane = new_lane
-			

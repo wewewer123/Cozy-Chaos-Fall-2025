@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://07xryqjw73lg"]
+
+[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://tempGraphics/t2.png" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/tree.gd" id="1_vplca"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
+height = 5.4677734
+radius = 1.8818359
+
+[node name="Tree" type="Area3D"]
+collision_layer = 8
+script = ExtResource("1_vplca")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+texture = ExtResource("1_7ukg5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
+shape = SubResource("CylinderShape3D_avsvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
