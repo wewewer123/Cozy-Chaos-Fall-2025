@@ -1,18 +1,8 @@
-extends Area3D
-
-signal player_collision
+extends CollisionObject
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var rng:= RandomNumberGenerator.new()
-	
-	lane_spawn(rng.randi_range(-1, 1))
+	type = CollisionType.GHOST
 
-func _process(delta):
-	position += Vector3(0, 0, 1.0)*20*delta
-
-func lane_spawn(direction: int) -> void:
-	position = Vector3((sign(direction)*10), 0, -20)
-
-func _on_body_entered(body: Node3D) -> void:
-	emit_signal("player_collision")
+func apply_effect(player: Node3D) -> void:
+	player.lives -= 1
