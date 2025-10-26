@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://j5nchefa2253"]
+
+[ext_resource type="Texture2D" uid="uid://dkiqrgkj0rbee" path="res://assets/ui/heartui_empty.png" id="1_rpg41"]
+
+[node name="HearthFull" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -49.0
+offset_right = 54.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rpg41")

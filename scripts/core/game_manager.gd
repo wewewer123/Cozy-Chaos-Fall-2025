@@ -12,6 +12,8 @@ var _curren_game_state:game_states = game_states.NULL
 var active_scene = null
 var _scene_container:Node = null
 
+var player:PlayerObject = null
+
 func _ready() -> void:
 	pass
 

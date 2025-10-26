@@ -4,10 +4,20 @@ extends Node3D
 @onready var spawner: Spawner = $Spawner
 @onready var player: PlayerObject = $Player
 
+var _hud:HUD
 
 func _ready() -> void:
 	spawner.init()
 	player.init(spawner)
+	
+	GameManager.player = player
+	_hud = load("res://scripts/hud/HUD.tscn").instantiate()
+	_hud.init() # spawns hearts needs player to be set in GameManager
+	add_child(_hud)
+	
+	player.health_changed.connect(_hud.on_player_health_changed)
+	player.leaf_changed.connect(_hud.on_player_leaf_changed)
+	player.player_died.connect(_hud.on_player_death)
 
 func _on_timer_timeout() -> void:
 	var result := spawner.spawn_pair($Items, $Obstacles)

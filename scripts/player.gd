@@ -1,7 +1,8 @@
 extends CharacterBody3D
 class_name PlayerObject
 
-var curr_health = 5
+var max_health:int = 5
+var curr_health:int = max_health
 
 @export var leaf = 0
 @export var max_velocity = 10
@@ -16,6 +17,8 @@ var spawner: Spawner
 
 signal health_changed(newHealth : int)
 signal player_died()
+
+signal leaf_changed(change:int)
 
 func init(s: Spawner) -> void:
 	spawner = s 
@@ -39,6 +42,10 @@ func consume_movement(direction: int) -> void:
 		curr_lane = new_lane
 		target_x = spawner.get_lane_position(curr_lane).x
 
+func add_leaf(value:int) -> void:
+	leaf += value
+	leaf_changed.emit(value)
+
 func incrementHealth() -> void:
 	_changeHealth(1)
 	
@@ -53,6 +60,6 @@ func _changeHealth(value: int) -> void:
 		return
 	
 	if(curr_health > 0):
-		health_changed.emit(curr_health)
+		health_changed.emit(value)
 	else:
 		player_died.emit()
