@@ -1,0 +1,52 @@
+[gd_scene load_steps=23 format=3 uid="uid://b5fjd6vcxcjrp"]
+
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/tree.gd" id="1_6kw8v"]
+[ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/summer_treese/t111.png" id="2_okqqn"]
+[ext_resource type="Texture2D" uid="uid://d2p88kguf874h" path="res://assets/art/summer_treese/t222.png" id="3_d0n8w"]
+[ext_resource type="Texture2D" uid="uid://c14kgw3dywa0w" path="res://assets/art/summer_treese/t333.png" id="4_kh4kj"]
+[ext_resource type="Texture2D" uid="uid://b8g0kfielnnu" path="res://assets/art/summer_treese/t444.png" id="5_s5jfg"]
+[ext_resource type="Texture2D" uid="uid://bye5ca73mbnoe" path="res://assets/art/summer_treese/t555.png" id="6_ckdr0"]
+[ext_resource type="Texture2D" uid="uid://y0oedotpuuvl" path="res://assets/art/semi_summer/ta1.png" id="7_icqer"]
+[ext_resource type="Texture2D" uid="uid://dlyrrlqgp43vh" path="res://assets/art/semi_summer/ta2.png" id="8_brb0k"]
+[ext_resource type="Texture2D" uid="uid://c3jfj14nocr8k" path="res://assets/art/semi_summer/ta3.png" id="9_855fg"]
+[ext_resource type="Texture2D" uid="uid://ct4bly3e0bfgl" path="res://assets/art/semi_summer/ta4.png" id="10_o1sfh"]
+[ext_resource type="Texture2D" uid="uid://d08314civhxj1" path="res://assets/art/semi_summer/ta5.png" id="11_1x0ya"]
+[ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/autumn/ta111.png" id="12_pm1sm"]
+[ext_resource type="Texture2D" uid="uid://crucks8tw0bxc" path="res://assets/art/autumn/ta1111.png" id="13_r05bm"]
+[ext_resource type="Texture2D" uid="uid://ctvofsuwpt834" path="res://assets/art/autumn/ta11111.png" id="14_fhsml"]
+[ext_resource type="Texture2D" uid="uid://b3rhmkpin2sx6" path="res://assets/art/autumn/ta222.png" id="15_ofwfs"]
+[ext_resource type="Texture2D" uid="uid://cathc2sqso0tc" path="res://assets/art/autumn/ta2222.png" id="16_g73ry"]
+[ext_resource type="Texture2D" uid="uid://5tg33ylh18kc" path="res://assets/art/autumn/ta22222.png" id="17_u6p5e"]
+[ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/autumn/ta333.png" id="18_vn7dw"]
+[ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/autumn/ta3333.png" id="19_2yo02"]
+[ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/autumn/ta44444.png" id="20_x44jh"]
+[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://tempGraphics/t2.png" id="21_cfcs5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
+height = 5.4677734
+radius = 1.8818359
+
+[node name="Tree" type="Area3D"]
+collision_layer = 8
+script = ExtResource("1_6kw8v")
+summer_textures = Array[Texture2D]([ExtResource("2_okqqn"), ExtResource("3_d0n8w"), ExtResource("4_kh4kj"), ExtResource("5_s5jfg"), ExtResource("6_ckdr0")])
+semi_autumn_textures = Array[Texture2D]([ExtResource("7_icqer"), ExtResource("8_brb0k"), ExtResource("9_855fg"), ExtResource("10_o1sfh"), ExtResource("11_1x0ya")])
+autumn_textures = Array[Texture2D]([ExtResource("12_pm1sm"), ExtResource("13_r05bm"), ExtResource("14_fhsml"), ExtResource("15_ofwfs"), ExtResource("16_g73ry"), ExtResource("17_u6p5e"), ExtResource("18_vn7dw"), ExtResource("19_2yo02"), ExtResource("20_x44jh")])
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+texture = ExtResource("21_cfcs5")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, 1.4142135, 0, 2.6, 0)
+texture = ExtResource("21_cfcs5")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0)
+texture = ExtResource("21_cfcs5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
+shape = SubResource("CylinderShape3D_avsvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
