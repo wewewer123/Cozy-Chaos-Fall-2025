@@ -11,6 +11,7 @@ func _process(_delta: float) -> void:
 		consume_movement(-1)
 	if Input.is_action_just_pressed("right"):
 		consume_movement(1)
+	print(lives)
 
 func _physics_process(_delta: float) -> void:
 	# simply teleporting for now as actually moving is too slow and blocks the input 

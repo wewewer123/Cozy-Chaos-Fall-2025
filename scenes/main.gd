@@ -11,5 +11,6 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	var tree = tree_inst.instantiate()
+	tree.connect("player_collision", func(): $Player.lives -= 1)
 	$Obstacles.add_child(tree)
 	

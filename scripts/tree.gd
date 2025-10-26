@@ -1,6 +1,6 @@
 extends Area3D
 
-
+signal player_collision
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,4 +20,4 @@ func lane_spawn(direction: int) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	$Player.lives -= 1
+	emit_signal("player_collision")
