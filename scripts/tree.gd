@@ -37,4 +37,4 @@ func replace_sprites() -> void:
 			child.texture = textures[index]
 
 func apply_effect(player: Node3D) -> void:
-	player.lives -= 1
+	player.decrementHealth()

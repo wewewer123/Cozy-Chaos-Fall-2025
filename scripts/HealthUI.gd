@@ -11,7 +11,6 @@ func _ready() -> void:
 		health_container.add_child(heart)
 		hearts.append(heart)
 
-
-func _on_player_lives_changed(curr_health: int) -> void:
+func _on_player_health_changed(newHealth: int) -> void:
 	for i in range(len(hearts)):
-		hearts[i].visible = i < curr_health
+		hearts[i].visible = i < newHealth

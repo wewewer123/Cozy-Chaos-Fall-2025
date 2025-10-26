@@ -30,8 +30,8 @@ func _on_collision(collision_type: int, player: Node3D) -> void:
 	#var leaf = leaf_inst.instantiate()
 	#var heart = heart_inst.instantiate()
 	#
-	#tree.connect("player_collision", func(): $Player.lives -= 1)
-	#ghost.connect("player_collision", func(): $Player.lives -= 1)
+	#tree.connect("player_collision", func(): $Player.curr_health -= 1)
+	#ghost.connect("player_collision", func(): $Player.curr_health -= 1)
 	#leaf.connect("player_collision", func(): $Player.leaf += 1)
 	#heart.connect("player_collision", func(): $Player.heart += 1)
 	#

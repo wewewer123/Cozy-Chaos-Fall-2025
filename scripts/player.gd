@@ -1,7 +1,8 @@
 extends CharacterBody3D
 class_name PlayerObject
 
-@export var lives = 5
+var curr_health = 5
+
 @export var leaf = 0
 @export var max_velocity = 10
 @export var move_speed: float = 15.0  
@@ -12,6 +13,9 @@ var lane_width: float = 25.0
 
 var target_x: float
 var spawner: Spawner
+
+signal health_changed(newHealth : int)
+signal player_died()
 
 func init(s: Spawner) -> void:
 	spawner = s 
@@ -34,3 +38,21 @@ func consume_movement(direction: int) -> void:
 	if new_lane >= 0 and new_lane < max_lanes:
 		curr_lane = new_lane
 		target_x = spawner.get_lane_position(curr_lane).x
+
+func incrementHealth() -> void:
+	_changeHealth(1)
+	
+func decrementHealth() -> void:
+	_changeHealth(-1)
+
+func _changeHealth(value: int) -> void:
+	curr_health += value
+	
+	if(curr_health > Globals.max_player_health):
+		curr_health = Globals.max_player_health
+		return
+	
+	if(curr_health > 0):
+		health_changed.emit(curr_health)
+	else:
+		player_died.emit()

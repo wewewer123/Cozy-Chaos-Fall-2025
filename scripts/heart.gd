@@ -5,4 +5,4 @@ func _ready():
 	type = CollisionType.HEART
 
 func apply_effect(player: Node3D) -> void:
-	player.lives += 1
+	player.incrementHealth()

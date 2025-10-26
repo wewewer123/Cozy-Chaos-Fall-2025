@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://plxa5avl6nh5"]
+[gd_scene load_steps=9 format=3 uid="uid://plxa5avl6nh5"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="3_sugp2"]
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cmeno804auk0u" path="res://scenes/healthUI.tscn" id="4_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,4 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.978491, 0.20628957, 0, -0.20628957, 0.978491, 0, 6.5727158, 25.120068)
 
+[node name="HealthUI" parent="." instance=ExtResource("4_tbgi4")]
+
+[connection signal="health_changed" from="Player" to="HealthUI" method="_on_player_health_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
