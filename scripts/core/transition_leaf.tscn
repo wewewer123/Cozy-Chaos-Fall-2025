@@ -729,7 +729,6 @@ rotation = -0.3540957
 texture = ExtResource("1_uwo63")
 
 [node name="Leaf11" type="Sprite2D" parent="Node2D"]
-modulate = Color(1, 0.69411767, 1, 1)
 position = Vector2(713, -374)
 rotation = 0.10481435
 texture = ExtResource("1_uwo63")
@@ -762,7 +761,6 @@ rotation = 0.15889832
 texture = ExtResource("1_uwo63")
 
 [node name="Leaf17" type="Sprite2D" parent="Node2D"]
-modulate = Color(0.93249375, 0.58814925, 0.63013124, 1)
 position = Vector2(2061, 369.99997)
 rotation = -0.48024303
 texture = ExtResource("1_uwo63")
