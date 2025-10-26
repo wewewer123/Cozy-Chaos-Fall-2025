@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvlf5mhwcncbc"]
+
+[ext_resource type="Script" uid="uid://67adang6a16o" path="res://src/core/game_manager.gd" id="1_wuupp"]
+[ext_resource type="PackedScene" uid="uid://bs1cs7i43kjyp" path="res://src/test/transition_leaf.tscn" id="2_xq5ln"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("transition")]
+script = ExtResource("1_wuupp")
+transition = NodePath("CanvasLayer")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_xq5ln")]
+
+[node name="Node" type="Node" parent="."]

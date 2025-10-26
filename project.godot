@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Cozy Chaos Fall 2025"
-run/main_scene="uid://plxa5avl6nh5"
+run/main_scene="uid://cdqjg3f6qxt0b"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/core/GameManager.tscn"
 
 [editor_plugins]
 
