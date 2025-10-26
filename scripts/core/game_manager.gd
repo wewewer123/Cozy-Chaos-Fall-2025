@@ -8,6 +8,13 @@ var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
 
+@export var audioSource : AudioStreamPlayer2D
+
+@export var radioLevel1:AudioStream
+@export var radioLevel2:AudioStream
+@export var radioLevel3:AudioStream
+@export var radioLevel4:AudioStream
+
 # scene related code
 var active_scene = null
 var _scene_container:Node = null
@@ -15,6 +22,9 @@ var _scene_container:Node = null
 var player:PlayerObject = null
 var current_level:int = 1
 
+func _playStream(nextStream: AudioStream) -> void:
+	audioSource.stream = nextStream
+	audioSource.play()
 
 func _ready() -> void:
 	pass
@@ -39,12 +49,16 @@ func set_state(new_state:game_states) -> void:
 			_set_menu()
 		game_states.LEVEL:
 			_set_level()
+			_playStream(radioLevel1)
 		game_states.LEVEL2:
 			_set_level2()
+			_playStream(radioLevel2)
 		game_states.LEVEL3:
 			_set_level3()
+			_playStream(radioLevel3)
 		game_states.LEVEL4:
 			_set_level4()
+			_playStream(radioLevel4)
 		game_states.WIN:
 			_set_win()
 

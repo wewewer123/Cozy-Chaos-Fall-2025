@@ -30,3 +30,4 @@ lean_smooth = 15.0
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("5_qlg0r")]
+volume_db = -5.0
