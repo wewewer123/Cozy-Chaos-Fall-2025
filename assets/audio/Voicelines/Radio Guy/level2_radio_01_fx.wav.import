@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bum5ohedxajlh"
+path="res://.godot/imported/level2_radio_01_fx.wav-0d02a74e8910cc7998ce3b07e3fe3eff.sample"
+
+[deps]
+
+source_file="res://assets/audio/Voicelines/Radio Guy/level2_radio_01_fx.wav"
+dest_files=["res://.godot/imported/level2_radio_01_fx.wav-0d02a74e8910cc7998ce3b07e3fe3eff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
