@@ -3,6 +3,7 @@ extends CharacterBody3D
 var max_lanes: int
 var curr_lane: int
 @export var lives = 5
+@export var leaf = 0
 @export var max_velocity = 10
 
 

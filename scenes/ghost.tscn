@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqcmrldguya81"]
+[gd_scene load_steps=4 format=3 uid="uid://cqcmrldguya81"]
 
-[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://tempGraphics/t2.png" id="1_t76o2"]
+[ext_resource type="Script" uid="uid://o1641o4dkfsy" path="res://scripts/ghost.gd" id="1_l5lq6"]
+[ext_resource type="Texture2D" uid="uid://ikg6wf18rcyc" path="res://tempGraphics/ghost.png" id="2_l5lq6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
@@ -8,11 +9,14 @@ radius = 1.8818359
 
 [node name="Ghost" type="Area3D"]
 collision_layer = 8
+script = ExtResource("1_l5lq6")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
-texture = ExtResource("1_t76o2")
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.6, 0)
+texture = ExtResource("2_l5lq6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

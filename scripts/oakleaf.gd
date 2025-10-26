@@ -16,3 +16,5 @@ func lane_spawn(direction: int) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	emit_signal("player_collision")
+	queue_free()
+	# Add audio for leaf collection
