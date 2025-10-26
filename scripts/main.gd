@@ -19,10 +19,10 @@ func _on_timer_timeout() -> void:
 	var ghost = ghost_inst.instantiate()
 	var leaf = leaf_inst.instantiate()
 	var heart = heart_inst.instantiate()
-	tree.connect("player_collision", func(): $Player.lives -= 1)
-	ghost.connect("player_collision", func(): $Player.lives -= 1)
+	tree.connect("player_collision", $Player.decrementLive)
+	ghost.connect("player_collision", $Player.decrementLive)
 	leaf.connect("player_collision", func(): $Player.leaf += 1)
-	heart.connect("player_collision", func(): $Player.heart += 1)
+	heart.connect("player_collision", $Player.incrementLive)
 	
 	if rng.randi_range(0, 3) == 0:
 		$Items.add_child(heart)

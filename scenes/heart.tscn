@@ -18,3 +18,5 @@ texture = ExtResource("2_ycbwg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
