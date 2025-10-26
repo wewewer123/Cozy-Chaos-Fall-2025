@@ -4,7 +4,7 @@ class_name PlayerObject
 var max_health:int = 5
 var curr_health:int = max_health
 
-@export var leaf = 0
+@export var leaf:int = 0
 @export var max_velocity = 10
 @export var move_speed: float = 15.0  
 
@@ -63,3 +63,4 @@ func _changeHealth(value: int) -> void:
 		health_changed.emit(value)
 	else:
 		player_died.emit()
+		GameManager.on_player_death()
