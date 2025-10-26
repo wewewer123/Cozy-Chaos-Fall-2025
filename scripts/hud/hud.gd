@@ -8,7 +8,7 @@ var hear_res:PackedScene = load("res://scripts/hud/hearth_full.tscn")
 var empty_hear_res:PackedScene = load("res://scripts/hud/hearth_empty.tscn")
 
 func _ready() -> void:
-	$MarginContainer/CenterContainer/Label.text = "Level - " + str(GameManager.current_level) + "/3"
+	$MarginContainer/CenterContainer/Label.text = "Level - " + str(GameManager.current_level) + "/4"
 	$Timer.start()
 
 func init() -> void:

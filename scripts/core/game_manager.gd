@@ -3,7 +3,7 @@ extends Node
 signal on_state_transition(new_state:game_states)
 
 # state related code
-enum game_states { NULL, MENU, LEVEL, LEVEL2, LEVEL3, WIN }
+enum game_states { NULL, MENU, LEVEL, LEVEL2, LEVEL3, LEVEL4, WIN }
 var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
@@ -43,6 +43,8 @@ func set_state(new_state:game_states) -> void:
 			_set_level2()
 		game_states.LEVEL3:
 			_set_level3()
+		game_states.LEVEL4:
+			_set_level4()
 		game_states.WIN:
 			_set_win()
 
@@ -63,6 +65,11 @@ func _set_level2() -> void:
 
 func _set_level3() -> void:
 	var res:PackedScene = load("res://scenes/LevelThree.tscn")
+	var new_scene = res.instantiate()
+	call_deferred("_set_new_scene", new_scene)
+	
+func _set_level4() -> void:
+	var res:PackedScene = load("res://scenes/LevelFour.tscn")
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
@@ -91,6 +98,8 @@ func next_level():
 				set_state(GameManager.game_states.LEVEL2)
 			3:
 				set_state(GameManager.game_states.LEVEL3)
+			4: 
+				set_state(GameManager.game_states.LEVEL4)
 		
 	else:
 		set_state(GameManager.game_states.WIN)
@@ -103,3 +112,5 @@ func on_player_death():
 			set_state(GameManager.game_states.LEVEL2)
 		3:
 			set_state(GameManager.game_states.LEVEL3)
+		4:
+			set_state(GameManager.game_states.LEVEL4)
