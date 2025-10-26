@@ -5,7 +5,18 @@ var _anim_name:String
 @export var anim_player:AnimationPlayer
 @export var timer:Timer
 
+var first_start:bool = true
+
+func _ready() -> void:
+	pass
+
 func fade_out() -> void:
+	if first_start == true:
+		first_start = false
+		_anim_name = "fade_out"
+		timer.start()
+		return
+	
 	anim_player.seek(1,true)
 	anim_player.play("fade_out", -1, -1, true)
 	
