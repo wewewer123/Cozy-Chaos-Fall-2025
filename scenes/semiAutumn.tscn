@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://djlbaaxs8x2cn"]
+[gd_scene load_steps=24 format=3 uid="uid://djlbaaxs8x2cn"]
 
 [ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/tree.gd" id="1_df1ah"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/summer_treese/t111.png" id="2_arhsw"]
@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/autumn/ta333.png" id="18_rp7fx"]
 [ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/autumn/ta3333.png" id="19_iducp"]
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/autumn/ta44444.png" id="20_bamvc"]
-[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://tempGraphics/t2.png" id="21_sox54"]
+[ext_resource type="Texture2D" uid="uid://bi8otuaoqlr01" path="res://assets/art/2D/autumn/ta555.png" id="21_arhsw"]
+[ext_resource type="Texture2D" uid="uid://be4n4l1pd413q" path="res://assets/art/2D/autumn/ta444.png" id="22_ibcai"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
@@ -32,18 +33,19 @@ script = ExtResource("1_df1ah")
 summer_textures = Array[Texture2D]([ExtResource("2_arhsw"), ExtResource("3_ibcai"), ExtResource("4_s7qc0"), ExtResource("5_8gcs6"), ExtResource("6_djvjd")])
 semi_autumn_textures = Array[Texture2D]([ExtResource("7_j56io"), ExtResource("8_7q7mf"), ExtResource("9_3ohih"), ExtResource("10_a6ytg"), ExtResource("11_nj32l")])
 autumn_textures = Array[Texture2D]([ExtResource("12_jn6oc"), ExtResource("13_fq2m3"), ExtResource("14_c410y"), ExtResource("15_afhb2"), ExtResource("16_th0pm"), ExtResource("17_q05by"), ExtResource("18_rp7fx"), ExtResource("19_iducp"), ExtResource("20_bamvc")])
+treeType = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
-texture = ExtResource("21_sox54")
+texture = ExtResource("12_jn6oc")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, 1.4142135, 0, 2.6, 0)
-texture = ExtResource("21_sox54")
+texture = ExtResource("21_arhsw")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0)
-texture = ExtResource("21_sox54")
+texture = ExtResource("22_ibcai")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)

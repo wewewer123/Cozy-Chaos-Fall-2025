@@ -11,7 +11,7 @@ enum TreeType { SUMMER, SEMI_AUTUMN, AUTUMN }
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	type = CollisionType.TREE
-	replace_sprites()
+	#replace_sprites()
 
 func replace_sprites() -> void:
 	var textures: Array[Texture2D]
