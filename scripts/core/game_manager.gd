@@ -88,7 +88,7 @@ func _set_new_scene(new_scene) -> void:
 	transition.fade_in()
 
 func next_level():
-	if current_level <= 2:
+	if current_level <= 3:
 		current_level += 1
 		
 		match  current_level:
