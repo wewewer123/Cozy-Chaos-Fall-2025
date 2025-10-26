@@ -1,14 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyftg85otyil"]
+[gd_scene load_steps=15 format=3 uid="uid://dry5v5b61sduq"]
 
-[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_dpppr"]
-[ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/summer path resize400.png" id="2_8dw8u"]
-[ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player.tscn" id="2_estr2"]
-[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://scenes/LevelOne.gdshader" id="3_0t3xx"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="3_8671u"]
-[ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/summerTrees.tscn" id="4_f0icx"]
-[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/ghost.tscn" id="5_8dw8u"]
-[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/leaf.tscn" id="6_kmdbv"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/heart2.tscn" id="7_0t3xx"]
+[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_vt067"]
+[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://scenes/LevelOne.gdshader" id="2_jwxli"]
+[ext_resource type="Texture2D" uid="uid://dgou84yt1k6mt" path="res://assets/art/2D/autumn path resize400.png" id="3_2rtsv"]
+[ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player.tscn" id="4_bxbrp"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="5_5h0pq"]
+[ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/autumnTrees.tscn" id="6_vt067"]
+[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/ghost.tscn" id="7_ks2a8"]
+[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/leaf.tscn" id="8_gxasn"]
+[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/heart2.tscn" id="9_hpx1p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,13 +27,13 @@ tonemap_mode = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gie0j"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_0t3xx")
-shader_parameter/albedo_texture = ExtResource("2_8dw8u")
+shader = ExtResource("2_jwxli")
+shader_parameter/albedo_texture = ExtResource("3_2rtsv")
 shader_parameter/uv_scroll = Vector2(0, -0.5)
 shader_parameter/tiling = 1.0
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_dpppr")
+script = ExtResource("1_vt067")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h2yge")
@@ -48,7 +48,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_estr2")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("4_bxbrp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
 
 [node name="Timer" type="Timer" parent="."]
@@ -61,11 +61,11 @@ autostart = true
 
 [node name="Spawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
-script = ExtResource("3_8671u")
-tree_inst = ExtResource("4_f0icx")
-ghost_inst = ExtResource("5_8dw8u")
-leaf_inst = ExtResource("6_kmdbv")
-heart_inst = ExtResource("7_0t3xx")
+script = ExtResource("5_5h0pq")
+tree_inst = ExtResource("6_vt067")
+ghost_inst = ExtResource("7_ks2a8")
+leaf_inst = ExtResource("8_gxasn")
+heart_inst = ExtResource("9_hpx1p")
 
 [node name="Lane0" type="Marker3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
