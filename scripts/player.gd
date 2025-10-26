@@ -1,17 +1,23 @@
 extends CharacterBody3D
+class_name PlayerObject
+
+@export var lives = 5
+@export var leaf = 0
+@export var max_velocity = 10
+@export var move_speed: float = 15.0  
 
 var max_lanes: int
 var curr_lane: int
-var curr_health : int
+var lane_width: float = 25.0
 
-@export var leaf = 0
-@export var max_velocity = 10
+var target_x: float
+var spawner: Spawner
 
-signal lives_changed(curr_health: int)
-signal player_died()
-
-func _ready() -> void:
-	curr_health = Globals.max_player_health
+func init(s: Spawner) -> void:
+	spawner = s 
+	max_lanes = spawner.get_lane_count()
+	curr_lane = max_lanes / 2
+	target_x = spawner.get_lane_position(curr_lane).x
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left"):
@@ -19,31 +25,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("right"):
 		consume_movement(1)
 
-func _physics_process(_delta: float) -> void:
-	# simply teleporting for now as actually moving is too slow and blocks the input 
-	position += velocity
-	velocity.x = 0
+func _physics_process(delta: float) -> void:
+	# Smoothly move toward the target lane’s X
+	position.x = lerp(position.x, target_x, move_speed * delta)
 
 func consume_movement(direction: int) -> void:
-	var new_lane = curr_lane+sign(direction)
-	if velocity.x == 0 and new_lane >= 0 and new_lane < max_lanes:
-			velocity.x = sign(direction) * max_velocity
-			curr_lane = new_lane
-
-func incrementLive() -> void:
-	_changeLives(1)
-	
-func decrementLive() -> void:
-	_changeLives(-1)
-
-func _changeLives(value: int) -> void:
-	curr_health += value
-	
-	if(curr_health > Globals.max_player_health):
-		curr_health = Globals.max_player_health
-		return
-	
-	if(curr_health > 0):
-		lives_changed.emit(curr_health)
-	else:
-		player_died.emit()
+	var new_lane = curr_lane + sign(direction)
+	if new_lane >= 0 and new_lane < max_lanes:
+		curr_lane = new_lane
+		target_x = spawner.get_lane_position(curr_lane).x
