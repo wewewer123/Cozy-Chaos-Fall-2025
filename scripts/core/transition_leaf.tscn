@@ -667,8 +667,10 @@ _data = {
 &"fade_out": SubResource("Animation_hwd3u")
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("anim_player", "timer")]
 script = ExtResource("1_fblsh")
+anim_player = NodePath("AnimationPlayer")
+timer = NodePath("TimerHold")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

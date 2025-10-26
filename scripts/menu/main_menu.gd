@@ -8,10 +8,21 @@ enum states {MENU, OPTIONS}
 var _state:states = states.MENU
 
 func _ready() -> void:
-	pass
+	$CenterContainer/Menu/CenterContainer/MenuButtonList/Start.grab_focus()
 
 func _enter_tree() -> void:
 	pass
+
+func _gui_input(event: InputEvent) -> void:
+	var event_key := event as InputEventKey
+	if event_key and event_key.pressed and event_key.keycode == KEY_TAB:
+		if event_key.shift_pressed:
+			find_prev_valid_focus().grab_focus.call_deferred()
+		else:
+			find_next_valid_focus().grab_focus.call_deferred()
+
+func _input(event: InputEvent) -> void:
+	_gui_input(event)
 
 func change_state(state:states) -> void:
 	if _state == state:
