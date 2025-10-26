@@ -50,6 +50,9 @@ shadow_enabled = true
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_kbmee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+leaf = 0
+max_velocity = 10
+move_speed = 15.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
