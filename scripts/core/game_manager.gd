@@ -14,6 +14,7 @@ var _curren_game_state:game_states = game_states.NULL
 @export var radioLevel2:AudioStream
 @export var radioLevel3:AudioStream
 @export var radioLevel4:AudioStream
+@export var radioEnd:AudioStream
 
 # scene related code
 var active_scene = null
@@ -61,6 +62,7 @@ func set_state(new_state:game_states) -> void:
 			_playStream(radioLevel4)
 		game_states.WIN:
 			_set_win()
+			_playStream(radioEnd)
 
 func _set_menu() -> void:
 	var res:PackedScene = load("res://scripts/menu/main_menu.tscn")
