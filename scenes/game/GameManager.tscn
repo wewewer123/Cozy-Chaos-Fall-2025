@@ -1,0 +1,36 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvlf5mhwcncbc"]
+
+[ext_resource type="Script" uid="uid://67adang6a16o" path="res://scripts/core/game_manager.gd" id="1_unqrf"]
+[ext_resource type="AudioStream" uid="uid://ccgcv367au3un" path="res://assets/audio/Voicelines/Radio Guy/level1_radio_01_fx.wav" id="2_mhx6a"]
+[ext_resource type="AudioStream" uid="uid://bum5ohedxajlh" path="res://assets/audio/Voicelines/Radio Guy/level2_radio_01_fx.wav" id="3_o1ahd"]
+[ext_resource type="AudioStream" uid="uid://dfum3yse08ucb" path="res://assets/audio/Voicelines/Radio Guy/level3_radio_01_fx.wav" id="4_gvcca"]
+[ext_resource type="AudioStream" uid="uid://dwbsg0gww8yg5" path="res://assets/audio/Voicelines/Radio Guy/level4_radio_01_fx.wav" id="5_mydsw"]
+[ext_resource type="AudioStream" uid="uid://dgqd61cnjtwlu" path="res://assets/audio/Voicelines/Radio Guy/ending_radio_fx.wav" id="6_t4l15"]
+[ext_resource type="PackedScene" uid="uid://c5h0614qa13mh" path="res://scenes/ui/main_menu.tscn" id="7_mhx6a"]
+[ext_resource type="PackedScene" uid="uid://dyftg85otyil" path="res://scenes/world/Level1.tscn" id="7_uut2o"]
+[ext_resource type="PackedScene" uid="uid://ebwap5j0m8u" path="res://scenes/world/Level2.tscn" id="8_tub3f"]
+[ext_resource type="PackedScene" uid="uid://c1hkqni13viv6" path="res://scenes/world/Level3.tscn" id="9_qxkjd"]
+[ext_resource type="PackedScene" uid="uid://dry5v5b61sduq" path="res://scenes/world/Level4.tscn" id="10_qowum"]
+[ext_resource type="PackedScene" uid="uid://bs1cs7i43kjyp" path="res://scenes/ui/transition_leaf.tscn" id="11_0rt5h"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("transition", "audioSource")]
+script = ExtResource("1_unqrf")
+transition = NodePath("CanvasLayer")
+audioSource = NodePath("AudioStreamPlayer2D")
+radioLevel1 = ExtResource("2_mhx6a")
+radioLevel2 = ExtResource("3_o1ahd")
+radioLevel3 = ExtResource("4_gvcca")
+radioLevel4 = ExtResource("5_mydsw")
+radioEnd = ExtResource("6_t4l15")
+mainMenuScene = ExtResource("7_mhx6a")
+levelScene1 = ExtResource("7_uut2o")
+levelScene2 = ExtResource("8_tub3f")
+levelScene3 = ExtResource("9_qxkjd")
+levelScene4 = ExtResource("10_qowum")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("11_0rt5h")]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0

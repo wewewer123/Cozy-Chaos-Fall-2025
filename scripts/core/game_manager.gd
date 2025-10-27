@@ -16,6 +16,13 @@ var _curren_game_state:game_states = game_states.NULL
 @export var radioLevel4:AudioStream
 @export var radioEnd:AudioStream
 
+@export var mainMenuScene:PackedScene
+@export var levelScene1:PackedScene
+@export var levelScene2:PackedScene
+@export var levelScene3:PackedScene
+@export var levelScene4:PackedScene
+
+
 # scene related code
 var active_scene = null
 var _scene_container:Node = null
@@ -65,27 +72,27 @@ func set_state(new_state:game_states) -> void:
 			_playStream(radioEnd)
 
 func _set_menu() -> void:
-	var res:PackedScene = load("res://scripts/menu/main_menu.tscn")
+	var res:PackedScene = mainMenuScene
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
 func _set_level() -> void:
-	var res:PackedScene = load("res://scenes/LevelOne.tscn")
+	var res:PackedScene = levelScene1
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
 func _set_level2() -> void:
-	var res:PackedScene = load("res://scenes/LevelTwo.tscn")
+	var res:PackedScene = levelScene2
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
 func _set_level3() -> void:
-	var res:PackedScene = load("res://scenes/LevelThree.tscn")
+	var res:PackedScene = levelScene3
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 	
 func _set_level4() -> void:
-	var res:PackedScene = load("res://scenes/LevelFour.tscn")
+	var res:PackedScene = levelScene4
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 

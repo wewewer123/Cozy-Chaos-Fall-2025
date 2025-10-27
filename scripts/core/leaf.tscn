@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dem4qx0rjlhd5"]
-
-[ext_resource type="Texture2D" uid="uid://bngueogxetywk" path="res://src/transition/leaf.png" id="1_nsf5g"]
-
-[node name="Leaf" type="Sprite2D"]
-texture = ExtResource("1_nsf5g")

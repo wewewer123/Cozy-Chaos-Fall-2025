@@ -11,7 +11,7 @@ func _ready() -> void:
 	player.init(spawner)
 	
 	GameManager.player = player
-	_hud = load("res://scripts/hud/HUD.tscn").instantiate()
+	_hud = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 	_hud.init() # spawns hearts needs player to be set in GameManager
 	add_child(_hud)
 	

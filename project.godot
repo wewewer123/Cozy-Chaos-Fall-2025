@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scripts/core/GameManager.tscn"
+GameManager="*res://scenes/game/GameManager.tscn"
 Globals="*res://scripts/globals.gd"
 
 [editor_plugins]

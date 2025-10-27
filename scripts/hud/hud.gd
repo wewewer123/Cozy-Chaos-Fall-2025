@@ -4,8 +4,8 @@ class_name HUD
 @export var hearth_container:HBoxContainer
 @export var empty_hearth_container:HBoxContainer
 
-var hear_res:PackedScene = load("res://scripts/hud/hearth_full.tscn")
-var empty_hear_res:PackedScene = load("res://scripts/hud/hearth_empty.tscn")
+var hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_full.tscn")
+var empty_hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_empty.tscn")
 
 func _ready() -> void:
 	$MarginContainer/CenterContainer/Label.text = "Level - " + str(GameManager.current_level) + "/4"
