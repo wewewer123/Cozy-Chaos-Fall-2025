@@ -1,10 +1,10 @@
 extends Node3D
 class_name Spawner
 
-@export var tree_inst: PackedScene = load("res://scenes/tree.tscn")
-@export var ghost_inst: PackedScene = load("res://scenes/ghost.tscn")
-@export var leaf_inst: PackedScene = load("res://scenes/leaf.tscn")
-@export var heart_inst: PackedScene = load("res://scenes/heart2.tscn")
+@export var tree_inst: PackedScene
+@export var ghost_inst: PackedScene
+@export var leaf_inst: PackedScene
+@export var heart_inst: PackedScene
 
 var lanes: Array[Marker3D]
 var rng := RandomNumberGenerator.new()
@@ -44,8 +44,8 @@ func _pick_lane(exclude_index: int = -1) -> int:
 func _spawn_packed_at(packed: PackedScene, parent: Node, lane_index: int) -> Node3D:
 	var node := packed.instantiate()
 	var base_pos := get_lane_position(lane_index)
-	node.global_position = base_pos
 	parent.add_child(node)
+	node.global_position = base_pos
 	return node
 
 # Allow caller to force a lane, otherwise pick one (optionally excluding)
