@@ -22,13 +22,13 @@ var _curren_game_state:game_states = game_states.NULL
 @export var levelScene3:PackedScene
 @export var levelScene4:PackedScene
 
-
 # scene related code
 var active_scene = null
 var _scene_container:Node = null
 
 var player:PlayerObject = null
-var current_level:int = 1
+var FIRST_LEVEL_INDEX = 1
+var current_level:int = FIRST_LEVEL_INDEX
 
 func _playStream(nextStream: AudioStream) -> void:
 	audioSource.stream = nextStream
@@ -36,6 +36,15 @@ func _playStream(nextStream: AudioStream) -> void:
 
 func _ready() -> void:
 	pass
+	
+func _process(_delta: float) -> void:
+	if  Input.is_action_just_pressed("escape"):
+		_resetGameState()
+		set_state(game_states.MENU)
+
+func _resetGameState():
+	current_level = FIRST_LEVEL_INDEX
+	audioSource.stop()
 
 func set_scene_container(scene_container:Node) -> void:
 	assert( scene_container != null, "GameManager : scene_container must not be null") 
@@ -49,6 +58,7 @@ func set_state(new_state:game_states) -> void:
 	
 	on_state_transition.emit(new_state)
 	transition.fade_out()
+	_curren_game_state = new_state
 	
 	await transition.faded_out
 	
