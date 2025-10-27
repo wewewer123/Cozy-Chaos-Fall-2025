@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo3apvyv0kqo2"]
 
 [ext_resource type="Script" uid="uid://coalb7hr6m78d" path="res://scripts/lane objects/collectables/heart.gd" id="1_bqvbl"]
-[ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://tempGraphics/heartcollectible.png" id="2_bqvbl"]
+[ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://assets/art/2D/heartcollectible.png" id="2_bqvbl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5lq6"]
 radius = 1.5371094

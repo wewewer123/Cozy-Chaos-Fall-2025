@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/obstacles/summerTrees.tscn" id="4_f0icx"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="5_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="6_kmdbv"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart2.tscn" id="7_0t3xx"]
+[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="7_0t3xx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

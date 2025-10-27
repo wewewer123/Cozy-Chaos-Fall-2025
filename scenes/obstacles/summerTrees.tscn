@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/autumn/ta333.png" id="18_ibjvk"]
 [ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/autumn/ta3333.png" id="19_8mo3q"]
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/autumn/ta44444.png" id="20_lt72m"]
-[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://tempGraphics/t2.png" id="21_0suo8"]
+[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://assets/art/2D/t2.png" id="21_0suo8"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
