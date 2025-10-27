@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dvlf5mhwcncbc"]
 
-[ext_resource type="Script" uid="uid://67adang6a16o" path="res://scripts/core/game_manager.gd" id="1_unqrf"]
+[ext_resource type="Script" uid="uid://67adang6a16o" path="res://scripts/game/game_manager.gd" id="1_unqrf"]
 [ext_resource type="AudioStream" uid="uid://ccgcv367au3un" path="res://assets/audio/Voicelines/Radio Guy/level1_radio_01_fx.wav" id="2_mhx6a"]
 [ext_resource type="AudioStream" uid="uid://bum5ohedxajlh" path="res://assets/audio/Voicelines/Radio Guy/level2_radio_01_fx.wav" id="3_o1ahd"]
 [ext_resource type="AudioStream" uid="uid://dfum3yse08ucb" path="res://assets/audio/Voicelines/Radio Guy/level3_radio_01_fx.wav" id="4_gvcca"]

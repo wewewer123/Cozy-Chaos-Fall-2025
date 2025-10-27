@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://f8842u8jr5o6"]
 
-[ext_resource type="Script" uid="uid://6umufkp7vx8k" path="res://witch_sound_manager.gd" id="1_y6na0"]
+[ext_resource type="Script" uid="uid://6umufkp7vx8k" path="res://scripts/player/witch_sound_manager.gd" id="1_y6na0"]
 [ext_resource type="AudioStream" uid="uid://dank1wgo7ded7" path="res://assets/audio/sounds/witch/Swish-DOWN.wav" id="2_nar58"]
 [ext_resource type="AudioStream" uid="uid://clsnpr4viyuvb" path="res://assets/audio/sounds/witch/Bump on trees _ sides.wav" id="3_f33mr"]
 [ext_resource type="AudioStream" uid="uid://bntgi7xytblpv" path="res://assets/audio/sounds/sound effect ojpe/bump ghost (with voice) 1.mp3" id="4_ojfkq"]

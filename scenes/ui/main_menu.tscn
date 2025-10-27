@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5h0614qa13mh"]
 
-[ext_resource type="Script" uid="uid://36la5hxulw6c" path="res://scripts/menu/main_menu.gd" id="1_c67eb"]
+[ext_resource type="Script" uid="uid://36la5hxulw6c" path="res://scripts/ui/main_menu.gd" id="1_c67eb"]
 [ext_resource type="Theme" uid="uid://dvmur811eqaun" path="res://assets/themes/menu_button_list.tres" id="3_hh8cs"]
-[ext_resource type="Script" uid="uid://dpkek3ls343it" path="res://scripts/menu/menu.gd" id="3_rdx8w"]
+[ext_resource type="Script" uid="uid://dpkek3ls343it" path="res://scripts/ui/menu.gd" id="3_rdx8w"]
 [ext_resource type="FontFile" uid="uid://5g0c1fwbh4w5" path="res://assets/fonts/AtlantisText-Bold.ttf" id="5_b6xvh"]
-[ext_resource type="Script" uid="uid://coackst1gtgo2" path="res://scripts/menu/options.gd" id="5_cwgiw"]
+[ext_resource type="Script" uid="uid://coackst1gtgo2" path="res://scripts/ui/options.gd" id="5_cwgiw"]
 [ext_resource type="Theme" uid="uid://dt0x4ngoh82te" path="res://assets/themes/grid_menu.tres" id="6_ohy3q"]
 
 [sub_resource type="Theme" id="Theme_cwgiw"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://dyftg85otyil"]
 
-[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_dpppr"]
+[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dpppr"]
 [ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/summer path resize400.png" id="2_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="2_estr2"]
 [ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="3_0t3xx"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="3_8671u"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="3_8671u"]
 [ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/obstacles/summerTrees.tscn" id="4_f0icx"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="5_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="6_kmdbv"]

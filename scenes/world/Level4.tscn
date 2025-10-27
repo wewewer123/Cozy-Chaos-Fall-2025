@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://dry5v5b61sduq"]
 
-[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/main.gd" id="1_vt067"]
+[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
 [ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="2_jwxli"]
 [ext_resource type="Texture2D" uid="uid://dgou84yt1k6mt" path="res://assets/art/2D/autumn path resize400.png" id="3_2rtsv"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/Spawner.gd" id="5_5h0pq"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="5_5h0pq"]
 [ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/obstacles/autumnTrees.tscn" id="6_vt067"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="7_ks2a8"]
 [ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="8_gxasn"]

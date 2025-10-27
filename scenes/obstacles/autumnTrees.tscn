@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://b5fjd6vcxcjrp"]
 
-[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/tree.gd" id="1_6kw8v"]
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane objects/obstacles/tree.gd" id="1_6kw8v"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/summer_treese/t111.png" id="2_okqqn"]
 [ext_resource type="Texture2D" uid="uid://d2p88kguf874h" path="res://assets/art/2D/summer_treese/t222.png" id="3_d0n8w"]
 [ext_resource type="Texture2D" uid="uid://c14kgw3dywa0w" path="res://assets/art/2D/summer_treese/t333.png" id="4_kh4kj"]

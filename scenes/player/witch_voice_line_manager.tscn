@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://d31bx1rfffxnc"]
 
-[ext_resource type="Script" uid="uid://cl6421337fopv" path="res://witch_voice_line_manager.gd" id="1_m20fq"]
+[ext_resource type="Script" uid="uid://cl6421337fopv" path="res://scripts/player/witch_voice_line_manager.gd" id="1_m20fq"]
 [ext_resource type="AudioStream" uid="uid://doilgv0cg3xn6" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-01.wav" id="2_g3j2s"]
 [ext_resource type="AudioStream" uid="uid://b2v32cw5vchvm" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-02.wav" id="3_olinp"]
 [ext_resource type="AudioStream" uid="uid://bt3tmksywy0fs" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-03.1.wav" id="4_tingo"]

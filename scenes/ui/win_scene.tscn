@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yl18bhn288tf"]
 
-[ext_resource type="Script" path="res://scripts/menu/win_scene.gd" id="1_u7bdv"]
-[ext_resource type="Texture2D" uid="uid://dqoy7jrg8jmi1" path="res://scripts/menu/menu end resize 400.png" id="2_famdu"]
+[ext_resource type="Script" uid="uid://t1tim3b4rak1" path="res://scripts/ui/win_scene.gd" id="1_u7bdv"]
+[ext_resource type="Texture2D" uid="uid://dqoy7jrg8jmi1" path="res://assets/menu end resize 400.png" id="2_famdu"]
 
 [node name="WinScene" type="Control"]
 layout_mode = 3
