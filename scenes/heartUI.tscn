@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://hx73ha1wsikw"]
-
-[ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://tempGraphics/heartcollectible.png" id="1_1jle4"]
-
-[node name="TextureRect" type="TextureRect"]
-offset_right = 109.0
-offset_bottom = 98.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_1jle4")
