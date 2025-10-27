@@ -19,7 +19,6 @@ func on_player_leaf_collision() -> void:
 	pass
 
 func on_player_health_changed(change:int) -> void:
-	print(change)
 	if change > 0:
 		add_heart()
 	else:

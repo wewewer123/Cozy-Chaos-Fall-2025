@@ -30,7 +30,7 @@ func _on_timer_timeout() -> void:
 func _on_collision(collision_type: int, player: Node3D) -> void:
 	# You don’t touch player stats here — that’s handled in apply_effect().
 	# This is just for cross-cutting concerns like sound, particles, UI.
-	print("Collision happened with: ", CollisionObject.CollisionType.keys()[collision_type])
+	pass
 	
 #func _on_timer_timeout() -> void:
 	#var rng:= RandomNumberGenerator.new() 
