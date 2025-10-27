@@ -30,7 +30,6 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_0t3xx")
 shader_parameter/albedo_texture = ExtResource("2_8dw8u")
-shader_parameter/uv_scroll = Vector2(0, -0.5)
 shader_parameter/tiling = 1.0
 
 [node name="Main" type="Node3D"]
