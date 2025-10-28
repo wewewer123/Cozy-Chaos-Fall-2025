@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0ih6rojp426s"]
 
-[ext_resource type="Script" uid="uid://25qt4h6xdr3d" path="res://tree_collection.gd" id="1_bpvfh"]
+[ext_resource type="Script" uid="uid://25qt4h6xdr3d" path="res://scripts/world/tree_collection.gd" id="1_bpvfh"]
 
 [node name="TreeCollection" type="Node"]
 script = ExtResource("1_bpvfh")

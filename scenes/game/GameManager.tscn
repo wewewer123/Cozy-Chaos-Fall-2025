@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvlf5mhwcncbc"]
+[gd_scene load_steps=14 format=3 uid="uid://dvlf5mhwcncbc"]
 
 [ext_resource type="Script" uid="uid://67adang6a16o" path="res://scripts/game/game_manager.gd" id="1_unqrf"]
 [ext_resource type="AudioStream" uid="uid://ccgcv367au3un" path="res://assets/audio/Voicelines/Radio Guy/level1_radio_01_fx.wav" id="2_mhx6a"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c1hkqni13viv6" path="res://scenes/world/Level3.tscn" id="9_qxkjd"]
 [ext_resource type="PackedScene" uid="uid://dry5v5b61sduq" path="res://scenes/world/Level4.tscn" id="10_qowum"]
 [ext_resource type="PackedScene" uid="uid://bs1cs7i43kjyp" path="res://scenes/ui/transition_leaf.tscn" id="11_0rt5h"]
+[ext_resource type="PackedScene" uid="uid://yl18bhn288tf" path="res://scenes/ui/win_scene.tscn" id="12_o1ahd"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("transition", "audioSource")]
 script = ExtResource("1_unqrf")
@@ -27,6 +28,7 @@ levelScene1 = ExtResource("7_uut2o")
 levelScene2 = ExtResource("8_tub3f")
 levelScene3 = ExtResource("9_qxkjd")
 levelScene4 = ExtResource("10_qowum")
+winScene = ExtResource("12_o1ahd")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("11_0rt5h")]
 

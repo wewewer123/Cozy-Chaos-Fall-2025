@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://djlbaaxs8x2cn"]
+[gd_scene load_steps=25 format=3 uid="uid://djlbaaxs8x2cn"]
 
 [ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane objects/obstacles/tree.gd" id="1_df1ah"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/summer_treese/t111.png" id="2_arhsw"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/autumn/ta44444.png" id="20_bamvc"]
 [ext_resource type="Texture2D" uid="uid://bi8otuaoqlr01" path="res://assets/art/2D/autumn/ta555.png" id="21_arhsw"]
 [ext_resource type="Texture2D" uid="uid://be4n4l1pd413q" path="res://assets/art/2D/autumn/ta444.png" id="22_ibcai"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="23_unrth"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
@@ -50,5 +51,7 @@ texture = ExtResource("22_ibcai")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="Movement" parent="." instance=ExtResource("23_unrth")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,6 +4,7 @@ class_name HUD
 @export var hearth_container:HBoxContainer
 @export var empty_hearth_container:HBoxContainer
 
+
 var hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_full.tscn")
 var empty_hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_empty.tscn")
 
@@ -25,9 +26,9 @@ func on_player_health_changed(change:int) -> void:
 		remove_hearth()
 
 func on_player_leaf_changed(_value:int) -> void:
-	$Control/MarginContainer2/HBoxContainer/Label.text = str(GameManager.player.leaf) + "/15"
+	$Control/MarginContainer2/HBoxContainer/Label.text = str(GameManager.player.leaf) + "/" + str(Globals.max_leaf_count)
 	
-	if GameManager.player.leaf == 15:
+	if GameManager.player.leaf == Globals.max_leaf_count:
 		GameManager.next_level()
 
 func add_heart() -> void:

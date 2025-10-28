@@ -21,6 +21,7 @@ var _curren_game_state:game_states = game_states.NULL
 @export var levelScene2:PackedScene
 @export var levelScene3:PackedScene
 @export var levelScene4:PackedScene
+@export var winScene:PackedScene
 
 # scene related code
 var active_scene = null
@@ -107,7 +108,7 @@ func _set_level4() -> void:
 	call_deferred("_set_new_scene", new_scene)
 
 func _set_win() -> void:
-	var res:PackedScene = load("res://scripts/menu/win_scene.tscn")
+	var res:PackedScene = winScene
 	var new_scene = res.instantiate()
 	call_deferred("_set_new_scene", new_scene)
 
