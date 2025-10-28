@@ -3,5 +3,14 @@ extends Node
 var max_player_health = 5
 var max_leaf_count = 10 
 
-# 1.5, 1.2, 0.8, 0.5
-# 1.0, 0.7, 0.5, 0.3
+# Current spawning timer speeds
+#     Lv1: 1.0
+#     Lv2: 0.7
+#     Lv3: 0.5
+#     Lv4: 0.3
+
+# Optional speeds if the current is too fast
+#     Lv1: 1.5
+#     Lv2: 1.2
+#     Lv3: 0.8
+#     Lv4: 0.5

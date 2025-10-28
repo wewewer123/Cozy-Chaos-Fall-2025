@@ -3,8 +3,12 @@ class_name CollisionObject
 
 enum CollisionType { TREE, GHOST, LEAF, HEART }
 @export var type: CollisionType
+@export var textureSetter : TreeTextureSetter
 
 signal collided_with_player(colisions_type: int, player: Node)
+
+func set_texture_alpha(value : float) -> void:
+	textureSetter.set_alpha(value)
 
 func _on_body_entered(body: Node3D) -> void:
 	if is_player(body):
