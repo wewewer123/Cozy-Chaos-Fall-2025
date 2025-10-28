@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhgg5f1ja4wnq"
-path.s3tc="res://.godot/imported/summer path resize400.png-93330efb04693a9d793e1d4315eee8c5.s3tc.ctex"
+uid="uid://c6c7ttxr0r1yr"
+path.s3tc="res://.godot/imported/heartcollectible.png-ffd95d4785a6eec0f31d23580645252b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/2D/summer path resize400.png"
-dest_files=["res://.godot/imported/summer path resize400.png-93330efb04693a9d793e1d4315eee8c5.s3tc.ctex"]
+source_file="res://assets/art/2D/stuff/heartcollectible.png"
+dest_files=["res://.godot/imported/heartcollectible.png-ffd95d4785a6eec0f31d23580645252b.s3tc.ctex"]
 
 [params]
 

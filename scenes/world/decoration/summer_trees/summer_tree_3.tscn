@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwrcm7ivsho5s"]
+
+[ext_resource type="PackedScene" uid="uid://domdm1bdbweh0" path="res://scenes/world/decoration/tree_decoration.tscn" id="1_2xkdu"]
+[ext_resource type="Texture2D" uid="uid://c14kgw3dywa0w" path="res://assets/art/2D/summer_treese/t333.png" id="2_2xkdu"]
+
+[node name="Tree" instance=ExtResource("1_2xkdu")]
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource("2_2xkdu")

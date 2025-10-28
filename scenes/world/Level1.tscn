@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyftg85otyil"]
+[gd_scene load_steps=18 format=3 uid="uid://dyftg85otyil"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dpppr"]
-[ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/summer path resize400.png" id="2_8dw8u"]
+[ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/stuff/summer path resize400.png" id="2_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="2_estr2"]
 [ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="3_0t3xx"]
 [ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="3_8671u"]
 [ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/obstacles/summerTrees.tscn" id="4_f0icx"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="5_8dw8u"]
+[ext_resource type="Script" uid="uid://cbma0sakc4ro2" path="res://tree_spawner.gd" id="5_muapc"]
+[ext_resource type="Resource" uid="uid://6km3wljid3ry" path="res://scenes/world/decoration/summer_trees/summer_tree_collection.tres" id="6_78lfr"]
 [ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="6_kmdbv"]
 [ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="7_0t3xx"]
 
@@ -24,6 +26,7 @@ sky = SubResource("Sky_0xm2m")
 tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+size = Vector2(1.24, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gie0j"]
 resource_local_to_scene = true
@@ -31,6 +34,10 @@ render_priority = 0
 shader = ExtResource("3_0t3xx")
 shader_parameter/albedo_texture = ExtResource("2_8dw8u")
 shader_parameter/tiling = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muapc"]
+shading_mode = 0
+albedo_color = Color(0.3647059, 0.26666668, 0.09411765, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dpppr")
@@ -44,14 +51,74 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
 
+[node name="Floor10" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -60, 0, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor4" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 60, 0, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, -50, 0, 50, -2.1855694e-06, 0, 0, 0, 50, 45, 0, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
+[node name="Floor13" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -45, 0, 0)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
 [node name="Floor2" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, -100)
 layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
 
+[node name="Floor11" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -60, 0, -100)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor5" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 60, 0, -100)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, -50, 0, 50, -2.1855694e-06, 0, 0, 0, 50, 45, 0, -100)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
+[node name="Floor14" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -45, 0, -100)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
 [node name="Floor3" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, -200)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor12" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -60, 0, -200)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+
+[node name="Floor6" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 60, 0, -200)
 layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
@@ -70,6 +137,22 @@ autostart = true
 [node name="Obstacles" type="Node3D" parent="."]
 
 [node name="Items" type="Node3D" parent="."]
+
+[node name="TreeSpawner" type="Node3D" parent="." node_paths=PackedStringArray("leftSpawnPoint", "rightSpawnPoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
+script = ExtResource("5_muapc")
+tree_collection = ExtResource("6_78lfr")
+leftSpawnPoint = NodePath("left")
+rightSpawnPoint = NodePath("right")
+spawnInterval = 0.4
+maxTreesPerSpawn = 7
+minTreesPerSpawn = 5
+
+[node name="left" type="Node3D" parent="TreeSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.004, -0.5, -223.448)
+
+[node name="right" type="Node3D" parent="TreeSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.895, -0.5, -221.613)
 
 [node name="Spawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)

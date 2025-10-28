@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbs70q0d5h6f4"
-path.s3tc="res://.godot/imported/t2.png-dbe3ea5aa0885b64ff0d809109a237cc.s3tc.ctex"
+uid="uid://dhgg5f1ja4wnq"
+path.s3tc="res://.godot/imported/summer path resize400.png-7a8fbe37555a3c73e64733eeaf0faad6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/2D/t2.png"
-dest_files=["res://.godot/imported/t2.png-dbe3ea5aa0885b64ff0d809109a237cc.s3tc.ctex"]
+source_file="res://assets/art/2D/stuff/summer path resize400.png"
+dest_files=["res://.godot/imported/summer path resize400.png-7a8fbe37555a3c73e64733eeaf0faad6.s3tc.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b7kvvc8waf021"]
+[gd_scene load_steps=24 format=3 uid="uid://b7kvvc8waf021"]
 
 [ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane objects/obstacles/tree.gd" id="1_16g3y"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/summer_treese/t111.png" id="2_ynx4y"]
@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/autumn/ta333.png" id="18_ibjvk"]
 [ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/autumn/ta3333.png" id="19_8mo3q"]
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/autumn/ta44444.png" id="20_lt72m"]
-[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://assets/art/2D/t2.png" id="21_0suo8"]
+[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://assets/art/2D/stuff/t2.png" id="21_0suo8"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="22_0vcm1"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
@@ -38,15 +39,17 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
 texture = ExtResource("21_0suo8")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, 1.4142135, 0, 2.6, 0)
+transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0.1)
 texture = ExtResource("21_0suo8")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0)
+transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0.23)
 texture = ExtResource("21_0suo8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="Movement" parent="." instance=ExtResource("22_0vcm1")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

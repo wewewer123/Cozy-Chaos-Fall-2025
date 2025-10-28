@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo3apvyv0kqo2"]
+[gd_scene load_steps=5 format=3 uid="uid://bo3apvyv0kqo2"]
 
 [ext_resource type="Script" uid="uid://coalb7hr6m78d" path="res://scripts/lane objects/collectables/heart.gd" id="1_bqvbl"]
-[ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://assets/art/2D/heartcollectible.png" id="2_bqvbl"]
+[ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://assets/art/2D/stuff/heartcollectible.png" id="2_bqvbl"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="3_stgmx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5lq6"]
 radius = 1.5371094
@@ -19,5 +20,7 @@ texture = ExtResource("2_bqvbl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3018754, 0)
 shape = SubResource("CapsuleShape3D_l5lq6")
+
+[node name="Movement" parent="." instance=ExtResource("3_stgmx")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

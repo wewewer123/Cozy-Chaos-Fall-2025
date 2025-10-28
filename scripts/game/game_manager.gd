@@ -50,8 +50,8 @@ func set_scene_container(scene_container:Node) -> void:
 	assert( scene_container != null, "GameManager : scene_container must not be null") 
 	_scene_container = scene_container
 
-func set_state(new_state:game_states) -> void:
-	if _curren_game_state == new_state:
+func set_state(new_state:game_states, force: bool = false) -> void:
+	if _curren_game_state == new_state and not  force:
 		return
 	
 	assert( _scene_container != null, "GameManager : _scene_container needs to be set call set_scene_container") 
@@ -140,10 +140,10 @@ func next_level():
 func on_player_death():
 	match  current_level:
 		1:
-			set_state(GameManager.game_states.LEVEL)
+			set_state(GameManager.game_states.LEVEL, true)
 		2:
-			set_state(GameManager.game_states.LEVEL2)
+			set_state(GameManager.game_states.LEVEL2, true)
 		3:
-			set_state(GameManager.game_states.LEVEL3)
+			set_state(GameManager.game_states.LEVEL3, true)
 		4:
-			set_state(GameManager.game_states.LEVEL4)
+			set_state(GameManager.game_states.LEVEL4, true)

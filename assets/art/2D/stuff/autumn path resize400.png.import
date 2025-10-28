@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6c7ttxr0r1yr"
-path.s3tc="res://.godot/imported/heartcollectible.png-e5a0f8bc5dddcced5c6951c21de5d465.s3tc.ctex"
+uid="uid://dgou84yt1k6mt"
+path.s3tc="res://.godot/imported/autumn path resize400.png-4a0558b2c98f3bc361bca7379fd3bbad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/2D/heartcollectible.png"
-dest_files=["res://.godot/imported/heartcollectible.png-e5a0f8bc5dddcced5c6951c21de5d465.s3tc.ctex"]
+source_file="res://assets/art/2D/stuff/autumn path resize400.png"
+dest_files=["res://.godot/imported/autumn path resize400.png-4a0558b2c98f3bc361bca7379fd3bbad.s3tc.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bs1cs7i43kjyp"]
 
 [ext_resource type="Script" uid="uid://bbl7flewcr2nc" path="res://scripts/ui/transition_leaf.gd" id="1_fblsh"]
-[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/leafcollectible.png" id="2_7or0q"]
+[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/stuff/leafcollectible.png" id="2_7or0q"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7or0q"]
 viewport_path = NodePath("SubViewportContainer/SubViewport")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t4fifylo4k7p"
-path.s3tc="res://.godot/imported/leafcollectible.png-5031f8eb07b52a1e7777a210b2323bb5.s3tc.ctex"
+uid="uid://bbs70q0d5h6f4"
+path.s3tc="res://.godot/imported/t2.png-abd921a498a421885a94c8b62b13df56.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/2D/leafcollectible.png"
-dest_files=["res://.godot/imported/leafcollectible.png-5031f8eb07b52a1e7777a210b2323bb5.s3tc.ctex"]
+source_file="res://assets/art/2D/stuff/t2.png"
+dest_files=["res://.godot/imported/t2.png-abd921a498a421885a94c8b62b13df56.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://domdm1bdbweh0"]
+
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="1_nnqo1"]
+[ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree_sprite.tscn" id="2_jrtv0"]
+
+[node name="Tree" type="Node3D"]
+
+[node name="Movement" parent="." instance=ExtResource("1_nnqo1")]
+
+[node name="Texture" parent="." instance=ExtResource("2_jrtv0")]
