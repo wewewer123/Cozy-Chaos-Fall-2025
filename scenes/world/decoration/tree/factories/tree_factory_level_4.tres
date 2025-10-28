@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://5tg33ylh18kc" path="res://assets/art/2D/trees/trees_red/ta22222.png" id="4_3ofps"]
 [ext_resource type="Texture2D" uid="uid://ermo2tprd5x" path="res://assets/art/2D/trees/trees_red/ta33333.png" id="5_l4lfq"]
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/trees/trees_red/ta44444.png" id="6_d5wmq"]
-[ext_resource type="Texture2D" uid="uid://dtc8aln6g6ogk" path="res://assets/art/2D/trees/trees_red/ta55555.png" id="7_xwg3a"]
 [ext_resource type="Texture2D" uid="uid://y0oedotpuuvl" path="res://assets/art/2D/trees/trees_red_dark/ta1.png" id="8_75mmq"]
 [ext_resource type="Texture2D" uid="uid://dlyrrlqgp43vh" path="res://assets/art/2D/trees/trees_red_dark/ta2.png" id="9_f0chd"]
 [ext_resource type="Texture2D" uid="uid://c3jfj14nocr8k" path="res://assets/art/2D/trees/trees_red_dark/ta3.png" id="10_5huov"]
 [ext_resource type="Texture2D" uid="uid://ct4bly3e0bfgl" path="res://assets/art/2D/trees/trees_red_dark/ta4.png" id="11_2f06s"]
 [ext_resource type="Texture2D" uid="uid://d08314civhxj1" path="res://assets/art/2D/trees/trees_red_dark/ta5.png" id="12_naf71"]
-[ext_resource type="Texture2D" uid="uid://b3rhmkpin2sx6" path="res://assets/art/2D/trees/trees_yellow/ta222.png" id="13_l4lfq"]
+[ext_resource type="Texture2D" uid="uid://tg4ajrdhah43" path="res://assets/art/2D/trees/trees_orange/ta5555.png" id="13_3ofps"]
+[ext_resource type="Texture2D" uid="uid://cathc2sqso0tc" path="res://assets/art/2D/trees/trees_orange/ta2222.png" id="13_l4lfq"]
 
 [resource]
 script = ExtResource("1_4rhym")
 tree_scene = ExtResource("2_3v2tx")
-tree_textures = Array[Texture2D]([ExtResource("3_r5pls"), ExtResource("4_3ofps"), ExtResource("5_l4lfq"), ExtResource("6_d5wmq"), ExtResource("7_xwg3a"), ExtResource("8_75mmq"), ExtResource("9_f0chd"), ExtResource("10_5huov"), ExtResource("11_2f06s"), ExtResource("12_naf71"), ExtResource("13_l4lfq")])
+tree_textures = Array[Texture2D]([ExtResource("3_r5pls"), ExtResource("4_3ofps"), ExtResource("5_l4lfq"), ExtResource("6_d5wmq"), ExtResource("8_75mmq"), ExtResource("9_f0chd"), ExtResource("10_5huov"), ExtResource("11_2f06s"), ExtResource("12_naf71"), ExtResource("13_3ofps"), ExtResource("13_l4lfq")])
