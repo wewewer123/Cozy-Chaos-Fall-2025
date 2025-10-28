@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7v0ou44u3gdb"]
 
 [ext_resource type="Script" uid="uid://cbma0sakc4ro2" path="res://scripts/world/tree_spawner.gd" id="1_dkscf"]
-[ext_resource type="Resource" uid="uid://6km3wljid3ry" path="res://scenes/world/decoration/summer_trees/summer_tree_collection.tres" id="2_y066e"]
+[ext_resource type="Resource" uid="uid://6km3wljid3ry" path="res://scenes/world/decoration/tree/factories/tree_factory_level_1.tres" id="2_y066e"]
 
 [node name="TreeSpawner" type="Node3D" node_paths=PackedStringArray("leftSpawnPoint", "rightSpawnPoint")]
 script = ExtResource("1_dkscf")

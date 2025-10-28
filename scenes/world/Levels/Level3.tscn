@@ -1,0 +1,64 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1hkqni13viv6"]
+
+[ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_8q2jx"]
+[ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_kbmee"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="5_c76ks"]
+[ext_resource type="PackedScene" uid="uid://djlbaaxs8x2cn" path="res://scenes/obstacles/semiAutumn.tscn" id="6_8q2jx"]
+[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="7_s8yxq"]
+[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="8_r6kld"]
+[ext_resource type="PackedScene" uid="uid://bxflkf55uurhm" path="res://scenes/world/enviornment/environment_level_3.tscn" id="8_rkt7a"]
+[ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_h7hjd"]
+[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="9_j1qmk"]
+[ext_resource type="Resource" uid="uid://i8mcap5ckuy3" path="res://scenes/world/decoration/tree/factories/tree_factory_level_3.tres" id="10_hna0g"]
+[ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_vy503"]
+[ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_rd0oh"]
+[ext_resource type="Texture2D" uid="uid://ctvofsuwpt834" path="res://assets/art/2D/trees/trees_red/ta11111.png" id="14_rqcwb"]
+
+[sub_resource type="Environment" id="Environment_rd0oh"]
+background_mode = 1
+background_color = Color(0.74887323, 0.8898445, 0.96706337, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_8q2jx")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("4_kbmee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="Spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -51.635483)
+script = ExtResource("5_c76ks")
+tree_inst = ExtResource("6_8q2jx")
+ghost_inst = ExtResource("7_s8yxq")
+leaf_inst = ExtResource("8_r6kld")
+heart_inst = ExtResource("9_j1qmk")
+
+[node name="Lane0" type="Marker3D" parent="Spawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="Lane1" type="Marker3D" parent="Spawner"]
+
+[node name="Lane2" type="Marker3D" parent="Spawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Ground" parent="." instance=ExtResource("8_rkt7a")]
+
+[node name="TreeSpawner" parent="." instance=ExtResource("9_h7hjd")]
+tree_collection = ExtResource("10_hna0g")
+
+[node name="Environment Light" parent="." instance=ExtResource("12_vy503")]
+
+[node name="TreesStatic" parent="." instance=ExtResource("13_rd0oh")]
+texture = ExtResource("14_rqcwb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rd0oh")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

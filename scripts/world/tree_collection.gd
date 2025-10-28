@@ -1,7 +1,12 @@
 extends Resource
-class_name TreeCollection
+class_name TreeFactory
 
-@export var tree_scenes: Array[PackedScene] = []
+@export var tree_scene: PackedScene
+@export var tree_textures: Array[Texture2D] = []
 
-func get_random_tree() -> PackedScene:
-	return tree_scenes.pick_random()
+# TODO: Adding object pool for performance
+func create_random_tree() -> Node3D:
+	var tree : TreeDecoration = tree_scene.instantiate()
+	tree.set_texture(tree_textures.pick_random())
+	return  tree
+	

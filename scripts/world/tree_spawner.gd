@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var tree_collection : TreeCollection
+@export var tree_collection : TreeFactory
 
 @export var leftSpawnPoint : Node3D
 @export var rightSpawnPoint : Node3D
@@ -26,7 +26,6 @@ func _ready() -> void:
 
 var timer = spawnInterval;
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer -= delta
 	
@@ -35,9 +34,11 @@ func _process(delta: float) -> void:
 		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, rightSpawnPoint.position, 1)
 		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, leftSpawnPoint.position, -1)
 
+# TODO: Group all trees together into a node and move it
+#		and not move all trees independently 
 func _spawnTrees(count:int, pos:Vector3, spawn_direction:int):
 	for i in range(count):
-		var tree:Node3D = tree_collection.get_random_tree(). instantiate()
+		var tree:Node3D = tree_collection.create_random_tree()
 		add_child(tree)	
 		tree.global_position = pos
 		tree.global_position.x += i * 4 * spawn_direction + rand_range_float(-4, 4)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbumwyptvgvnq"]
+
+[ext_resource type="PackedScene" uid="uid://domdm1bdbweh0" path="res://scenes/world/decoration/tree/tree_decoration.tscn" id="1_kakom"]
+
+[node name="Tree" instance=ExtResource("1_kakom")]

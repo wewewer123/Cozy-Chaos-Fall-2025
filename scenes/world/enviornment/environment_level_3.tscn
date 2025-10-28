@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxflkf55uurhm"]
+
+[ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="1_e5eg1"]
+[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="2_s1c30"]
+[ext_resource type="Texture2D" uid="uid://dgou84yt1k6mt" path="res://assets/art/2D/world/autumn path resize400.png" id="3_e5eg1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipf5i"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_s1c30")
+shader_parameter/albedo_texture = ExtResource("3_e5eg1")
+shader_parameter/tiling = 1.0
+
+[node name="Ground" instance=ExtResource("1_e5eg1")]
+
+[node name="Floor 1" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 2" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 3" parent="." index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 4" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 5" parent="." index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 6" parent="." index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 7" parent="." index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 8" parent="." index="7"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")
+
+[node name="Floor 9" parent="." index="8"]
+surface_material_override/0 = SubResource("ShaderMaterial_ipf5i")

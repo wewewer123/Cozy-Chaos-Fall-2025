@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TreeFactory" load_steps=13 format=3 uid="uid://i8mcap5ckuy3"]
+
+[ext_resource type="Script" uid="uid://25qt4h6xdr3d" path="res://scripts/world/tree_collection.gd" id="1_u1kqt"]
+[ext_resource type="PackedScene" uid="uid://domdm1bdbweh0" path="res://scenes/world/decoration/tree/tree_decoration.tscn" id="2_tq48d"]
+[ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="4_1vua8"]
+[ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/trees/trees_yellow/ta333.png" id="5_80k3j"]
+[ext_resource type="Texture2D" uid="uid://be4n4l1pd413q" path="res://assets/art/2D/trees/trees_yellow/ta444.png" id="6_xsc0w"]
+[ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/trees/trees_orange/ta3333.png" id="7_5mqc8"]
+[ext_resource type="Texture2D" uid="uid://b2fcnx14x17dt" path="res://assets/art/2D/trees/trees_orange/ta4444.png" id="8_kpf0d"]
+[ext_resource type="Texture2D" uid="uid://tg4ajrdhah43" path="res://assets/art/2D/trees/trees_orange/ta5555.png" id="9_5fxee"]
+[ext_resource type="Texture2D" uid="uid://crucks8tw0bxc" path="res://assets/art/2D/trees/trees_orange/ta1111.png" id="10_or3dn"]
+[ext_resource type="Texture2D" uid="uid://cathc2sqso0tc" path="res://assets/art/2D/trees/trees_orange/ta2222.png" id="11_rn2hc"]
+[ext_resource type="Texture2D" uid="uid://5tg33ylh18kc" path="res://assets/art/2D/trees/trees_red/ta22222.png" id="12_wxv7j"]
+[ext_resource type="Texture2D" uid="uid://ermo2tprd5x" path="res://assets/art/2D/trees/trees_red/ta33333.png" id="13_awi23"]
+
+[resource]
+script = ExtResource("1_u1kqt")
+tree_scene = ExtResource("2_tq48d")
+tree_textures = Array[Texture2D]([ExtResource("4_1vua8"), ExtResource("5_80k3j"), ExtResource("6_xsc0w"), ExtResource("7_5mqc8"), ExtResource("8_kpf0d"), ExtResource("9_5fxee"), ExtResource("10_or3dn"), ExtResource("11_rn2hc"), ExtResource("12_wxv7j"), ExtResource("13_awi23")])
