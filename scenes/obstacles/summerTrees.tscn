@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7kvvc8waf021"]
+[gd_scene load_steps=25 format=3 uid="uid://b7kvvc8waf021"]
 
 [ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane objects/obstacles/tree.gd" id="1_16g3y"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/trees/trees_green/t111.png" id="2_ynx4y"]
@@ -20,35 +20,30 @@
 [ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/trees/trees_yellow/ta333.png" id="18_ibjvk"]
 [ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/trees/trees_orange/ta3333.png" id="19_8mo3q"]
 [ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/trees/trees_red/ta44444.png" id="20_lt72m"]
-[ext_resource type="Texture2D" uid="uid://bbs70q0d5h6f4" path="res://assets/art/2D/obstacles/t2.png" id="21_0suo8"]
+[ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="21_jrq22"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="22_0vcm1"]
+[ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="22_fqlab"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
 radius = 1.8818359
 
-[node name="Tree" type="Area3D"]
+[node name="Tree" type="Area3D" node_paths=PackedStringArray("textureSetter")]
 collision_layer = 8
 script = ExtResource("1_16g3y")
 summer_textures = Array[Texture2D]([ExtResource("2_ynx4y"), ExtResource("3_v72n4"), ExtResource("4_56e16"), ExtResource("5_f7hvq"), ExtResource("6_74qlo")])
 semi_autumn_textures = Array[Texture2D]([ExtResource("7_xfeij"), ExtResource("8_g3qcl"), ExtResource("9_813ct"), ExtResource("10_k48cq"), ExtResource("11_q0a85")])
 autumn_textures = Array[Texture2D]([ExtResource("12_xq58d"), ExtResource("13_rc20p"), ExtResource("14_5qrco"), ExtResource("15_l22nm"), ExtResource("16_hau7w"), ExtResource("17_6foml"), ExtResource("18_ibjvk"), ExtResource("19_8mo3q"), ExtResource("20_lt72m")])
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
-texture = ExtResource("21_0suo8")
-
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0.1)
-texture = ExtResource("21_0suo8")
-
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0.23)
-texture = ExtResource("21_0suo8")
+textureSetter = NodePath("Texture")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="Texture" parent="." instance=ExtResource("21_jrq22")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("22_fqlab")
+texture = ExtResource("5_f7hvq")
 
 [node name="Movement" parent="." instance=ExtResource("22_0vcm1")]
 

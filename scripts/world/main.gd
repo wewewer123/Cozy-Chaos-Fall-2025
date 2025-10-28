@@ -1,6 +1,7 @@
 extends Node3D
 @export var max_lanes = 3
-
+@export var fade_in_time = 1
+ 
 @onready var spawner: Spawner = $Spawner
 @onready var player: PlayerObject = $Player
 
@@ -24,8 +25,20 @@ func _on_timer_timeout() -> void:
 	var item : CollisionObject = result["item"]
 	var obstacle : CollisionObject = result["obstacle"]
 	
+	await fade_in(item,obstacle)
+	
 	item.connect("collided_with_player", self._on_collision)
 	obstacle.connect("collided_with_player", self._on_collision)
+
+func fade_in(item, obstacle : CollisionObject) -> void:
+	var t := 0.0
+	item.set_texture_alpha(0)
+	obstacle.set_texture_alpha(0)
+	while t < fade_in_time:
+		t += get_process_delta_time()
+		item.set_texture_alpha(clamp(t / fade_in_time, 0.0, 1.0))
+		obstacle.set_texture_alpha(clamp(t / fade_in_time, 0.0, 1.0))
+		await get_tree().process_frame
 
 func _on_collision(collision_type: int, player: Node3D) -> void:
 	# You don’t touch player stats here — that’s handled in apply_effect().

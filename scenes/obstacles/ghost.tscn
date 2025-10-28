@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqcmrldguya81"]
+[gd_scene load_steps=6 format=3 uid="uid://cqcmrldguya81"]
 
 [ext_resource type="Script" uid="uid://o1641o4dkfsy" path="res://scripts/lane objects/obstacles/ghost.gd" id="1_l5lq6"]
+[ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="2_324og"]
 [ext_resource type="Texture2D" uid="uid://ikg6wf18rcyc" path="res://assets/art/2D/obstacles/ghost.png" id="2_l5lq6"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="3_324og"]
 
@@ -8,13 +9,16 @@
 radius = 1.5371094
 height = 4.751953
 
-[node name="Ghost" type="Area3D"]
+[node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter")]
 collision_layer = 8
 script = ExtResource("1_l5lq6")
 type = 1
+textureSetter = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.6, 0)
+texture = ExtResource("2_l5lq6")
+script = ExtResource("2_324og")
 texture = ExtResource("2_l5lq6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
