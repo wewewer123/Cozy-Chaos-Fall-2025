@@ -36,11 +36,11 @@ autumn_textures = Array[Texture2D]([ExtResource("12_pm1sm"), ExtResource("13_r05
 treeType = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.6, 0)
 texture = ExtResource("17_u6p5e")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, 1.4142135, 0, 2.6, 0)
+transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0)
 texture = ExtResource("14_fhsml")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]

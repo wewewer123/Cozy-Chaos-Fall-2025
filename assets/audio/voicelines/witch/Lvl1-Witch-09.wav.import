@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://vycqdcqn4w31"
-path="res://.godot/imported/Lvl1-Witch-09.wav-f462b6829effae91f9ffe0a3c646c07b.sample"
+path="res://.godot/imported/Lvl1-Witch-09.wav-af581d11759f54f531a09248d120f999.sample"
 
 [deps]
 
-source_file="res://assets/audio/voicelines/witch/Lvl1-Witch-09.wav"
-dest_files=["res://.godot/imported/Lvl1-Witch-09.wav-f462b6829effae91f9ffe0a3c646c07b.sample"]
+source_file="res://assets/audio/Voicelines/witch/Lvl1-Witch-09.wav"
+dest_files=["res://.godot/imported/Lvl1-Witch-09.wav-af581d11759f54f531a09248d120f999.sample"]
 
 [params]
 

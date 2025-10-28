@@ -29,7 +29,7 @@ script = ExtResource("1_dd1l5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.7
 autostart = true
 
 [node name="Obstacles" type="Node3D" parent="."]

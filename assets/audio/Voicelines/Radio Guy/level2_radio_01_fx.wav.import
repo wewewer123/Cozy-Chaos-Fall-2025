@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bum5ohedxajlh"
-path="res://.godot/imported/level2_radio_01_fx.wav-cb64f7116ecb5bed672021679137851a.sample"
+path="res://.godot/imported/level2_radio_01_fx.wav-0d02a74e8910cc7998ce3b07e3fe3eff.sample"
 
 [deps]
 
-source_file="res://assets/audio/voicelines/radio guy/level2_radio_01_fx.wav"
-dest_files=["res://.godot/imported/level2_radio_01_fx.wav-cb64f7116ecb5bed672021679137851a.sample"]
+source_file="res://assets/audio/Voicelines/Radio Guy/level2_radio_01_fx.wav"
+dest_files=["res://.godot/imported/level2_radio_01_fx.wav-0d02a74e8910cc7998ce3b07e3fe3eff.sample"]
 
 [params]
 

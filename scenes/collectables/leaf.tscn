@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://db86y3xlsmqhs"]
 
-[ext_resource type="Script" uid="uid://b8euiqmjllx3v" path="res://scripts/lane objects/collectables/oakleaf.gd" id="1_4r3pj"]
-[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/collectibles/leafcollectible.png" id="2_4r3pj"]
-[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="3_urgib"]
+[ext_resource type="Script" uid="uid://b8euiqmjllx3v" path="res://scripts/lane objects/collectables/oakleaf.gd" id="1_r6846"]
+[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/collectibles/leafcollectible.png" id="2_y2xad"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="3_h5d7w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5lq6"]
 radius = 1.5371094
@@ -10,17 +10,17 @@ height = 4.751953
 
 [node name="Ghost" type="Area3D"]
 collision_layer = 8
-script = ExtResource("1_4r3pj")
+script = ExtResource("1_r6846")
 type = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.6, 0)
-texture = ExtResource("2_4r3pj")
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 2.6, 0)
+texture = ExtResource("2_y2xad")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3018754, 0)
 shape = SubResource("CapsuleShape3D_l5lq6")
 
-[node name="Movement" parent="." instance=ExtResource("3_urgib")]
+[node name="Movement" parent="." instance=ExtResource("3_h5d7w")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
