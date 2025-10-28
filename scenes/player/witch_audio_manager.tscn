@@ -20,11 +20,16 @@ oneHeartLeftSound = ExtResource("7_0o3r1")
 playerHealSound = ExtResource("8_pbdrm")
 
 [node name="Audio 1" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [node name="Audio 2" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [node name="Audio 3" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [node name="Audio 4" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [node name="Audio 5" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0

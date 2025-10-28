@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dry5v5b61sduq"]
+[gd_scene load_steps=17 format=3 uid="uid://dry5v5b61sduq"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_mgf4m"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_qoiiw"]
 [ext_resource type="Texture2D" uid="uid://y0oedotpuuvl" path="res://assets/art/2D/trees/trees_red_dark/ta1.png" id="14_0p8ux"]
+[ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_lugpx"]
+[ext_resource type="AudioStream" uid="uid://dbqvy8xq56bvv" path="res://assets/audio/Ambience SFX/Fall (3 and 4).mp3" id="15_7i75j"]
 
 [sub_resource type="Environment" id="Environment_dqfi3"]
 background_mode = 1
@@ -60,5 +62,9 @@ texture = ExtResource("14_0p8ux")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dqfi3")
+
+[node name="Backgroundmusic" parent="." instance=ExtResource("14_lugpx")]
+stream = ExtResource("15_7i75j")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

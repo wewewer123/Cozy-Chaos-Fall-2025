@@ -1,6 +1,7 @@
 extends Node2D
 
-var time = 15;
+var maxTime = 10;
+var time = 18;
 
 var index = 0;
 
@@ -47,5 +48,4 @@ func _process(delta: float) -> void:
 		audioPlayer.stream = all_streams[index]
 		audioPlayer.play()
 		index = (index + 1) % len(all_streams)
-		time = 7
-		
+		time = maxTime

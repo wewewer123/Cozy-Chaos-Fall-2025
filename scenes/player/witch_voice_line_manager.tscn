@@ -1,21 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://d31bx1rfffxnc"]
+[gd_scene load_steps=13 format=3 uid="uid://d31bx1rfffxnc"]
 
 [ext_resource type="Script" uid="uid://cl6421337fopv" path="res://scripts/player/witch_voice_line_manager.gd" id="1_m20fq"]
 [ext_resource type="AudioStream" uid="uid://doilgv0cg3xn6" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-01.wav" id="2_g3j2s"]
 [ext_resource type="AudioStream" uid="uid://b2v32cw5vchvm" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-02.wav" id="3_olinp"]
 [ext_resource type="AudioStream" uid="uid://bt3tmksywy0fs" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-03.1.wav" id="4_tingo"]
-[ext_resource type="AudioStream" uid="uid://cp7ho18vhwtup" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-03.wav" id="5_a1w3e"]
-[ext_resource type="AudioStream" uid="uid://bublnwyi43icn" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-04.wav" id="6_lbnfh"]
 [ext_resource type="AudioStream" uid="uid://cfyr8f7aeuhh2" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-05.1.wav" id="7_f2b4l"]
-[ext_resource type="AudioStream" uid="uid://c38v0k0qy6qrr" path="res://assets/audio/Voicelines/New separated sounds/Lvl1-Witch-05.02.wav" id="8_mmlh8"]
 [ext_resource type="AudioStream" uid="uid://hx8kkvo2e221" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-01.wav" id="9_47pqn"]
 [ext_resource type="AudioStream" uid="uid://g6dbbloovh6i" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-03.wav" id="10_hexdl"]
 [ext_resource type="AudioStream" uid="uid://yukhnrtphsiw" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-07.wav" id="11_fmg5t"]
 [ext_resource type="AudioStream" uid="uid://cc3o34ef7my0k" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-08.wav" id="12_newpm"]
 [ext_resource type="AudioStream" uid="uid://dkdkdw7vokw5" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-09.wav" id="13_7qv04"]
-[ext_resource type="AudioStream" uid="uid://dbjqng8sjhuo6" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-10.wav" id="14_g0pw5"]
 [ext_resource type="AudioStream" uid="uid://b7g2l5g2885bs" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-11.wav" id="15_s8qjb"]
-[ext_resource type="AudioStream" uid="uid://dbqngylwuecnv" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-12.wav" id="16_m65se"]
 [ext_resource type="AudioStream" uid="uid://7q8svh7qopk" path="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-13.wav" id="17_mdagt"]
 
 [node name="WitchVoiceLineManager" type="Node2D" node_paths=PackedStringArray("audioPlayer")]
@@ -24,18 +19,19 @@ audioPlayer = NodePath("AudioStreamPlayer2D")
 vl1_1 = ExtResource("2_g3j2s")
 vl1_2 = ExtResource("3_olinp")
 vl1_3 = ExtResource("4_tingo")
-vl1_4 = ExtResource("5_a1w3e")
-vl2_1 = ExtResource("6_lbnfh")
+vl1_4 = ExtResource("2_g3j2s")
+vl2_1 = ExtResource("2_g3j2s")
 vl2_2 = ExtResource("7_f2b4l")
-vl2_3 = ExtResource("8_mmlh8")
+vl2_3 = ExtResource("2_g3j2s")
 vl2_4 = ExtResource("9_47pqn")
 vl3_1 = ExtResource("10_hexdl")
 vl3_2 = ExtResource("11_fmg5t")
 vl3_3 = ExtResource("12_newpm")
 vl3_4 = ExtResource("13_7qv04")
-vl4_1 = ExtResource("14_g0pw5")
+vl4_1 = ExtResource("2_g3j2s")
 vl4_2 = ExtResource("15_s8qjb")
-vl4_3 = ExtResource("16_m65se")
+vl4_3 = ExtResource("2_g3j2s")
 vl4_4 = ExtResource("17_mdagt")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.0

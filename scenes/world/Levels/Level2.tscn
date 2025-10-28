@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ebwap5j0m8u"]
+[gd_scene load_steps=17 format=3 uid="uid://ebwap5j0m8u"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dd1l5"]
 [ext_resource type="PackedScene" uid="uid://c00jton8wqa8x" path="res://scenes/world/enviornment/environment_level_2.tscn" id="2_t0aw8"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_u6557"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_xhb0t"]
 [ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="14_bgw3j"]
+[ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_py7lu"]
+[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/Ambience SFX/Summer (1 and 2).mp3" id="15_w5duo"]
 
 [sub_resource type="Environment" id="Environment_frq16"]
 background_mode = 1
@@ -60,5 +62,9 @@ texture = ExtResource("14_bgw3j")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_frq16")
+
+[node name="Backgroundmusic" parent="." instance=ExtResource("14_py7lu")]
+stream = ExtResource("15_w5duo")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
