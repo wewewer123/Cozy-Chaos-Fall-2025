@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_rd0oh"]
 [ext_resource type="Texture2D" uid="uid://ctvofsuwpt834" path="res://assets/art/2D/trees/trees_red/ta11111.png" id="14_rqcwb"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_s7s4a"]
-[ext_resource type="AudioStream" uid="uid://dbqvy8xq56bvv" path="res://assets/audio/Ambience SFX/Fall (3 and 4).mp3" id="15_b6y0l"]
+[ext_resource type="AudioStream" uid="uid://dbqvy8xq56bvv" path="res://assets/audio/ambience/Fall (3 and 4).mp3" id="15_b6y0l"]
 
 [sub_resource type="Environment" id="Environment_rd0oh"]
 background_mode = 1

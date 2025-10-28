@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="7_0t3xx"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="11_d7lc8"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="11_xtfam"]
-[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/Ambience SFX/Summer (1 and 2).mp3" id="12_k6s3k"]
+[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/ambience/Summer (1 and 2).mp3" id="12_k6s3k"]
 
 [sub_resource type="Environment" id="Environment_3602c"]
 background_mode = 1

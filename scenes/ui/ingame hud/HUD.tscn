@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxdybyp8x2j86"]
 
 [ext_resource type="Script" uid="uid://p4ib4v3ahpgj" path="res://scripts/ui/hud.gd" id="1_bpx0x"]
-[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/stuff/leafcollectible.png" id="2_wq4ec"]
+[ext_resource type="Texture2D" uid="uid://t4fifylo4k7p" path="res://assets/art/2D/collectibles/leafcollectible.png" id="2_wq4ec"]
 [ext_resource type="FontFile" uid="uid://bq61bjrepoyqc" path="res://assets/fonts/AtlantisHeadline-Bold.ttf" id="3_ija5l"]
 [ext_resource type="Script" uid="uid://waibkb3mk5xx" path="res://scripts/ui/label_text_setter.gd" id="4_aquis"]
 

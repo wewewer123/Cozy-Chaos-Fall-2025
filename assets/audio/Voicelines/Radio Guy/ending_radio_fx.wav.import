@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgqd61cnjtwlu"
-path="res://.godot/imported/ending_radio_fx.wav-8db7a357be128ed0c0ec5ccd8159bc83.sample"
+path="res://.godot/imported/ending_radio_fx.wav-8b96d1ef1bc7c29806a922ddf6430132.sample"
 
 [deps]
 
-source_file="res://assets/audio/Voicelines/Radio Guy/ending_radio_fx.wav"
-dest_files=["res://.godot/imported/ending_radio_fx.wav-8db7a357be128ed0c0ec5ccd8159bc83.sample"]
+source_file="res://assets/audio/voicelines/radio guy/ending_radio_fx.wav"
+dest_files=["res://.godot/imported/ending_radio_fx.wav-8b96d1ef1bc7c29806a922ddf6430132.sample"]
 
 [params]
 

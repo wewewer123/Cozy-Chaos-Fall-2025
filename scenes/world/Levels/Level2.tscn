@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_xhb0t"]
 [ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="14_bgw3j"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_py7lu"]
-[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/Ambience SFX/Summer (1 and 2).mp3" id="15_w5duo"]
+[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/ambience/Summer (1 and 2).mp3" id="15_w5duo"]
 
 [sub_resource type="Environment" id="Environment_frq16"]
 background_mode = 1

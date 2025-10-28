@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgkpidnm3mt6j"]
 
-[ext_resource type="PackedScene" uid="uid://cfqhcntydvi3q" path="res://assets/art/3D/Witch (1).glb" id="1_efjm4"]
+[ext_resource type="PackedScene" uid="uid://cfqhcntydvi3q" path="res://assets/art/3D/Witch.glb" id="1_efjm4"]
 
 [node name="Witch (1)" instance=ExtResource("1_efjm4")]
 
