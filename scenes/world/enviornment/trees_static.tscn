@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdkni105yimiq"]
 
-[ext_resource type="Script" uid="uid://fob0wn2pb5hb" path="res://static_tree_texture_setter.gd" id="1_fbqqw"]
+[ext_resource type="Script" uid="uid://fob0wn2pb5hb" path="res://scripts/world/static_tree_texture_setter.gd" id="1_fbqqw"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/trees/trees_green/t111.png" id="2_o7qe7"]
 [ext_resource type="PackedScene" uid="uid://hrqv2imwsifj" path="res://scenes/world/decoration/tree/tree_static.tscn" id="3_kw3b3"]
 
