@@ -1,7 +1,7 @@
 extends Node
 
 var max_player_health = 5
-var max_leaf_count = 25 
+var max_leaf_count = 100 
 
 # Current spawning timer speeds
 #     Lv1: 1.0

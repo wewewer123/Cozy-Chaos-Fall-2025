@@ -7,8 +7,9 @@ var curr_time = 5
 var interval = 5
 
 @export var switchLanesSound : AudioStream
-@export var bumpTreeSound : AudioStream
-@export var bumpOnGhostSound : AudioStream
+@export var wallOfTreeSound : AudioStream
+@export var hurtByTreeSound : AudioStream
+@export var hurtByGhostSound : AudioStream
 @export var pickUpLeafSound : AudioStream
 @export var pickUpHeartSound : AudioStream
 @export var oneHeartLeftSound : AudioStream
@@ -20,11 +21,14 @@ func _ready() -> void:
 func playSwitchLaneSound() -> void:
 	_playStream(switchLanesSound)
 
-func playBumpOnTrees() -> void:
-	_playStream(bumpTreeSound)
+func playWallOfTrees() -> void:
+	_playStream(wallOfTreeSound)
 
-func playBumpOnGhost() -> void:
-	_playStream(bumpOnGhostSound)
+func playHurtByTree() -> void:
+	_playStream(hurtByTreeSound)
+
+func playHurtByGhost() -> void:
+	_playStream(hurtByGhostSound)
 
 func playPickUpLeaf() -> void:
 	_playStream(pickUpLeafSound)

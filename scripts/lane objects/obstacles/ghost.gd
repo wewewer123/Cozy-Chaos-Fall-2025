@@ -6,4 +6,4 @@ func _ready():
 
 func apply_effect(player: Node3D) -> void:
 	player.decrementHealth()
-	player.witch_audio_manager.playBumpOnGhost()
+	player.witch_audio_manager.playHurtByGhost()

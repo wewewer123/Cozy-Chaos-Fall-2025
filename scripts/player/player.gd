@@ -43,6 +43,8 @@ func consume_movement(direction: int) -> void:
 		curr_lane = new_lane
 		target_x = spawner.get_lane_position(curr_lane).x
 		witch_audio_manager.playSwitchLaneSound()
+	else:
+		witch_audio_manager.playWallOfTrees()
 
 func add_leaf(value:int) -> void:
 	leaf += value
