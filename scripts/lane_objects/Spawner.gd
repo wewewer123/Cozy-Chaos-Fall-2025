@@ -74,7 +74,7 @@ func spawn(parent: Node, player_locator:PlayerLocator) -> void:
 func spawn_single(parent: Node, player_locator:PlayerLocator) -> void:
 	var lane_object:CollisionObject
 	
-	if randi_range(0, 1) == 0:
+	if randi_range(0, 2) == 0:
 		lane_object = spawn_item(parent, _pick_lane())
 	else:
 		lane_object = spawn_obstacle(parent, _pick_lane())

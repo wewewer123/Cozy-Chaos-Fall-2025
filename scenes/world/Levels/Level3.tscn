@@ -66,7 +66,7 @@ environment = SubResource("Environment_rd0oh")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_s7s4a")]
 stream = ExtResource("15_s7s4a")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="PlayerLocator" parent="." instance=ExtResource("17_tshvk")]
 

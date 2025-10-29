@@ -1,9 +1,9 @@
 extends Node
 
 var max_player_health = 5
-var max_leaf_count = 5
+var max_leaf_count = 1
 
-var SPAWN_DIFFICULTY_MULTIPLAYER = 3
+var SPAWN_DIFFICULTY_MULTIPLAYER = 2
 
 var LANE_SPAWN_TIMERS := {
 	GameManager.game_states.LEVEL1: 1.0 * SPAWN_DIFFICULTY_MULTIPLAYER,
