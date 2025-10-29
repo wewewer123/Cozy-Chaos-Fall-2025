@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5h0614qa13mh"]
+[gd_scene load_steps=10 format=3 uid="uid://c5h0614qa13mh"]
 
 [ext_resource type="Script" uid="uid://36la5hxulw6c" path="res://scripts/ui/main_menu.gd" id="1_c67eb"]
+[ext_resource type="Texture2D" uid="uid://hom8qcbm0v3m" path="res://assets/art/2D/ui/menu start resize 400.png" id="2_btxxm"]
 [ext_resource type="Theme" uid="uid://dvmur811eqaun" path="res://assets/themes/menu_button_list.tres" id="3_hh8cs"]
 [ext_resource type="Script" uid="uid://dpkek3ls343it" path="res://scripts/ui/menu.gd" id="3_rdx8w"]
 [ext_resource type="FontFile" uid="uid://5g0c1fwbh4w5" path="res://assets/fonts/AtlantisText-Bold.ttf" id="5_b6xvh"]
@@ -42,7 +43,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.8499292, 0.54589653, 0.26820412, 1)
+color = Color(0.627451, 0.6117647, 0.4509804, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bc"]
+layout_mode = 0
+offset_top = -152.0
+offset_right = 800.0
+offset_bottom = 648.0
+texture = ExtResource("2_btxxm")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -74,6 +82,10 @@ theme = ExtResource("3_hh8cs")
 
 [node name="Start" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Exit")
+accessibility_name = "Start"
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "start"
@@ -90,6 +102,11 @@ flat = true
 
 [node name="Options" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Start")
+accessibility_name = "Options"
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Options
@@ -98,6 +115,10 @@ flat = true
 
 [node name="Exit" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Options")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Options")
+accessibility_name = "Exit"
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "exit
