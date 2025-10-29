@@ -1,18 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyftg85otyil"]
+[gd_scene load_steps=16 format=3 uid="uid://dyftg85otyil"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dpppr"]
 [ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="2_40x7k"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="2_estr2"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="3_8671u"]
-[ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/obstacles/summerTrees.tscn" id="4_f0icx"]
-[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="5_8dw8u"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane_objects/Spawner.gd" id="3_8671u"]
+[ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/lane_objects/obstacles/summerTrees.tscn" id="4_f0icx"]
+[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/lane_objects/obstacles/ghost.tscn" id="5_8dw8u"]
 [ext_resource type="PackedScene" uid="uid://cfgyqhgaajthv" path="res://scenes/world/lane_spawn_timer.tscn" id="5_k6s3k"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="5_muapc"]
-[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="6_kmdbv"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="7_0t3xx"]
+[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/lane_objects/collectables/leaf.tscn" id="6_kmdbv"]
+[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/lane_objects/collectables/heart.tscn" id="7_0t3xx"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="11_d7lc8"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="11_xtfam"]
 [ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/ambience/Summer (1 and 2).mp3" id="12_k6s3k"]
+[ext_resource type="PackedScene" uid="uid://4mplcxp2vl13" path="res://scenes/world/player_locator.tscn" id="14_uvtmw"]
 
 [sub_resource type="Environment" id="Environment_3602c"]
 background_mode = 1
@@ -27,6 +28,8 @@ script = ExtResource("1_dpppr")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_energy = 0.05
 shadow_enabled = true
+
+[node name="PlayerLocator" parent="." instance=ExtResource("14_uvtmw")]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_estr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)

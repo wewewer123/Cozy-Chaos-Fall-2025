@@ -4,12 +4,14 @@ extends Node3D
  
 @onready var spawner: Spawner = $Spawner
 @onready var player: PlayerObject = $Player
+@onready var player_locator: PlayerLocator = $PlayerLocator
 
 var _hud:HUD
 
 func _ready() -> void:
 	spawner.init()
 	player.init(spawner)
+	player_locator.init(player)
 	
 	GameManager.player = player
 	_hud = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
@@ -25,10 +27,12 @@ func _on_lane_spawn_timer_timeout() -> void:
 	var item : CollisionObject = result["item"]
 	var obstacle : CollisionObject = result["obstacle"]
 	
-	await fade_in(item,obstacle)
-	
+	item.init(player_locator)
+	obstacle.init(player_locator)
 	item.connect("collided_with_player", self._on_collision)
 	obstacle.connect("collided_with_player", self._on_collision)
+	
+	await fade_in(item,obstacle)	
 	
 func fade_in(item, obstacle : CollisionObject) -> void:
 	var t := 0.0

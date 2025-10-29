@@ -4,8 +4,13 @@ class_name CollisionObject
 enum CollisionType { TREE, GHOST, LEAF, HEART }
 @export var type: CollisionType
 @export var textureSetter : TreeTextureSetter
+@onready var directionalAudio : DirectionalAudioManager = $LaneEntityDirectionalAudio
 
 signal collided_with_player(colisions_type: int, player: Node)
+
+func init(player_locator:PlayerLocator):
+	if(directionalAudio != null):
+		directionalAudio.init(player_locator)
 
 func set_texture_alpha(value : float) -> void:
 	textureSetter.set_alpha(value)

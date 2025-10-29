@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://big6ghvxhq5pr"]
+
+[ext_resource type="Script" uid="uid://pj5e56nt1utr" path="res://scripts/lane_objects/lane_entity_directional_audio.gd" id="1_r1pxh"]
+
+[node name="LaneEntityDirectionalAudio" type="Node3D" node_paths=PackedStringArray("leftAudio", "centerAudio", "rightAudio")]
+script = ExtResource("1_r1pxh")
+leftAudio = NodePath("Left")
+centerAudio = NodePath("Center")
+rightAudio = NodePath("Right")
+
+[node name="Left" type="AudioStreamPlayer2D" parent="."]
+bus = &"Left Pan"
+
+[node name="Center" type="AudioStreamPlayer2D" parent="."]
+bus = &"Center Pan"
+
+[node name="Right" type="AudioStreamPlayer2D" parent="."]
+bus = &"Right pan"
