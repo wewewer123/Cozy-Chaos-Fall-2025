@@ -14,6 +14,7 @@ var next_audio_index : int = 0
 
 func init(playerLocator:PlayerLocator):
 	player_locator = playerLocator
+	await get_tree().create_timer(start_delay_seconds).timeout
 	_playDirectionalSound()
 
 func _ready() -> void:
@@ -29,7 +30,7 @@ func _playStream(audio_stream: AudioStreamPlayer2D) -> void:
 	audio_stream.play()
 	
 	await _change_audio_stream_params_while_playing(audio_stream)
-	# await _fade_out_audiostream(audio_stream)
+	await _fade_out_audiostream(audio_stream)
 			
 	audio_stream.stop()
 
@@ -38,18 +39,27 @@ func _get_panner_for_audio_stream(audio_stream: AudioStreamPlayer2D) -> AudioEff
 	
 func _change_audio_stream_params_while_playing(audio_stream: AudioStreamPlayer2D) -> void:
 	var panner = _get_panner_for_audio_stream(audio_stream)
+	var max_distance = max_distance_player_obstacle
 	
-	while(player_locator.player_behind_of(self)):
-		var distanceRatio = player_locator.distance_to_player(self) / max_distance_player_obstacle * end_volume_db
-		var next_volume_db = end_volume_db - clamp(distanceRatio, 0.0, end_volume_db);
-		panner.pan = player_locator.get_player_pos_x_relativ_to(self)
-		audio_stream.volume_db = next_volume_db + start_volume_db
-		await get_tree().process_frame
+	while player_locator.player_behind_of(self):
+		var distance = player_locator.distance_to_player(self)
+		var ratio = clamp(distance / max_distance, 0.0, 1.0)
+		var next_volume_db = lerp(end_volume_db, start_volume_db , ratio)
 		
+		panner.pan = player_locator.get_x_direction_from_player(self)
+		audio_stream.volume_db = next_volume_db
+		
+		await get_tree().process_frame
+
 func _fade_out_audiostream(audio_stream: AudioStreamPlayer2D) -> void:
-	var t_cur = audio_fade_out_seconds
-	var volume = audio_stream.volume_db
-	while(t_cur > 0):
-		t_cur -= get_process_delta_time()
-		audio_stream.volume_db -= volume * (get_process_delta_time() / audio_fade_out_seconds)
+	var duration:float = audio_fade_out_seconds
+	var start_volume = audio_stream.volume_db
+	var target_volume = -80.0
+	var time_passed = 0.0
+	
+	while time_passed < duration:
+		var delta := get_process_delta_time()
+		time_passed += delta
+		var t = clamp(time_passed / duration, 0.0, 1.0)
+		audio_stream.volume_db = lerp(start_volume, target_volume, t)
 		await get_tree().process_frame

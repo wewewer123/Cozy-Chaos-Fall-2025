@@ -31,5 +31,7 @@ shape = SubResource("CapsuleShape3D_l5lq6")
 
 [node name="LaneEntityDirectionalAudio" parent="." instance=ExtResource("5_piuvc")]
 soundeffect = ExtResource("6_aoq6d")
+end_volume_db = 10
+start_delay_seconds = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
