@@ -5,6 +5,7 @@
 [node name="LaneEntityDirectionalAudio" type="Node3D" node_paths=PackedStringArray("audio_streams")]
 script = ExtResource("1_d6vvy")
 audio_streams = [NodePath("Audio 1"), NodePath("Audio 2"), NodePath("Audio 3")]
+start_volume_db = -15
 end_volume_db = 10
 audio_fade_out_seconds = 0.75
 

@@ -3,9 +3,10 @@ class_name DirectionalAudioManager
 
 @export var soundeffect : AudioStream
 @export var audio_streams : Array[AudioStreamPlayer2D]
-@export	var start_volume_db = -30
-@export var end_volume_db = 60
-@export var audio_fade_out_seconds = 0.25
+@export	var start_volume_db = -15
+@export var end_volume_db = 10
+@export var audio_fade_out_seconds:float = 0.25
+@export var start_delay_seconds:float = 0
 
 var max_distance_player_obstacle = 45.0
 
