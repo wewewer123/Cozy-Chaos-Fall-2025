@@ -3,6 +3,11 @@ class_name DirectionalAudioManager
 
 @export var soundeffect : AudioStream
 @export var audio_streams : Array[AudioStreamPlayer2D]
+@export	var start_volume_db = -30
+@export var end_volume_db = 60
+@export var audio_fade_out_seconds = 0.25
+
+var max_distance_player_obstacle = 45.0
 
 var player_locator : PlayerLocator
 var next_audio_index : int = 0
@@ -16,34 +21,35 @@ func _ready() -> void:
 		audio_streams[i].stream = soundeffect
 
 func _playDirectionalSound() -> void:
-	playStream(audio_streams[next_audio_index])
+	_playStream(audio_streams[next_audio_index])
 	next_audio_index = (next_audio_index + 1) % len(audio_streams)
 
-func playStream(audio_stream: AudioStreamPlayer2D) -> void:
-	var startvol = -30
-	var vol_range = 60
-	
+func _playStream(audio_stream: AudioStreamPlayer2D) -> void:
+	audio_stream.volume_db = start_volume_db
 	audio_stream.play()
-	audio_stream.volume_db = startvol
+	
+	await _change_audio_stream_params_while_playing(audio_stream)
+	# await _fade_out_audiostream(audio_stream)
+			
+	audio_stream.stop()
+
+func _get_panner_for_audio_stream(audio_stream: AudioStreamPlayer2D) -> AudioEffect:
+	return AudioServer.get_bus_effect(AudioServer.get_bus_index(audio_stream.bus), 0)
+	
+func _change_audio_stream_params_while_playing(audio_stream: AudioStreamPlayer2D) -> void:
+	var panner = _get_panner_for_audio_stream(audio_stream)
 	
 	while(player_locator.player_behind_of(self)):
-		var vol_rangeume = vol_range - clamp(player_locator.distance_to_player(self) / 45.0 * vol_range, 0.0, vol_range);
-		
-		var effect = AudioServer.get_bus_effect(AudioServer.get_bus_index(audio_stream.bus), 0)
-		effect.pan = player_locator.get_player_pos_x_relativ_to(self)
-		
-		if abs(effect.pan) < 0.2:
-			audio_stream.volume_db = vol_rangeume + startvol + 5
-		else:
-			audio_stream.volume_db = vol_rangeume + startvol
-			
+		var distanceRatio = player_locator.distance_to_player(self) / max_distance_player_obstacle * end_volume_db
+		var next_volume_db = end_volume_db - clamp(distanceRatio, 0.0, end_volume_db);
+		panner.pan = player_locator.get_player_pos_x_relativ_to(self)
+		audio_stream.volume_db = next_volume_db + start_volume_db
 		await get_tree().process_frame
-	var t_start = 0.25
-	var t = t_start
+		
+func _fade_out_audiostream(audio_stream: AudioStreamPlayer2D) -> void:
+	var t_cur = audio_fade_out_seconds
 	var volume = audio_stream.volume_db
-	while(t > 0):
-		t -= get_process_delta_time()
-		audio_stream.volume_db -= volume * (get_process_delta_time() / t_start)
+	while(t_cur > 0):
+		t_cur -= get_process_delta_time()
+		audio_stream.volume_db -= volume * (get_process_delta_time() / audio_fade_out_seconds)
 		await get_tree().process_frame
-	audio_stream.stop()
-	

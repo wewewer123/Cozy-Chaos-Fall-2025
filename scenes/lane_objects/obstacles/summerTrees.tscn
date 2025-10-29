@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="21_jrq22"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="22_0vcm1"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="22_fqlab"]
-[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/lane_entity_directional_audio.tscn" id="24_8o7y0"]
+[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="24_8o7y0"]
 [ext_resource type="AudioStream" uid="uid://ccp45bxb8x0x0" path="res://assets/audio/sounds/sound effect ojpe/woodpecker.mp3" id="25_l3hrv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]

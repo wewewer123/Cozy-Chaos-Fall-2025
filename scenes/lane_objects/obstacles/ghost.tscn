@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ikg6wf18rcyc" path="res://assets/art/2D/obstacles/ghost.png" id="2_aoq6d"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="3_v243u"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="4_4uyvt"]
-[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/lane_entity_directional_audio.tscn" id="5_piuvc"]
+[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="5_piuvc"]
 [ext_resource type="AudioStream" uid="uid://bge3ds3vruy1n" path="res://assets/audio/sounds/sound effect ojpe/boo ghost.mp3" id="6_aoq6d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5lq6"]
