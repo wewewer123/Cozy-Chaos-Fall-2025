@@ -13,14 +13,7 @@ height = 4.751953
 collision_layer = 8
 script = ExtResource("1_bqvbl")
 type = 3
-<<<<<<< HEAD
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
-texture = ExtResource("2_bqvbl")
-=======
-textureSetter = NodePath("Sprite3D")
->>>>>>> 91aa2007308dea6e4abdb72fb47dbf58a57a1b8e
+textureSetter = NodePath("Sprite3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3018754, 0)
@@ -28,7 +21,7 @@ shape = SubResource("CapsuleShape3D_l5lq6")
 
 [node name="Movement" parent="." instance=ExtResource("3_stgmx")]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 2.6, 0)
 texture = ExtResource("2_bqvbl")
 script = ExtResource("2_stgmx")
