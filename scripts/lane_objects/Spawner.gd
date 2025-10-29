@@ -5,6 +5,10 @@ class_name Spawner
 @export var ghost_inst: PackedScene
 @export var leaf_inst: PackedScene
 @export var heart_inst: PackedScene
+@export var fade_in_time := 1.0
+@export var spawn_strategie: SpawnStrategie = SpawnStrategie.Single
+
+enum SpawnStrategie { Single, Pair }
 
 var lanes: Array[Marker3D]
 var rng := RandomNumberGenerator.new()
@@ -60,16 +64,45 @@ func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) 
 	return _spawn_packed_at(packed, parent, index)
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.
-func spawn_pair(item_parent: Node, obstacle_parent: Node) -> Dictionary:
+func spawn(parent: Node, player_locator:PlayerLocator) -> void:
+	match spawn_strategie:
+		SpawnStrategie.Single:
+			spawn_single(parent, player_locator)
+		SpawnStrategie.Pair:
+			spawn_pair(parent, player_locator)
+
+func spawn_single(parent: Node, player_locator:PlayerLocator) -> void:
+	var lane_object:CollisionObject
+	
+	if randi_range(0, 1) == 0:
+		lane_object = spawn_item(parent, _pick_lane())
+	else:
+		lane_object = spawn_obstacle(parent, _pick_lane())
+	
+	lane_object.init(player_locator)
+	
+	await fade_in([lane_object])
+
+func spawn_pair(parent: Node, player_locator:PlayerLocator) -> void:
 	var lane_item := _pick_lane()
 	var lane_obstacle := _pick_lane(lane_item)
 
-	var item := spawn_item(item_parent, lane_item)
-	var obstacle := spawn_obstacle(obstacle_parent, lane_obstacle)
+	var item := spawn_item(parent, lane_item)
+	var obstacle := spawn_obstacle(parent, lane_obstacle)
 
-	return {
-		"item": item,
-		"item_lane": lane_item,
-		"obstacle": obstacle,
-		"obstacle_lane": lane_obstacle
-	}
+	item.init(player_locator)
+	obstacle.init(player_locator)
+	
+	await fade_in([item,obstacle])
+	
+func fade_in(objects : Array[CollisionObject]) -> void:
+	var t := 0.0
+	set_alpha_for_objects(objects,0)
+	while t < fade_in_time:
+		t += get_process_delta_time()
+		set_alpha_for_objects(objects, clamp(t / fade_in_time, 0.0, 1.0))
+		await get_tree().process_frame
+		
+func set_alpha_for_objects(objects:Array[CollisionObject], alpha:float):
+	for child in objects:
+		child.set_texture_alpha(alpha)
