@@ -20,7 +20,7 @@ func _ready() -> void:
 	player.leaf_changed.connect(_hud.on_player_leaf_changed)
 	player.player_died.connect(_hud.on_player_death)
 
-func _on_timer_timeout() -> void:
+func _on_lane_spawn_timer_timeout() -> void:
 	var result := spawner.spawn_pair($Items, $Obstacles)
 	var item : CollisionObject = result["item"]
 	var obstacle : CollisionObject = result["obstacle"]
@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 	
 	item.connect("collided_with_player", self._on_collision)
 	obstacle.connect("collided_with_player", self._on_collision)
-
+	
 func fade_in(item, obstacle : CollisionObject) -> void:
 	var t := 0.0
 	item.set_texture_alpha(0)
@@ -44,27 +44,3 @@ func _on_collision(collision_type: int, player: Node3D) -> void:
 	# You don’t touch player stats here — that’s handled in apply_effect().
 	# This is just for cross-cutting concerns like sound, particles, UI.
 	pass
-	
-#func _on_timer_timeout() -> void:
-	#var rng:= RandomNumberGenerator.new() 
-	#
-	#var tree = tree_inst.instantiate()
-	#var ghost = ghost_inst.instantiate()
-	#var leaf = leaf_inst.instantiate()
-	#var heart = heart_inst.instantiate()
-	#
-	#tree.connect("player_collision", func(): $Player.curr_health -= 1)
-	#ghost.connect("player_collision", func(): $Player.curr_health -= 1)
-	#leaf.connect("player_collision", func(): $Player.leaf += 1)
-	#heart.connect("player_collision", func(): $Player.heart += 1)
-	#
-	#if rng.randi_range(0, 3) == 0:
-		#$Items.add_child(heart)
-	#else:
-		#$Items.add_child(leaf)
-	#
-	#if rng.randi_range(0, 1) == 0:
-		#$Obstacles.add_child(tree)
-	#else:
-		#$Obstacles.add_child(ghost)
-	

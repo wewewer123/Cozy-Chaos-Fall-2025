@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1hkqni13viv6"]
+[gd_scene load_steps=18 format=3 uid="uid://c1hkqni13viv6"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_8q2jx"]
+[ext_resource type="PackedScene" uid="uid://cfgyqhgaajthv" path="res://lane_spawn_timer.tscn" id="3_b6y0l"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_kbmee"]
 [ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="5_c76ks"]
 [ext_resource type="PackedScene" uid="uid://djlbaaxs8x2cn" path="res://scenes/obstacles/semiAutumn.tscn" id="6_8q2jx"]
@@ -26,13 +27,12 @@ script = ExtResource("1_8q2jx")
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_kbmee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [node name="Obstacles" type="Node3D" parent="."]
 
 [node name="Items" type="Node3D" parent="."]
+
+[node name="LaneSpawnTimer" parent="." instance=ExtResource("3_b6y0l")]
+level = 4
 
 [node name="Spawner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
@@ -67,4 +67,4 @@ environment = SubResource("Environment_rd0oh")
 stream = ExtResource("15_s7s4a")
 volume_db = -10.0
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LaneSpawnTimer" to="." method="_on_lane_spawn_timer_timeout"]

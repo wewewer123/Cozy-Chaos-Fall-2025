@@ -12,7 +12,7 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_pressed() -> void:
-	GameManager.set_state(GameManager.game_states.LEVEL)
+	GameManager.set_state(GameManager.game_states.LEVEL1)
 
 func _on_continue_pressed() -> void:
 	pass

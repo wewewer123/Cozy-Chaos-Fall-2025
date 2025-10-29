@@ -3,7 +3,7 @@ extends Node
 signal on_state_transition(new_state:game_states)
 
 # state related code
-enum game_states { NULL, MENU, LEVEL, LEVEL2, LEVEL3, LEVEL4, WIN }
+enum game_states { NULL, MENU, LEVEL1, LEVEL2, LEVEL3, LEVEL4, WIN }
 var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
@@ -66,7 +66,7 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	match new_state:
 		game_states.MENU:
 			_set_menu()
-		game_states.LEVEL:
+		game_states.LEVEL1:
 			_set_level()
 			_playStream(radioLevel1)
 		game_states.LEVEL2:
@@ -127,7 +127,7 @@ func next_level():
 		
 		match  current_level:
 			1:
-				set_state(GameManager.game_states.LEVEL)
+				set_state(GameManager.game_states.LEVEL1)
 			2:
 				set_state(GameManager.game_states.LEVEL2)
 			3:
@@ -141,7 +141,7 @@ func next_level():
 func on_player_death():
 	match  current_level:
 		1:
-			set_state(GameManager.game_states.LEVEL, true)
+			set_state(GameManager.game_states.LEVEL1, true)
 		2:
 			set_state(GameManager.game_states.LEVEL2, true)
 		3:
