@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7kvvc8waf021"]
+[gd_scene load_steps=27 format=3 uid="uid://b7kvvc8waf021"]
 
-[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane objects/obstacles/tree.gd" id="1_16g3y"]
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane_objects/obstacles/tree.gd" id="1_16g3y"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/trees/trees_green/t111.png" id="2_ynx4y"]
 [ext_resource type="Texture2D" uid="uid://d2p88kguf874h" path="res://assets/art/2D/trees/trees_green/t222.png" id="3_v72n4"]
 [ext_resource type="Texture2D" uid="uid://c14kgw3dywa0w" path="res://assets/art/2D/trees/trees_green/t333.png" id="4_56e16"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="21_jrq22"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="22_0vcm1"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="22_fqlab"]
+[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="24_8o7y0"]
+[ext_resource type="AudioStream" uid="uid://ccp45bxb8x0x0" path="res://assets/audio/sounds/sound effect ojpe/woodpecker.mp3" id="25_l3hrv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
 height = 5.4677734
@@ -46,5 +48,8 @@ script = ExtResource("22_fqlab")
 texture = ExtResource("5_f7hvq")
 
 [node name="Movement" parent="." instance=ExtResource("22_0vcm1")]
+
+[node name="LaneEntityDirectionalAudio" parent="." instance=ExtResource("24_8o7y0")]
+soundeffect = ExtResource("25_l3hrv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
