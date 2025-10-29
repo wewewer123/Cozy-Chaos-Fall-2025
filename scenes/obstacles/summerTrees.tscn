@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
 shape = SubResource("CylinderShape3D_avsvi")
 
 [node name="Texture" parent="." instance=ExtResource("21_jrq22")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("22_fqlab")
 texture = ExtResource("5_f7hvq")
 

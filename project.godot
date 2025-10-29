@@ -13,7 +13,7 @@ config_version=5
 config/name="Cozy Chaos Fall 2025"
 run/main_scene="uid://c1ikbrgeaqg0m"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://t4fifylo4k7p"
 
 [autoload]
 

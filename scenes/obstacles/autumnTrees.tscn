@@ -44,6 +44,7 @@ shape = SubResource("CylinderShape3D_avsvi")
 [node name="Movement" parent="." instance=ExtResource("22_w3hr8")]
 
 [node name="Texture" parent="." instance=ExtResource("22_8081k")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("23_1ef7d")
 texture = ExtResource("20_x44jh")
 
