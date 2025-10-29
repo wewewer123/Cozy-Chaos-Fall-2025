@@ -2,17 +2,15 @@
 
 [ext_resource type="Script" uid="uid://pj5e56nt1utr" path="res://scripts/lane_objects/lane_entity_directional_audio.gd" id="1_r1pxh"]
 
-[node name="LaneEntityDirectionalAudio" type="Node3D" node_paths=PackedStringArray("leftAudio", "centerAudio", "rightAudio")]
+[node name="LaneEntityDirectionalAudio" type="Node3D" node_paths=PackedStringArray("audio_streams")]
 script = ExtResource("1_r1pxh")
-leftAudio = NodePath("Left")
-centerAudio = NodePath("Center")
-rightAudio = NodePath("Right")
+audio_streams = [NodePath("Audio 1"), NodePath("Audio 2"), NodePath("Audio 3")]
 
-[node name="Left" type="AudioStreamPlayer2D" parent="."]
-bus = &"Left Pan"
+[node name="Audio 1" type="AudioStreamPlayer2D" parent="."]
+bus = &"Pan 1"
 
-[node name="Center" type="AudioStreamPlayer2D" parent="."]
-bus = &"Center Pan"
+[node name="Audio 2" type="AudioStreamPlayer2D" parent="."]
+bus = &"Pan 2"
 
-[node name="Right" type="AudioStreamPlayer2D" parent="."]
-bus = &"Right pan"
+[node name="Audio 3" type="AudioStreamPlayer2D" parent="."]
+bus = &"Pan 3"

@@ -11,12 +11,11 @@
 radius = 1.5371094
 height = 4.751953
 
-[node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter", "directionalAudio")]
+[node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter")]
 collision_layer = 8
 script = ExtResource("1_i3suy")
 type = 1
 textureSetter = NodePath("Sprite3D")
-directionalAudio = NodePath("LaneEntityDirectionalAudio")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 2.6, 0)

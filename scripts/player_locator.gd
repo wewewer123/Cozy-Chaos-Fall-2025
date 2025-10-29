@@ -6,14 +6,11 @@ var player : PlayerObject
 func init(playerObj:PlayerObject):
 	player = playerObj
 	
-func get_player_x_position() -> float:
-	return player.position.x
-
-func position_is_left_of_player(node:Node3D) -> bool:
-	return round(node.global_position.x) < round(player.global_position.x)
-
-func position_is_right_of_player(node:Node3D) -> bool:
-	return round(node.global_position.x) > round(player.global_position.x)
-
 func distance_to_player(node:Node3D) -> float:
 	return (node.global_position - player.global_position).length()
+
+func get_player_pos_x_relativ_to(node:Node3D) -> float:
+	return clampf((node.global_position.x- player.global_position.x) / 7.0,-1,1)
+	
+func player_behind_of(node:Node3D) -> bool:
+	return (player.global_position.z - 12.0) >= node.global_position.z
