@@ -39,4 +39,4 @@ winScene = ExtResource("12_o1ahd")
 volume_db = 10.0
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_gvcca")]
-volume_db = -5.0
+volume_db = -10.0

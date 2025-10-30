@@ -31,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="LaneSpawner" parent="." instance=ExtResource("4_vy503")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+level = 4
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_h7hjd")]
 tree_collection = ExtResource("10_hna0g")

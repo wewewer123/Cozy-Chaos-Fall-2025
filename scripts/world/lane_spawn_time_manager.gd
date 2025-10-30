@@ -1,10 +1,8 @@
 extends Timer
 class_name LaneSpawnTimer
 
-@export var level: GameManager.game_states = GameManager.game_states.LEVEL1
-
-func _ready() -> void:
-	wait_time = Globals.LANE_SPAWN_TIMERS.get(level)
+func init(_wait_time:float):
+	wait_time = _wait_time
 	
 func start_timer() -> void:
 	start()

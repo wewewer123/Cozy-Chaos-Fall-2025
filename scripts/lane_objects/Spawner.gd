@@ -1,6 +1,7 @@
 extends Node3D
 class_name Spawner
 
+@export var level: GameManager.game_states = GameManager.game_states.LEVEL1
 @export var tree_inst: PackedScene
 @export var ghost_inst: PackedScene
 @export var leaf_inst: PackedScene
@@ -27,6 +28,8 @@ func _ready() -> void:
 func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	self.player_locat = player_locator
 	self.object_parent = spawned_object_parent
+	var timer:LaneSpawnTimer = $LaneSpawnTimer
+	timer.init(Globals.LANE_SPAWN_TIMERS.get(level))
 	
 	rng.randomize()
 	lanes = []

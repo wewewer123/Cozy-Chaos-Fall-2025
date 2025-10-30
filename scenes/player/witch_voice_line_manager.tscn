@@ -34,4 +34,3 @@ vl4_3 = ExtResource("2_g3j2s")
 vl4_4 = ExtResource("17_mdagt")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = 10.0
