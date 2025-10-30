@@ -13,7 +13,7 @@ func _ready() -> void:
 	$Timer.start()
 
 func init() -> void:
-	for x in range(GameManager.player.max_health):
+	for x in range(Globals.max_player_health):
 		add_heart()
 
 func on_player_leaf_collision() -> void:

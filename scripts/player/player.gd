@@ -1,8 +1,7 @@
 extends CharacterBody3D
 class_name PlayerObject
 
-var max_health:int = 5
-var curr_health:int = max_health
+var curr_health:int = Globals.max_player_health
 
 @export var leaf:int = 0
 @export var witch_audio_manager:Node
