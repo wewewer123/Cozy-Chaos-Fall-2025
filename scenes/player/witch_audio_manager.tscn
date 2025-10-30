@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://f8842u8jr5o6"]
+[gd_scene load_steps=11 format=3 uid="uid://f8842u8jr5o6"]
 
 [ext_resource type="Script" uid="uid://6umufkp7vx8k" path="res://scripts/player/witch_sound_manager.gd" id="1_y6na0"]
 [ext_resource type="AudioStream" uid="uid://dank1wgo7ded7" path="res://assets/audio/sounds/witch/Swish-DOWN.wav" id="2_nar58"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c8ehtn3cggfgy" path="res://assets/audio/sounds/sound effect ojpe/pick up heart.mp3" id="6_pbdrm"]
 [ext_resource type="AudioStream" uid="uid://d8xihgo4tfgn" path="res://assets/audio/sounds/sound effect ojpe/1 health left.mp3" id="7_0o3r1"]
 [ext_resource type="AudioStream" uid="uid://bwxhgiv6egt85" path="res://assets/audio/sounds/sound effect ojpe/player heal.mp3" id="8_pbdrm"]
+[ext_resource type="AudioStream" uid="uid://cr0w30lmyp5em" path="res://assets/audio/sounds/witch/player-death-louder2.mp3" id="10_wpnni"]
 
 [node name="WitchAudioManager" type="Node2D"]
 script = ExtResource("1_y6na0")
@@ -20,6 +21,7 @@ pickUpLeafSound = ExtResource("5_0o3r1")
 pickUpHeartSound = ExtResource("6_pbdrm")
 oneHeartLeftSound = ExtResource("7_0o3r1")
 playerHealSound = ExtResource("8_pbdrm")
+playerDeathSound = ExtResource("10_wpnni")
 
 [node name="Audio 1" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0

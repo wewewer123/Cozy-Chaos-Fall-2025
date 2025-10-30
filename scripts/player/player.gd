@@ -69,5 +69,6 @@ func _changeHealth(value: int) -> void:
 	if(curr_health > 0):
 		health_changed.emit(value)
 	else:
+		witch_audio_manager.playDeathSound()
 		player_died.emit()
 		GameManager.on_player_death()

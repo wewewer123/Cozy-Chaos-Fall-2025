@@ -7,9 +7,9 @@ var SPAWN_DIFFICULTY_MULTIPLAYER = 7
 
 var LANE_SPAWN_TIMERS := {
 	GameManager.game_states.LEVEL1: 1.0 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL2: 0.85 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL3: 0.7 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL4: 0.5 * SPAWN_DIFFICULTY_MULTIPLAYER
+	GameManager.game_states.LEVEL2: 0.7 * SPAWN_DIFFICULTY_MULTIPLAYER,
+	GameManager.game_states.LEVEL3: 0.5 * SPAWN_DIFFICULTY_MULTIPLAYER,
+	GameManager.game_states.LEVEL4: 0.3 * SPAWN_DIFFICULTY_MULTIPLAYER
 }
 
 var object_spawn_distance:float = 60

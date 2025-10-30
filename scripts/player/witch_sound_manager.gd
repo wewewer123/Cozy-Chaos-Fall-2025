@@ -14,6 +14,7 @@ var interval = 5
 @export var pickUpHeartSound : AudioStream
 @export var oneHeartLeftSound : AudioStream
 @export var playerHealSound : AudioStream
+@export var playerDeathSound : AudioStream
 
 func _ready() -> void:
 	audioPlayers = get_children()
@@ -41,6 +42,9 @@ func playHealSound() -> void:
 
 func playOnHealthLeftSound() -> void:
 	_playStream(oneHeartLeftSound)
+	
+func playDeathSound() -> void:
+	_playStream(playerDeathSound)
 
 func _playStream(nextStream: AudioStream) -> void:
 	audioPlayers[currentPlayerIndex].stream = nextStream
