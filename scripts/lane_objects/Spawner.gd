@@ -8,6 +8,8 @@ class_name Spawner
 @export var fade_in_time := 1.0
 @export var spawn_strategie: SpawnStrategie = SpawnStrategie.Single
 
+@onready var lane_spawn_timer: LaneSpawnTimer = $LaneSpawnTimer
+
 enum SpawnStrategie { Single, Pair }
 
 var lanes: Array[Marker3D]
@@ -25,7 +27,9 @@ func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	for child in get_children():
 		if child is Marker3D:
 			lanes.append(child)
-	
+			
+	lane_spawn_timer.start()
+
 
 func get_lane_count() -> int:
 	return lanes.size()
@@ -112,6 +116,12 @@ func fade_in(objects : Array[CollisionObject]) -> void:
 func set_alpha_for_objects(objects:Array[CollisionObject], alpha:float):
 	for child in objects:
 		child.set_texture_alpha(alpha)
+
+func start_spawning() -> void:
+	lane_spawn_timer.start_timer()
+
+func stop_spawning() -> void:
+	lane_spawn_timer.stop_timer()
 
 func _on_lane_spawn_timer_timeout() -> void:
 	spawn()
