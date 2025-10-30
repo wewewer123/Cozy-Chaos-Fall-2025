@@ -13,7 +13,13 @@ enum SpawnStrategie { Single, Pair }
 var lanes: Array[Marker3D]
 var rng := RandomNumberGenerator.new()
 
-func init() -> void:
+var player_locat:PlayerLocator
+var object_parent:Node
+
+func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
+	self.player_locat = player_locator
+	self.object_parent = spawned_object_parent
+	
 	rng.randomize()
 	lanes = []
 	for child in get_children():
@@ -64,34 +70,34 @@ func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) 
 	return _spawn_packed_at(packed, parent, index)
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.
-func spawn(parent: Node, player_locator:PlayerLocator) -> void:
+func spawn() -> void:
 	match spawn_strategie:
 		SpawnStrategie.Single:
-			spawn_single(parent, player_locator)
+			spawn_single()
 		SpawnStrategie.Pair:
-			spawn_pair(parent, player_locator)
+			spawn_pair()
 
-func spawn_single(parent: Node, player_locator:PlayerLocator) -> void:
+func spawn_single() -> void:
 	var lane_object:CollisionObject
 	
 	if randi_range(0, 2) == 0:
-		lane_object = spawn_item(parent, _pick_lane())
+		lane_object = spawn_item(object_parent, _pick_lane())
 	else:
-		lane_object = spawn_obstacle(parent, _pick_lane())
+		lane_object = spawn_obstacle(object_parent, _pick_lane())
 	
-	lane_object.init(player_locator)
+	lane_object.init(player_locat)
 	
 	await fade_in([lane_object])
 
-func spawn_pair(parent: Node, player_locator:PlayerLocator) -> void:
+func spawn_pair() -> void:
 	var lane_item := _pick_lane()
 	var lane_obstacle := _pick_lane(lane_item)
 
-	var item := spawn_item(parent, lane_item)
-	var obstacle := spawn_obstacle(parent, lane_obstacle)
+	var item := spawn_item(object_parent, lane_item)
+	var obstacle := spawn_obstacle(object_parent, lane_obstacle)
 
-	item.init(player_locator)
-	obstacle.init(player_locator)
+	item.init(player_locat)
+	obstacle.init(player_locat)
 	
 	await fade_in([item,obstacle])
 	
@@ -106,3 +112,6 @@ func fade_in(objects : Array[CollisionObject]) -> void:
 func set_alpha_for_objects(objects:Array[CollisionObject], alpha:float):
 	for child in objects:
 		child.set_texture_alpha(alpha)
+
+func _on_lane_spawn_timer_timeout() -> void:
+	spawn()

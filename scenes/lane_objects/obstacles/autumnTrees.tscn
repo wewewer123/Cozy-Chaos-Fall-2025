@@ -36,7 +36,6 @@ script = ExtResource("1_6kw8v")
 summer_textures = Array[Texture2D]([ExtResource("2_okqqn"), ExtResource("3_d0n8w"), ExtResource("4_kh4kj"), ExtResource("5_s5jfg"), ExtResource("6_ckdr0")])
 semi_autumn_textures = Array[Texture2D]([ExtResource("7_icqer"), ExtResource("8_brb0k"), ExtResource("9_855fg"), ExtResource("10_o1sfh"), ExtResource("11_1x0ya")])
 autumn_textures = Array[Texture2D]([ExtResource("12_pm1sm"), ExtResource("13_r05bm"), ExtResource("14_fhsml"), ExtResource("15_ofwfs"), ExtResource("16_g73ry"), ExtResource("17_u6p5e"), ExtResource("18_vn7dw"), ExtResource("19_2yo02"), ExtResource("20_x44jh")])
-treeType = 2
 textureSetter = NodePath("Texture")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

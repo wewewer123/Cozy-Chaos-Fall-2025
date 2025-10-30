@@ -1,14 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dry5v5b61sduq"]
+[gd_scene load_steps=14 format=3 uid="uid://dry5v5b61sduq"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
-[ext_resource type="PackedScene" uid="uid://cfgyqhgaajthv" path="res://scenes/world/lane_spawn_timer.tscn" id="3_lugpx"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane_objects/Spawner.gd" id="5_5h0pq"]
-[ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/lane_objects/obstacles/autumnTrees.tscn" id="6_vt067"]
-[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/lane_objects/obstacles/ghost.tscn" id="7_ks2a8"]
-[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/lane_objects/collectables/leaf.tscn" id="8_gxasn"]
+[ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_mgf4m"]
 [ext_resource type="PackedScene" uid="uid://b617pcd1e87dk" path="res://scenes/world/enviornment/environment_level_4.tscn" id="8_v41oc"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/lane_objects/collectables/heart.tscn" id="9_hpx1p"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_mvwpp"]
 [ext_resource type="Resource" uid="uid://wajewmi47mmq" path="res://scenes/world/decoration/tree/factories/tree_factory_level_4.tres" id="10_iwh7l"]
 [ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_mgf4m"]
@@ -32,26 +27,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
 
 [node name="Items" type="Node3D" parent="."]
 
-[node name="LaneSpawnTimer" parent="." instance=ExtResource("3_lugpx")]
-level = 5
-
-[node name="Spawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
-script = ExtResource("5_5h0pq")
-tree_inst = ExtResource("6_vt067")
-ghost_inst = ExtResource("7_ks2a8")
-leaf_inst = ExtResource("8_gxasn")
-heart_inst = ExtResource("9_hpx1p")
-
-[node name="Lane0" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
-
-[node name="Lane1" type="Marker3D" parent="Spawner"]
-
-[node name="Lane2" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-
 [node name="Ground" parent="." instance=ExtResource("8_v41oc")]
+
+[node name="LaneSpawner" parent="." instance=ExtResource("4_mgf4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_mvwpp")]
 tree_collection = ExtResource("10_iwh7l")
@@ -69,5 +48,3 @@ stream = ExtResource("15_0p8ux")
 volume_db = -20.0
 
 [node name="PlayerLocator" parent="." instance=ExtResource("17_7i75j")]
-
-[connection signal="timeout" from="LaneSpawnTimer" to="." method="_on_lane_spawn_timer_timeout"]

@@ -1,15 +1,15 @@
 extends Node
 
-var max_player_health = 5
-var max_leaf_count = 10
+var max_player_health = 3
+var max_leaf_count = 5
 
-var SPAWN_DIFFICULTY_MULTIPLAYER = 2
+var SPAWN_DIFFICULTY_MULTIPLAYER = 5
 
 var LANE_SPAWN_TIMERS := {
 	GameManager.game_states.LEVEL1: 1.0 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL2: 0.95 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL3: 0.9 * SPAWN_DIFFICULTY_MULTIPLAYER,
-	GameManager.game_states.LEVEL4: 0.8 * SPAWN_DIFFICULTY_MULTIPLAYER
+	GameManager.game_states.LEVEL2: 0.85 * SPAWN_DIFFICULTY_MULTIPLAYER,
+	GameManager.game_states.LEVEL3: 0.7 * SPAWN_DIFFICULTY_MULTIPLAYER,
+	GameManager.game_states.LEVEL4: 0.5 * SPAWN_DIFFICULTY_MULTIPLAYER
 }
 
 # Current spawning timer speeds
