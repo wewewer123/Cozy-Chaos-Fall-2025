@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045776367, 0.9870453, -0.0
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("11_xtfam")]
 stream = ExtResource("12_k6s3k")
-volume_db = -10.0
+volume_db = 10.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3602c")

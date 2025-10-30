@@ -6,6 +6,7 @@ var currentPlayerIndex = 0
 var curr_time = 5
 var interval = 5
 
+@export var volume_db : float = 0
 @export var switchLanesSound : AudioStream
 @export var wallOfTreeSound : AudioStream
 @export var hurtByTreeSound : AudioStream

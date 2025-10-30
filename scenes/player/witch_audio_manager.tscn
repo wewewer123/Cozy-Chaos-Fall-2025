@@ -13,6 +13,7 @@
 
 [node name="WitchAudioManager" type="Node2D"]
 script = ExtResource("1_y6na0")
+volume_db = 10.0
 switchLanesSound = ExtResource("2_nar58")
 wallOfTreeSound = ExtResource("3_6n7l8")
 hurtByTreeSound = ExtResource("4_6n7l8")

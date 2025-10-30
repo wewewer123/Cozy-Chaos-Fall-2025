@@ -1144,7 +1144,7 @@ script = ExtResource("1_fblsh")
 anim_player = NodePath("SubViewportContainer/SubViewport/AnimationPlayer")
 timer = NodePath("SubViewportContainer/SubViewport/TimerHold")
 audio_source = NodePath("AudioStreamPlayer2D")
-audio_source_max_db = 20.0
+audio_source_max_db = 25.0
 audio_source_min_db = -30.0
 audio_source_fade_out_offset = 1.5
 
