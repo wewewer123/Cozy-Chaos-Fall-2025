@@ -8,7 +8,7 @@ var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
 
-@export var audioSource : AudioStreamPlayer2D
+@export var radio_audio_source : AudioStreamPlayer2D
 
 @export var radioLevel1:AudioStream
 @export var radioLevel2:AudioStream
@@ -28,12 +28,19 @@ var active_scene = null
 var _scene_container:Node = null
 
 var player:PlayerObject = null
+var curr_lane_spawner:Spawner = null
 var FIRST_LEVEL_INDEX = 1
 var current_level:int = FIRST_LEVEL_INDEX
 
 func _playStream(nextStream: AudioStream) -> void:
-	audioSource.stream = nextStream
-	audioSource.play()
+	if(Globals.debug_skip_radio):
+		await get_tree().process_frame
+		curr_lane_spawner.start_spawning()
+		return
+
+	radio_audio_source.stream = nextStream
+	radio_audio_source.play()
+	start_obstacle_spawn_after_radio_finished()
 
 func _ready() -> void:
 	pass
@@ -45,7 +52,7 @@ func _process(_delta: float) -> void:
 
 func _resetGameState():
 	current_level = FIRST_LEVEL_INDEX
-	audioSource.stop()
+	radio_audio_source.stop()
 
 func set_scene_container(scene_container:Node) -> void:
 	assert( scene_container != null, "GameManager : scene_container must not be null") 
@@ -57,6 +64,8 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	
 	assert( _scene_container != null, "GameManager : _scene_container needs to be set call set_scene_container") 
 	
+	if curr_lane_spawner != null:
+		curr_lane_spawner.stop_spawning()
 	on_state_transition.emit(new_state)
 	transition.fade_out()
 	_curren_game_state = new_state
@@ -81,6 +90,12 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 		game_states.WIN:
 			_set_win()
 			_playStream(radioEnd)
+	
+func start_obstacle_spawn_after_radio_finished() -> void:
+	while radio_audio_source.playing:
+		await get_tree().process_frame
+	
+	curr_lane_spawner.start_spawning()
 
 func _set_menu() -> void:
 	var res:PackedScene = mainMenuScene

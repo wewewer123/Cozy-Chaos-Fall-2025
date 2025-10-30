@@ -8,7 +8,8 @@ class_name DirectionalAudioManager
 @export var audio_fade_out_seconds:float = 0.25
 @export var start_delay_seconds:float = 0
 
-var max_distance_player_obstacle = abs(Globals.object_spawn_distance)
+var max_volume_offset = 10
+var max_distance_player_obstacle = abs(Globals.object_spawn_distance) + max_volume_offset
 var player_locator : PlayerLocator
 
 func init(playerLocator:PlayerLocator, next_audio_bus_index:int):
