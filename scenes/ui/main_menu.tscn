@@ -304,7 +304,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
 accessibility_description = "Master volume"
-value = 60.0
+value = 10.0
 rounded = true
 
 [node name="MasterVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]

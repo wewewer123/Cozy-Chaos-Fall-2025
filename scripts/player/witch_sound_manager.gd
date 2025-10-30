@@ -1,6 +1,6 @@
 extends Node2D
 
-var audioPlayers := []
+var audioPlayers:Array[AudioStreamPlayer2D]
 var currentPlayerIndex = 0
 
 var curr_time = 5
@@ -18,7 +18,10 @@ var interval = 5
 @export var playerDeathSound : AudioStream
 
 func _ready() -> void:
-	audioPlayers = get_children()
+	for child in get_children():
+		var audio_player = child as AudioStreamPlayer2D
+		audio_player.volume_db = volume_db
+		audioPlayers.append(audio_player)
 
 func playSwitchLaneSound() -> void:
 	_playStream(switchLanesSound)
