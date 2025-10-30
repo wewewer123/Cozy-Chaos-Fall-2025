@@ -35,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
 [node name="Items" type="Node3D" parent="."]
 
 [node name="LaneSpawnTimer" parent="." instance=ExtResource("4_py7lu")]
+wait_time = 0.7
 level = 3
 
 [node name="Spawner" type="Node3D" parent="."]
