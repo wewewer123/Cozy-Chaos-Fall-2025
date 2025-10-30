@@ -33,9 +33,6 @@ func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	for child in get_children():
 		if child is Marker3D:
 			lanes.append(child)
-			
-	lane_spawn_timer.start()
-
 
 func get_lane_count() -> int:
 	return lanes.size()
@@ -126,6 +123,7 @@ func set_alpha_for_objects(objects:Array[CollisionObject], alpha:float):
 		child.set_texture_alpha(alpha)
 
 func start_spawning() -> void:
+	spawn()
 	lane_spawn_timer.start_timer()
 
 func stop_spawning() -> void:

@@ -7,6 +7,7 @@ func _ready() -> void:
 	var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 	
 	GameManager.player = player
+	GameManager.curr_lane_spawner = spawner
 	
 	hud.init()
 	spawner.init($Items, player_locator)
