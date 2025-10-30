@@ -8,9 +8,9 @@ enum CollisionType { TREE, GHOST, LEAF, HEART }
 
 signal collided_with_player(colisions_type: int, player: Node)
 
-func init(player_locator:PlayerLocator):
+func init(player_locator:PlayerLocator, next_audio_bus_index:int):
 	if(directionalAudio != null):
-		directionalAudio.init(player_locator)
+		directionalAudio.init(player_locator, next_audio_bus_index)
 
 func set_texture_alpha(value : float) -> void:
 	textureSetter.set_alpha(value)

@@ -12,6 +12,8 @@ var LANE_SPAWN_TIMERS := {
 	GameManager.game_states.LEVEL4: 0.5 * SPAWN_DIFFICULTY_MULTIPLAYER
 }
 
+var object_spawn_distance:float = 60
+
 # Current spawning timer speeds
 #     Lv1: 1.0
 #     Lv2: 0.7

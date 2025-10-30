@@ -23,7 +23,7 @@ script = ExtResource("1_dd1l5")
 [node name="Ground" parent="." instance=ExtResource("2_t0aw8")]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_dml08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="Obstacles" type="Node3D" parent="."]
 

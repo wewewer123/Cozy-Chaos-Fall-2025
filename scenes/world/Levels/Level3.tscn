@@ -21,7 +21,7 @@ background_color = Color(0.74887323, 0.8898445, 0.96706337, 1)
 script = ExtResource("1_8q2jx")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_kbmee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="Obstacles" type="Node3D" parent="."]
 

@@ -8,22 +8,20 @@ class_name DirectionalAudioManager
 @export var audio_fade_out_seconds:float = 0.25
 @export var start_delay_seconds:float = 0
 
-var max_distance_player_obstacle = 45.0
+var max_distance_player_obstacle = abs(Globals.object_spawn_distance)
 var player_locator : PlayerLocator
-var next_audio_index : int = 0
 
-func init(playerLocator:PlayerLocator):
+func init(playerLocator:PlayerLocator, next_audio_bus_index:int):
 	player_locator = playerLocator
 	await get_tree().create_timer(start_delay_seconds).timeout
-	_playDirectionalSound()
+	_playDirectionalSound(next_audio_bus_index)
 
 func _ready() -> void:
 	for i in range(len(audio_streams)):
 		audio_streams[i].stream = soundeffect
 
-func _playDirectionalSound() -> void:
-	_playStream(audio_streams[next_audio_index])
-	next_audio_index = (next_audio_index + 1) % len(audio_streams)
+func _playDirectionalSound(next_audio_bus_index:int) -> void:
+	_playStream(audio_streams[next_audio_bus_index])
 
 func _playStream(audio_stream: AudioStreamPlayer2D) -> void:
 	audio_stream.volume_db = start_volume_db

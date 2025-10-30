@@ -18,6 +18,12 @@ var rng := RandomNumberGenerator.new()
 var player_locat:PlayerLocator
 var object_parent:Node
 
+var next_audio_bus_index = 0
+var audio_pan_effect_busses = 3
+
+func _ready() -> void:
+	position.z = -Globals.object_spawn_distance
+
 func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	self.player_locat = player_locator
 	self.object_parent = spawned_object_parent
@@ -80,6 +86,8 @@ func spawn() -> void:
 			spawn_single()
 		SpawnStrategie.Pair:
 			spawn_pair()
+	
+	next_audio_bus_index = (next_audio_bus_index + 1) % audio_pan_effect_busses
 
 func spawn_single() -> void:
 	var lane_object:CollisionObject
@@ -89,7 +97,7 @@ func spawn_single() -> void:
 	else:
 		lane_object = spawn_obstacle(object_parent, _pick_lane())
 	
-	lane_object.init(player_locat)
+	lane_object.init(player_locat, next_audio_bus_index)
 	
 	await fade_in([lane_object])
 
@@ -100,8 +108,8 @@ func spawn_pair() -> void:
 	var item := spawn_item(object_parent, lane_item)
 	var obstacle := spawn_obstacle(object_parent, lane_obstacle)
 
-	item.init(player_locat)
-	obstacle.init(player_locat)
+	item.init(player_locat, next_audio_bus_index)
+	obstacle.init(player_locat, next_audio_bus_index)
 	
 	await fade_in([item,obstacle])
 	

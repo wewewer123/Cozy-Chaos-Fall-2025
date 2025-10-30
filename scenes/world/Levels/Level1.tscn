@@ -27,7 +27,7 @@ shadow_enabled = true
 [node name="PlayerLocator" parent="." instance=ExtResource("14_uvtmw")]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_estr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="Obstacles" type="Node3D" parent="."]
 
