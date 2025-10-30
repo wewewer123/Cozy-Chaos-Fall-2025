@@ -36,6 +36,7 @@ winScene = ExtResource("12_o1ahd")
 [node name="Node" type="Node" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -80.0
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_gvcca")]
-volume_db = -20.0
+volume_db = -25.0
