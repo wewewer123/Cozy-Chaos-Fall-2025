@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=11 format=3 uid="uid://b66ua3ss6oli1"]
+[gd_resource type="Resource" script_class="TutorialAudioContainer" load_steps=11 format=3 uid="uid://b66ua3ss6oli1"]
 
 [ext_resource type="AudioStream" uid="uid://2jmq70tauwo" path="res://assets/audio/Voicelines/witch/Lvl1-Witch-01.wav" id="1_y7for"]
 [ext_resource type="AudioStream" uid="uid://b63ugs78pg74j" path="res://assets/audio/Voicelines/witch/Lvl1-Witch-02.wav" id="2_tfjxb"]
@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://nio7kt8fohjn" path="res://assets/audio/Voicelines/witch/Lvl1-Witch-08.wav" id="7_g7qwu"]
 [ext_resource type="AudioStream" uid="uid://bd0icgdo7yqve" path="res://assets/audio/Voicelines/witch/Lvl1-Witch-09.wav" id="8_3uuql"]
 [ext_resource type="AudioStream" uid="uid://dyx4wmuwbmff0" path="res://assets/audio/Voicelines/witch/Lvl1-Witch-10.wav" id="9_q1e1b"]
-[ext_resource type="Script" uid="uid://brmfacvu2v0oe" path="res://tutorial_voice_lines.gd" id="10_rr4ot"]
+[ext_resource type="Script" path="res://tutorial_voice_lines.gd" id="10_rr4ot"]
 
 [resource]
 script = ExtResource("10_rr4ot")
