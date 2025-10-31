@@ -40,7 +40,6 @@ func _playStream(nextStream: AudioStream) -> void:
 
 	radio_audio_source.stream = nextStream
 	radio_audio_source.play()
-	start_obstacle_spawn_after_radio_finished()
 
 func _ready() -> void:
 	pass
@@ -78,24 +77,37 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 		game_states.LEVEL1:
 			_set_level()
 			_playStream(radioLevel1)
+			await wait_until_radio_finished()
+			await play_tutorial()
+			curr_lane_spawner.start_spawning()
 		game_states.LEVEL2:
 			_set_level2()
 			_playStream(radioLevel2)
+			await wait_until_radio_finished()
+			curr_lane_spawner.start_spawning()
 		game_states.LEVEL3:
 			_set_level3()
 			_playStream(radioLevel3)
+			await wait_until_radio_finished()
+			curr_lane_spawner.start_spawning()
 		game_states.LEVEL4:
 			_set_level4()
 			_playStream(radioLevel4)
+			await wait_until_radio_finished()
+			curr_lane_spawner.start_spawning()
 		game_states.WIN:
 			_set_win()
 			_playStream(radioEnd)
+			await wait_until_radio_finished()
+			curr_lane_spawner.start_spawning()
 	
-func start_obstacle_spawn_after_radio_finished() -> void:
+func wait_until_radio_finished() -> void:
 	while radio_audio_source.playing:
 		await get_tree().process_frame
+
+func play_tutorial() -> void:
+	pass
 	
-	curr_lane_spawner.start_spawning()
 
 func _set_menu() -> void:
 	var res:PackedScene = mainMenuScene

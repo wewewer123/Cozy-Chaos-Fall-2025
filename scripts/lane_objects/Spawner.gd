@@ -66,6 +66,7 @@ func _spawn_packed_at(packed: PackedScene, parent: Node, lane_index: int) -> Nod
 	var base_pos := get_lane_position(lane_index)
 	parent.add_child(node)
 	node.global_position = base_pos
+	node.init(player_locat, next_audio_bus_index)
 	return node
 
 # Allow caller to force a lane, otherwise pick one (optionally excluding)
@@ -97,8 +98,6 @@ func spawn_single() -> void:
 	else:
 		lane_object = spawn_obstacle(object_parent, _pick_lane())
 	
-	lane_object.init(player_locat, next_audio_bus_index)
-	
 	await fade_in([lane_object])
 
 func spawn_pair() -> void:
@@ -108,9 +107,6 @@ func spawn_pair() -> void:
 	var item := spawn_item(object_parent, lane_item)
 	var obstacle := spawn_obstacle(object_parent, lane_obstacle)
 
-	item.init(player_locat, next_audio_bus_index)
-	obstacle.init(player_locat, next_audio_bus_index)
-	
 	await fade_in([item,obstacle])
 	
 func fade_in(objects : Array[CollisionObject]) -> void:
@@ -134,3 +130,18 @@ func stop_spawning() -> void:
 
 func _on_lane_spawn_timer_timeout() -> void:
 	spawn()
+
+func spawn_tree() -> void:
+	_spawn_packed_random(tree_inst)
+
+func spawn_ghost() -> void:
+	_spawn_packed_random(ghost_inst)
+
+func spawn_leaf() -> void:
+	_spawn_packed_random(leaf_inst)
+
+func spawn_heart() -> void:
+	_spawn_packed_random(heart_inst)
+
+func _spawn_packed_random(packed: PackedScene) -> void:
+	_spawn_packed_at(packed, object_parent, randi_range(0,len(lanes) - 1))
