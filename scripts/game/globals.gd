@@ -14,7 +14,7 @@ var LANE_SPAWN_TIMERS := {
 
 var object_spawn_distance:float = 60
 
-var debug_skip_radio = true
+var debug_skip_radio = false
 
 # Current spawning timer speeds
 #     Lv1: 1.0

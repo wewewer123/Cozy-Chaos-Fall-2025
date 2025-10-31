@@ -81,7 +81,7 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 			_playStream(radioLevel1)
 			await wait_audio_source_finished(radio_audio_source)
 			await get_tree().process_frame
-			await play_tutorial()
+			#await play_tutorial()
 			curr_lane_spawner.start_spawning()
 		game_states.LEVEL2:
 			_set_level2()
