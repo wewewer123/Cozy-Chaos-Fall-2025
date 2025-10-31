@@ -23,6 +23,9 @@ var _curren_game_state:game_states = game_states.NULL
 @export var levelScene4:PackedScene
 @export var winScene:PackedScene
 
+@export var tutorial:PackedScene
+
+
 # scene related code
 var active_scene = null
 var _scene_container:Node = null
@@ -35,7 +38,6 @@ var current_level:int = FIRST_LEVEL_INDEX
 func _playStream(nextStream: AudioStream) -> void:
 	if(Globals.debug_skip_radio):
 		await get_tree().process_frame
-		curr_lane_spawner.start_spawning()
 		return
 
 	radio_audio_source.stream = nextStream
@@ -77,37 +79,42 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 		game_states.LEVEL1:
 			_set_level()
 			_playStream(radioLevel1)
-			await wait_until_radio_finished()
+			await wait_audio_source_finished(radio_audio_source)
+			await get_tree().process_frame
 			await play_tutorial()
 			curr_lane_spawner.start_spawning()
 		game_states.LEVEL2:
 			_set_level2()
 			_playStream(radioLevel2)
-			await wait_until_radio_finished()
+			await wait_audio_source_finished(radio_audio_source)
 			curr_lane_spawner.start_spawning()
 		game_states.LEVEL3:
 			_set_level3()
 			_playStream(radioLevel3)
-			await wait_until_radio_finished()
+			await wait_audio_source_finished(radio_audio_source)
 			curr_lane_spawner.start_spawning()
 		game_states.LEVEL4:
 			_set_level4()
 			_playStream(radioLevel4)
-			await wait_until_radio_finished()
+			await wait_audio_source_finished(radio_audio_source)
 			curr_lane_spawner.start_spawning()
 		game_states.WIN:
 			_set_win()
 			_playStream(radioEnd)
-			await wait_until_radio_finished()
-			curr_lane_spawner.start_spawning()
-	
-func wait_until_radio_finished() -> void:
-	while radio_audio_source.playing:
+			await wait_audio_source_finished(radio_audio_source)
+			
+func play_tutorial():
+	var tutorialObject = tutorial.instantiate()
+	add_child(tutorialObject)
+	await tutorialObject.start_and_wait(radio_audio_source,curr_lane_spawner,player)
+		
+func wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
+	while audio_source.playing:
 		await get_tree().process_frame
 
-func play_tutorial() -> void:
-	pass
-	
+func _play_voiceline(audio_stream:AudioStream) -> void:
+	radio_audio_source.stream = audio_stream
+	radio_audio_source.play()
 
 func _set_menu() -> void:
 	var res:PackedScene = mainMenuScene

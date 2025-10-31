@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://jkp5gvu52u1o"]
+[gd_scene load_steps=6 format=3 uid="uid://jkp5gvu52u1o"]
 
 [ext_resource type="Script" uid="uid://ccvgk5a0aacet" path="res://scripts/player/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://bgkpidnm3mt6j" path="res://scenes/player/witch.tscn" id="2_g2els"]
 [ext_resource type="Script" uid="uid://bpi4tgmt1d56b" path="res://scripts/player/proceduralAnimation.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://f8842u8jr5o6" path="res://scenes/player/witch_audio_manager.tscn" id="4_dqkch"]
-[ext_resource type="PackedScene" uid="uid://d31bx1rfffxnc" path="res://scenes/player/witch_voice_line_manager.tscn" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -28,5 +27,3 @@ lean_smooth = 15.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
-
-[node name="WitchVoiceLineManager" parent="." instance=ExtResource("6_tuyoq")]
