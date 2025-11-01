@@ -36,14 +36,20 @@ autumn_textures = Array[Texture2D]([ExtResource("12_xq58d"), ExtResource("13_rc2
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("21_0suo8")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0.1)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("21_0suo8")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0.23)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("21_0suo8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

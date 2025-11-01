@@ -10,28 +10,44 @@ class_name BroomOscillator
 var _time: float = 0.0
 var _base_y: float
 var _target_tilt: Vector3 = Vector3.ZERO
+var _additionOffset:float
 
 func _ready() -> void:
 	_base_y = global_position.y
+	rotation_degrees.y=180
+
+func _changeLanes()->void:
+	var tween=create_tween()
+	tween.tween_property(self,"_additionOffset",-.1,.1)
+	tween.tween_property(self,"_additionOffset",0,.1)
+	pass
+	
 
 func _process(delta: float) -> void:
 	# === Bobbing motion ===
 	_time += delta
 	var offset_y = sin(_time * TAU * frequency) * amplitude
-	global_position.y = _base_y + offset_y
+	global_position.y = _base_y + offset_y + _additionOffset
 	
 	var input_dir := Vector2.ZERO
+	
 	if Input.is_action_pressed("left"):
 		input_dir.x -= 1
 	if Input.is_action_pressed("right"):
 		input_dir.x += 1
-		
+	
+	if Input.is_action_just_pressed("left"):
+		_changeLanes()
+	if Input.is_action_just_pressed("right"):
+		_changeLanes()
+	
 	_target_tilt = Vector3(
 		input_dir.y * lean_amount,
-		180,
+		180,  # Set Y to 0 so you don’t force 180° flips
 		input_dir.x * lean_amount
-	)
+		)
 
+	
 	var current_rot = rotation_degrees
-	current_rot = current_rot.lerp(_target_tilt, delta * lean_smooth)
+	current_rot=current_rot.lerp(_target_tilt,(lean_smooth*60.0)*delta)
 	rotation_degrees = current_rot

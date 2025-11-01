@@ -38,14 +38,20 @@ treeType = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("12_jn6oc")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, 1.4142135, 0, 2.6, 0)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("21_arhsw")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0)
+alpha_cut = 1
+alpha_antialiasing_mode = 2
 texture = ExtResource("22_ibcai")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -36,13 +36,19 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Smoothly move toward the target lane’s X
-	position.x = lerp(position.x, target_x, move_speed * delta)
+	pass
+	#position.x = lerp(position.x, target_x, move_speed * delta)
 
 func consume_movement(direction: int) -> void:
 	var new_lane = curr_lane + sign(direction)
 	if new_lane >= 0 and new_lane < max_lanes:
 		curr_lane = new_lane
+		var tween=create_tween()
+		
 		target_x = spawner.get_lane_position(curr_lane).x
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.set_trans(Tween.TRANS_BOUNCE)
+		tween.tween_property(self,"position:x",target_x,.15)
 		witch_audio_manager.playSwitchLaneSound()
 
 func add_leaf(value:int) -> void:
