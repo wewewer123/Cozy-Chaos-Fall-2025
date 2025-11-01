@@ -17,3 +17,4 @@
 script = ExtResource("1_u1kqt")
 tree_scene = ExtResource("2_tq48d")
 tree_textures = Array[Texture2D]([ExtResource("4_1vua8"), ExtResource("5_80k3j"), ExtResource("6_xsc0w"), ExtResource("7_5mqc8"), ExtResource("8_kpf0d"), ExtResource("9_5fxee"), ExtResource("10_or3dn"), ExtResource("11_rn2hc"), ExtResource("12_wxv7j"), ExtResource("13_awi23")])
+particles = true

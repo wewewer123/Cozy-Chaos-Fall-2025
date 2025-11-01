@@ -1,9 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://domdm1bdbweh0"]
+[gd_scene load_steps=10 format=3 uid="uid://domdm1bdbweh0"]
 
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="1_1sskc"]
 [ext_resource type="Script" uid="uid://bcp4gcadsu134" path="res://scripts/world/tree_decoration.gd" id="1_cfqu1"]
 [ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_decoration_texture.tscn" id="2_cfqu1"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="3_6lbe6"]
+[ext_resource type="Texture2D" uid="uid://0m4e23dpbpqw" path="res://assets/art/2D/trees/Leafs.png" id="5_6lbe6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne0o8"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_6lbe6")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_o3bcq"]
+
+[sub_resource type="Gradient" id="Gradient_aile5"]
+offsets = PackedFloat32Array(0, 0.12738854, 0.68471336, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_27vjf"]
+colors = PackedColorArray(0.66337353, 0.23878598, 0.21541789, 1, 0.86, 0.4070667, 0.18059999, 1)
 
 [node name="Tree" type="Node3D" node_paths=PackedStringArray("texture_setter")]
 script = ExtResource("1_cfqu1")
@@ -13,3 +34,30 @@ texture_setter = NodePath("Texture")
 
 [node name="Texture" parent="." instance=ExtResource("2_cfqu1")]
 script = ExtResource("3_6lbe6")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.865978, 0)
+material_override = SubResource("StandardMaterial3D_ne0o8")
+emitting = false
+amount = 10
+lifetime = 4.57
+preprocess = 1.09
+randomness = 0.23
+lifetime_randomness = 0.23
+local_coords = true
+mesh = SubResource("QuadMesh_o3bcq")
+emission_shape = 2
+emission_sphere_radius = 3.82
+direction = Vector3(1, 1, 1)
+spread = 180.0
+gravity = Vector3(0, -2, 0)
+angular_velocity_min = -123.31
+angular_velocity_max = 43.76
+angle_min = -620.5
+angle_max = 572.8
+scale_amount_min = 0.25
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_aile5")
+color_initial_ramp = SubResource("Gradient_27vjf")
+hue_variation_min = -0.07
+hue_variation_max = 0.08
