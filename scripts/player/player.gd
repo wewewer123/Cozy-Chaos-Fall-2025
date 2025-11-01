@@ -22,6 +22,7 @@ signal player_died()
 signal leaf_changed(change:int)
 
 func init(s: Spawner) -> void:
+	$"Witch (1)/AnimationPlayer".play("ArmatureAction")
 	spawner = s 
 	max_lanes = spawner.get_lane_count()
 	curr_lane = max_lanes / 2

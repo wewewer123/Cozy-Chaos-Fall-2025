@@ -24,9 +24,23 @@ frequency = 0.5
 lean_amount = 50.0
 lean_smooth = 15.0
 
+[node name="Skeleton3D" parent="Witch (1)/Armature" index="0"]
+bones/7/rotation = Quaternion(0.89587426, 0.011147158, 0.084796816, -0.43599832)
+bones/8/rotation = Quaternion(0.11835231, 0.05441258, -0.051986538, 0.9901159)
+bones/9/rotation = Quaternion(0.11345488, 0.022071522, -0.047599655, 0.99215686)
+bones/10/rotation = Quaternion(-0.6900762, -0.00036870697, 0.0004367856, 0.7237366)
+bones/11/rotation = Quaternion(-0.3149975, 0.052836668, -0.13242562, 0.9383221)
+bones/12/rotation = Quaternion(-0.2304279, 0.092440635, -0.093289055, 0.96418613)
+bones/71/rotation = Quaternion(-0.7284637, -0.042100597, -0.088165596, 0.6780819)
+
+[node name="AnimationPlayer" parent="Witch (1)" index="2"]
+reset_on_save = false
+
 [node name="WitchAudioManager" parent="." instance=ExtResource("4_dqkch")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
 
 [node name="WitchVoiceLineManager" parent="." instance=ExtResource("6_tuyoq")]
+
+[editable path="Witch (1)"]
