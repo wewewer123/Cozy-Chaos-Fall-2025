@@ -1,7 +1,7 @@
 extends Node
 
 var max_player_health = 3
-var max_leaf_count = 3
+var max_leaf_count = 15
 
 var SPAWN_DIFFICULTY_MULTIPLIER = 1
 

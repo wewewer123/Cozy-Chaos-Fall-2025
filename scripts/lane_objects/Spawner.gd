@@ -82,10 +82,9 @@ func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) 
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.
 func spawn() -> void:
-	match spawn_strategie:
-		SpawnStrategie.Single:
+	if randi_range(0, 1) == 0:
 			spawn_single()
-		SpawnStrategie.Pair:
+	else:
 			spawn_pair()
 	
 	next_audio_bus_index = (next_audio_bus_index + 1) % audio_pan_effect_busses
@@ -101,13 +100,27 @@ func spawn_single() -> void:
 	await fade_in([lane_object])
 
 func spawn_pair() -> void:
-	var lane_item := _pick_lane()
-	var lane_obstacle := _pick_lane(lane_item)
-
-	var item := spawn_item(object_parent, lane_item)
-	var obstacle := spawn_obstacle(object_parent, lane_obstacle)
-
-	await fade_in([item,obstacle])
+	var lane_object:CollisionObject
+	var lane_object_2:CollisionObject
+	
+	var lane = 1
+	var lane2 = 1
+	while lane == lane2:
+		lane = _pick_lane()
+		lane2 = _pick_lane()
+	
+	if randi_range(0, 2) == 0:
+		lane_object = spawn_item(object_parent, lane)
+	else:
+		lane_object = spawn_obstacle(object_parent, lane)
+	
+	if randi_range(0, 2) == 0:
+		lane_object_2 = spawn_item(object_parent, lane2)
+	else:
+		lane_object_2 = spawn_obstacle(object_parent, lane2)
+	
+	await fade_in([lane_object])
+	fade_in([lane_object_2])
 	
 func fade_in(objects : Array[CollisionObject]) -> void:
 	var t := 0.0
