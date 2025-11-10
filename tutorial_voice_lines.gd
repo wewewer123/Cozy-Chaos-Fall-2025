@@ -10,3 +10,4 @@ class_name TutorialAudioContainer
 @export var Lvl1_Witch_08:AudioStream
 @export var Lvl1_Witch_09:AudioStream
 @export var Lvl1_Witch_10:AudioStream
+@export var Lvl1_Radio_02:AudioStream

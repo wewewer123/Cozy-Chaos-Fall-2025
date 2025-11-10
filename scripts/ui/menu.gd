@@ -13,6 +13,9 @@ func _on_exit_pressed() -> void:
 
 func _on_start_pressed() -> void:
 	GameManager.set_state(GameManager.game_states.LEVEL1)
+	
+func _on_tutorial_pressed() -> void:
+	GameManager.set_state(GameManager.game_states.TUTORIAL)
 
 func _on_continue_pressed() -> void:
 	pass

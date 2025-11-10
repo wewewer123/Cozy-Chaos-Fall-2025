@@ -8,6 +8,8 @@ var curr_health:int = Globals.max_player_health
 @export var max_velocity = 10
 @export var move_speed: float = 15.0  
 
+signal object_missed_signal
+
 var max_lanes: int
 var curr_lane: int
 var lane_width: float = 25.0
@@ -72,3 +74,13 @@ func _changeHealth(value: int) -> void:
 		witch_audio_manager.playDeathSound()
 		player_died.emit()
 		GameManager.on_player_death()
+
+func set_health_to_max():
+	_changeHealth(Globals.max_player_health - curr_health)
+
+func has_max_health() -> bool:
+	return curr_health >= Globals.max_player_health
+
+func _on_missed_objects_collider_area_entered(area: Area3D) -> void:
+	if(area is CollisionObject):
+		object_missed_signal.emit()
