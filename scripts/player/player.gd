@@ -75,6 +75,11 @@ func _changeHealth(value: int) -> void:
 		player_died.emit()
 		GameManager.on_player_death()
 
+func set_health_to_max():
+	_changeHealth(Globals.max_player_health - curr_health)
+
+func has_max_health() -> bool:
+	return curr_health >= Globals.max_player_health
 
 func _on_missed_objects_collider_area_entered(area: Area3D) -> void:
 	if(area is CollisionObject):
