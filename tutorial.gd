@@ -25,10 +25,12 @@ func wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
 func _wait_for_witch_voice_line():
 	await wait_audio_source_finished(_audio_player)
 
-func play_tutorial() -> void:
-	_play_voiceline(tutorial_audio.Lvl1_Witch_01) #where are you
+func _play_and_wait_witch_voice_line(stream:AudioStream):
+	_play_voiceline(stream)
 	await _wait_for_witch_voice_line() 
-	
+
+func play_tutorial() -> void:
+	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_01) #where are you
 	await _wait_for_leaf_tutorial()
 	#await get_tree().create_timer(3).timeout
 	#await _wait_for_witch_voice_line()
@@ -47,6 +49,9 @@ func play_tutorial() -> void:
 	#await _wait_for_witch_voice_line()
 
 func _wait_for_leaf_tutorial():
+	var callable:Callable = _play_voiceline.bind(tutorial_audio.Lvl1_Witch_04)	
+	_player.object_missed_signal.connect(callable)
+	
 	await get_tree().create_timer(1).timeout
 	_play_voiceline(tutorial_audio.Lvl1_Witch_02) #what is this
 	await _wait_for_witch_voice_line()
@@ -56,3 +61,6 @@ func _wait_for_leaf_tutorial():
 	while _player.leaf < 1:
 		_spawner.spawn_leaf()
 		await get_tree().create_timer(4).timeout
+		await _wait_for_witch_voice_line()
+		
+	_player.object_missed_signal.disconnect(callable)

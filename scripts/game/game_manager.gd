@@ -73,8 +73,6 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	
 	await transition.faded_out
 	
-	print("TEST")
-	
 	match new_state:
 		game_states.MENU:
 			_set_menu()
