@@ -54,3 +54,6 @@ func _on_options_pressed() -> void:
 func _on_menu_back_pressed() -> void:
 	change_state(states.MENU)
 	$CenterContainer/Menu/CenterContainer/MenuButtonList/Start.grab_focus()
+
+func _on_tutorial_pressed() -> void:
+	pass # Replace with function body.

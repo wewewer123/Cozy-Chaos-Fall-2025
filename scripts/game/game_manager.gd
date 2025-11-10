@@ -3,7 +3,7 @@ extends Node
 signal on_state_transition(new_state:game_states)
 
 # state related code
-enum game_states { NULL, MENU, LEVEL1, LEVEL2, LEVEL3, LEVEL4, WIN }
+enum game_states { NULL, TUTORIAL, MENU, LEVEL1, LEVEL2, LEVEL3, LEVEL4, WIN }
 var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
@@ -60,7 +60,7 @@ func set_scene_container(scene_container:Node) -> void:
 	_scene_container = scene_container
 
 func set_state(new_state:game_states, force: bool = false) -> void:
-	if _curren_game_state == new_state and not  force:
+	if _curren_game_state == new_state and not force:
 		return
 	
 	assert( _scene_container != null, "GameManager : _scene_container needs to be set call set_scene_container") 
@@ -73,15 +73,19 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	
 	await transition.faded_out
 	
+	print("TEST")
+	
 	match new_state:
 		game_states.MENU:
 			_set_menu()
+		game_states.TUTORIAL:
+			_set_level()
+			_set_tutorial()
 		game_states.LEVEL1:
 			_set_level()
 			_playStream(radioLevel1)
 			await wait_audio_source_finished(radio_audio_source)
 			await get_tree().process_frame
-			#await play_tutorial()
 			curr_lane_spawner.start_spawning()
 		game_states.LEVEL2:
 			_set_level2()
@@ -102,11 +106,13 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 			_set_win()
 			_playStream(radioEnd)
 			await wait_audio_source_finished(radio_audio_source)
-			
-func play_tutorial():
+
+	
+func _set_tutorial():
 	var tutorialObject = tutorial.instantiate()
 	add_child(tutorialObject)
-	await tutorialObject.start_and_wait(radio_audio_source,curr_lane_spawner,player)
+	await get_tree().process_frame
+	await tutorialObject.start_and_wait(radio_audio_source, curr_lane_spawner, player)
 		
 func wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
 	while audio_source.playing:
