@@ -29,7 +29,7 @@ func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	self.player_locat = player_locator
 	self.object_parent = spawned_object_parent
 	var timer:LaneSpawnTimer = $LaneSpawnTimer
-	timer.init(Globals.LANE_SPAWN_TIMERS.get(level))
+	timer.init(Globals.get_spawn_time_for_level(level))
 	
 	rng.randomize()
 	lanes = []

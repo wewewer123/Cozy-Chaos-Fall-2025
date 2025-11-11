@@ -15,7 +15,7 @@ func _ready() -> void:
 	_on_master_vol_slider_value_changed(slider_master_val.value)
 	_on_sfx_vol_slider_value_changed(slider_sfx_val.value)
 	_on_music_vol_slider_value_changed(slider_music_val.value)
-	_on_difficulty_slider_value_changed(slider_difficulty_val.value)
+	slider_difficulty_val.value = Globals.lane_object_spawn_time_multiplier
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -49,6 +49,7 @@ func _on_sfx_vol_slider_value_changed(value: float) -> void:
 
 func _on_difficulty_slider_value_changed(value: float) -> void:
 	diff_val.text = str("%*.1f seconds" % [3, value])
+	Globals.lane_object_spawn_time_multiplier = value
 
 func _on_visibility_changed() -> void:
 	$MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer2/Label.grab_focus()
