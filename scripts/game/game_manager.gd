@@ -8,7 +8,7 @@ var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
 
-@export var radio_audio_source : AudioStreamPlayer2D
+@export var radio_audio_source:AudioStreamPlayer2D
 
 @export var radioLevel1:AudioStream
 @export var radioLevel2:AudioStream
@@ -17,14 +17,14 @@ var _curren_game_state:game_states = game_states.NULL
 @export var radioEnd:AudioStream
 
 @export var mainMenuScene:PackedScene
+@export var tutorial:PackedScene
 @export var levelScene1:PackedScene
 @export var levelScene2:PackedScene
 @export var levelScene3:PackedScene
 @export var levelScene4:PackedScene
 @export var winScene:PackedScene
 
-@export var tutorial:PackedScene
-
+@export var ttsId:String
 
 # scene related code
 var active_scene = null
@@ -44,12 +44,23 @@ func _playStream(nextStream: AudioStream) -> void:
 	radio_audio_source.play()
 
 func _ready() -> void:
-	pass
-	
+	var voices = DisplayServer.tts_get_voices()
+	if voices.size() > 0:
+		ttsId = voices[0].id
+		
 func _process(_delta: float) -> void:
 	if  Input.is_action_just_pressed("escape"):
 		_resetGameState()
 		set_state(game_states.MENU)
+	
+	if  Input.is_action_just_pressed("read_lives"):
+		var message = "You have "+str(player.curr_health)+" lives left."
+		DisplayServer.tts_speak(message, ttsId)
+	
+	if  Input.is_action_just_pressed("read_leaf"):
+		var message = "You have collected "+str(player.leaf)+" leaves out of "+str(Globals.get_leaf_count())+"."
+		DisplayServer.tts_speak(message, ttsId)
+	
 
 func _resetGameState():
 	current_level = FIRST_LEVEL_INDEX
