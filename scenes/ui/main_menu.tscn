@@ -82,8 +82,8 @@ theme = ExtResource("3_hh8cs")
 
 [node name="Start" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Options")
-focus_next = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../tutorial")
+focus_next = NodePath("../tutorial")
 focus_previous = NodePath("../Exit")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
@@ -92,9 +92,10 @@ flat = true
 
 [node name="tutorial" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../Options")
 focus_next = NodePath("../Options")
-focus_previous = NodePath("../Exit")
+focus_previous = NodePath("../Start")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "tutorial"
@@ -111,10 +112,10 @@ flat = true
 
 [node name="Options" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Start")
+focus_neighbor_top = NodePath("../tutorial")
 focus_neighbor_bottom = NodePath("../Exit")
 focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Start")
+focus_previous = NodePath("../tutorial")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Options
@@ -312,7 +313,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
 min_value = 0.5
-max_value = 20.0
+max_value = 5.0
 step = 0.1
 value = 1.0
 

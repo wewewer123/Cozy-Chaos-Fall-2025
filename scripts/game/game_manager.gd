@@ -177,6 +177,7 @@ func next_level():
 		set_state(GameManager.game_states.WIN)
 
 func on_player_death():
+	curr_lane_spawner.stop_spawning()
 	match  current_level:
 		1:
 			set_state(GameManager.game_states.LEVEL1, true)

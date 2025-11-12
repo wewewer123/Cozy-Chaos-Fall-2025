@@ -46,5 +46,6 @@ environment = SubResource("Environment_dqfi3")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_lugpx")]
 stream = ExtResource("15_0p8ux")
+volume_db = 7.0
 
 [node name="PlayerLocator" parent="." instance=ExtResource("17_7i75j")]

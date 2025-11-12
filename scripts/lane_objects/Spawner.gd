@@ -37,6 +37,9 @@ func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 		if child is Marker3D:
 			lanes.append(child)
 
+func get_level():
+	return level
+
 func get_lane_count() -> int:
 	return lanes.size()
 
@@ -82,10 +85,10 @@ func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) 
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.
 func spawn() -> void:
-	if randi_range(0, 1) == 0:
-			spawn_single()
-	else:
-			spawn_pair()
+	#if randi_range(0, 1) == 0:
+	spawn_single()
+	#else:
+			#spawn_pair()
 	
 	next_audio_bus_index = (next_audio_bus_index + 1) % audio_pan_effect_busses
 

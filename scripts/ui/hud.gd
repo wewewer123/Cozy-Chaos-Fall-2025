@@ -26,9 +26,9 @@ func on_player_health_changed(change:int) -> void:
 		remove_hearth()
 
 func on_player_leaf_changed(_value:int) -> void:
-	$Control/MarginContainer2/HBoxContainer/Label.text = str(GameManager.player.leaf) + "/" + str(Globals.max_leaf_count)
+	$Control/MarginContainer2/HBoxContainer/Label.text = str(GameManager.player.leaf) + "/" + str(Globals.get_leaf_count())
 	
-	if GameManager.player.leaf == Globals.max_leaf_count:
+	if GameManager.player.leaf == Globals.get_leaf_count():
 		GameManager.next_level()
 
 func add_heart() -> void:

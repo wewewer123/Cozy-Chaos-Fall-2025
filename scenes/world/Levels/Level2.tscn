@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_u6557"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_jvilp"]
 [ext_resource type="Resource" uid="uid://ctw7pnyka6wju" path="res://scenes/world/decoration/tree/factories/tree_factory_level_2.tres" id="10_kkefh"]
+[ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="11_u6557"]
 [ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_u6557"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="13_xhb0t"]
 [ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="14_bgw3j"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_py7lu"]
-[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/ambience/Summer (1 and 2).mp3" id="15_w5duo"]
 [ext_resource type="PackedScene" uid="uid://4mplcxp2vl13" path="res://scenes/world/player_locator.tscn" id="17_w5duo"]
 
 [sub_resource type="Environment" id="Environment_frq16"]
@@ -31,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="LaneSpawner" parent="." instance=ExtResource("4_u6557")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
-level = 3
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_jvilp")]
 tree_collection = ExtResource("10_kkefh")
@@ -45,7 +44,7 @@ texture = ExtResource("14_bgw3j")
 environment = SubResource("Environment_frq16")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_py7lu")]
-stream = ExtResource("15_w5duo")
-volume_db = 10.0
+stream = ExtResource("11_u6557")
+volume_db = 7.0
 
 [node name="PlayerLocator" parent="." instance=ExtResource("17_w5duo")]
