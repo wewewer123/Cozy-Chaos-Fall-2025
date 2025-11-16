@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmtgic684lmxk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvxji"]
+size = Vector3(6, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p47bc"]
+size = Vector3(5, 1, 1)
+
+[node name="MissedObjectsCollider" type="Area3D"]
+collision_layer = 16
+collision_mask = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+shape = SubResource("BoxShape3D_lvxji")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+shape = SubResource("BoxShape3D_p47bc")

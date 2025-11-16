@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jkp5gvu52u1o"]
+[gd_scene load_steps=6 format=3 uid="uid://jkp5gvu52u1o"]
 
 [ext_resource type="Script" uid="uid://ccvgk5a0aacet" path="res://scripts/player/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://bgkpidnm3mt6j" path="res://scenes/player/witch.tscn" id="2_g2els"]
@@ -7,12 +7,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lvxji"]
-size = Vector3(6, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p47bc"]
-size = Vector3(5, 1, 1)
-
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("witch_audio_manager")]
 collision_mask = 12
 script = ExtResource("1_3vyb7")
@@ -20,18 +14,6 @@ witch_audio_manager = NodePath("WitchAudioManager")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")
-
-[node name="MissedObjectsCollider" type="Area3D" parent="."]
-collision_layer = 16
-collision_mask = 12
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MissedObjectsCollider"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
-shape = SubResource("BoxShape3D_lvxji")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MissedObjectsCollider"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-shape = SubResource("BoxShape3D_p47bc")
 
 [node name="Witch (1)" parent="." instance=ExtResource("2_g2els")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.6, 0)
@@ -45,7 +27,3 @@ lean_smooth = 15.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
-
-[connection signal="area_entered" from="MissedObjectsCollider" to="." method="_on_missed_objects_collider_area_entered"]
-[connection signal="area_shape_entered" from="MissedObjectsCollider" to="." method="_on_missed_objects_collider_area_shape_entered"]
-[connection signal="body_entered" from="MissedObjectsCollider" to="." method="_on_missed_objects_collider_body_entered"]
