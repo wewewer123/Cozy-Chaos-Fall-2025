@@ -18,10 +18,23 @@ shape = SubResource("CapsuleShape3D_sh265")
 [node name="Witch (1)" parent="." instance=ExtResource("2_g2els")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.6, 0)
 script = ExtResource("3_qhqgy")
-amplitude = 0.1
-frequency = 0.5
+amplitude = 0.02
+frequency = 1.025
 lean_amount = 50.0
-lean_smooth = 15.0
+lean_smooth = 0.1
+
+[node name="Skeleton3D" parent="Witch (1)/Armature" index="0"]
+bones/7/rotation = Quaternion(0.8425099, -0.030125871, 0.011542341, -0.53771394)
+bones/8/rotation = Quaternion(0.25516498, 0.020179778, 0.025170824, 0.9663592)
+bones/9/rotation = Quaternion(0.25516546, 0.020179775, 0.025170831, 0.966359)
+bones/10/position = Vector3(0.02926725, 0.44908234, -0.13850646)
+bones/10/rotation = Quaternion(-0.66151327, 0.041483797, 0.0007451344, 0.7487849)
+bones/11/rotation = Quaternion(-0.2808436, 0.02849229, -0.008639191, 0.9592917)
+bones/12/rotation = Quaternion(-0.02101502, 0.029745309, -0.00091120636, 0.9993362)
+bones/71/rotation = Quaternion(-0.69379294, -0.021934604, -0.052980743, 0.717888)
+
+[node name="AnimationPlayer" parent="Witch (1)" index="2"]
+reset_on_save = false
 
 [node name="WitchAudioManager" parent="." instance=ExtResource("4_dqkch")]
 
