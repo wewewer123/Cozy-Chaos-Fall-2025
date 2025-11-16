@@ -23,7 +23,7 @@ signal player_died()
 signal leaf_changed(change:int)
 
 func init(s: Spawner) -> void:
-	$"Witch (1)/AnimationPlayer".play("ArmatureAction")
+	$"Witch/AnimationPlayer".play("ArmatureAction")
 	spawner = s 
 	max_lanes = spawner.get_lane_count()
 	curr_lane = max_lanes / 2
@@ -48,7 +48,7 @@ func consume_movement(direction: int) -> void:
 		
 		target_x = spawner.get_lane_position(curr_lane).x
 		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.set_trans(Tween.TRANS_BOUNCE)
+		tween.set_trans(Tween.TRANS_SINE)
 		tween.tween_property(self,"position:x",target_x,.15)
 		witch_audio_manager.playSwitchLaneSound()
 	else:
