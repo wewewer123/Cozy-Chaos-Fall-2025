@@ -10,7 +10,7 @@ func get_spawn_time_for_level(value: GameManager.game_states) -> float:
 	var base_time = _base_spawn_times.get(value)
 	return base_time * lane_object_spawn_time_multiplier
 
-var lane_object_spawn_time_multiplier = 1.1
+var lane_object_spawn_time_multiplier = 2
 
 var _base_spawn_times := {
 	GameManager.game_states.LEVEL1: 1.0,
@@ -19,7 +19,6 @@ var _base_spawn_times := {
 	GameManager.game_states.LEVEL4: 0.3
 }
 
-
 func get_leaf_count_for_level(value: GameManager.game_states) -> int:
 	var base_count = _base_leaf_counts.get(value, 0)
 	return base_count * max_leaf_count_multiplier
@@ -27,7 +26,7 @@ func get_leaf_count_for_level(value: GameManager.game_states) -> int:
 func get_max_leaf_count():
 	return get_leaf_count_for_level(GameManager._curren_game_state)
 
-var max_leaf_count_multiplier = 1
+var max_leaf_count_multiplier = 10
 
 var _base_leaf_counts := {
 	GameManager.game_states.LEVEL1: 1,
