@@ -4,8 +4,6 @@ var max_player_health = 3
 
 var object_spawn_distance:float = 60
 
-var debug_skip_radio = false
-
 func get_spawn_time_for_level(value: GameManager.game_states) -> float:
 	var base_time = _base_spawn_times.get(value)
 	return base_time * lane_object_spawn_time_multiplier

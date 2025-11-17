@@ -148,5 +148,4 @@ func _spawn_packed_on_lane(packed: PackedScene, lane:int) -> void:
 	lane_object.fade_in(fade_in_time)
 
 func _spawn_packed_random(packed: PackedScene) -> void:
-	var lane_object = _spawn_packed_at(packed, object_parent, randi_range(0,len(lanes) - 1))
-	lane_object.fade_in(fade_in_time)
+	_spawn_packed_on_lane(packed, randi_range(0,len(lanes) - 1))
