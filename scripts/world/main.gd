@@ -22,8 +22,12 @@ func _ready() -> void:
 	player.player_died.connect(hud.on_player_death)
 	
 	player.leaf_changed.connect(on_player_leaf_changed)
+	player.player_died.connect(on_player_death)
 	
 func on_player_leaf_changed(new_leaf_count:int):
 	if new_leaf_count == Globals.get_max_leaf_count():
-		lane_object_parent.remove_all_lane_objects()	
+		lane_object_parent.remove_all_lane_objects()
 		GameManager.next_level()
+
+func on_player_death() -> void:
+	lane_object_parent.remove_all_lane_objects()
