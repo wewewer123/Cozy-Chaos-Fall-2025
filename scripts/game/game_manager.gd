@@ -8,14 +8,6 @@ var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
 
-@export var radio_audio_source:AudioStreamPlayer2D
-
-@export var radioLevel1:AudioStream
-@export var radioLevel2:AudioStream
-@export var radioLevel3:AudioStream
-@export var radioLevel4:AudioStream
-@export var radioEnd:AudioStream
-
 @export var mainMenuScene:PackedScene
 @export var tutorial:PackedScene
 @export var levelScene1:PackedScene
@@ -34,14 +26,6 @@ var player:PlayerObject = null
 var curr_lane_spawner:Spawner = null
 var FIRST_LEVEL_INDEX = 1
 var current_level:int = FIRST_LEVEL_INDEX
-
-func _playStream(nextStream: AudioStream) -> void:
-	if(Globals.debug_skip_radio):
-		await get_tree().process_frame
-		return
-
-	radio_audio_source.stream = nextStream
-	radio_audio_source.play()
 
 func _ready() -> void:
 	var voices = DisplayServer.tts_get_voices()
@@ -64,7 +48,6 @@ func _process(_delta: float) -> void:
 
 func _resetGameState():
 	current_level = FIRST_LEVEL_INDEX
-	radio_audio_source.stop()
 
 func set_scene_container(scene_container:Node) -> void:
 	assert( scene_container != null, "GameManager : scene_container must not be null") 
@@ -88,7 +71,6 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 		game_states.MENU:
 			_set_menu()
 		game_states.TUTORIAL:
-			_set_level()
 			_set_tutorial()
 		game_states.LEVEL1:
 			_set_level()
@@ -103,18 +85,12 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 			_set_win()
 
 func _set_tutorial():
-	var tutorialObject = tutorial.instantiate()
-	add_child(tutorialObject)
-	await get_tree().process_frame
-	await tutorialObject.start_and_wait(radio_audio_source, curr_lane_spawner, player)
+	var tutorial_scene = tutorial.instantiate()
+	call_deferred("_set_new_scene", tutorial_scene)
 		
 func wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
 	while audio_source.playing:
 		await get_tree().process_frame
-
-func _play_voiceline(audio_stream:AudioStream) -> void:
-	radio_audio_source.stream = audio_stream
-	radio_audio_source.play()
 
 func _set_menu() -> void:
 	var res:PackedScene = mainMenuScene

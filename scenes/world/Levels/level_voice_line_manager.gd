@@ -15,6 +15,9 @@ func play_middle_lines_async():
 func play_ending_lines_async():
 	await _play_voice_lines_async(_level_end_voice_lines)
 
+func has_mid_level_voice_lines() -> bool:
+	return len(_level_middle_voice_lines) > 0 
+
 func _play_voice_lines_async(voice_lines:Array[AudioStream]):
 	if len(voice_lines) == 0: 
 		return

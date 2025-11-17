@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://yl18bhn288tf"]
+[gd_scene load_steps=6 format=3 uid="uid://yl18bhn288tf"]
 
 [ext_resource type="Script" uid="uid://t1tim3b4rak1" path="res://scripts/ui/win_scene.gd" id="1_u7bdv"]
 [ext_resource type="Texture2D" uid="uid://dqoy7jrg8jmi1" path="res://assets/art/2D/ui/menu end resize 400.png" id="2_famdu"]
+[ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="2_m14gf"]
+[ext_resource type="AudioStream" uid="uid://dgqd61cnjtwlu" path="res://assets/audio/Voicelines/Radio Guy/ending_radio_fx.wav" id="3_v6m3t"]
+[ext_resource type="AudioStream" uid="uid://ccvfuwsnj30hx" path="res://assets/audio/Voicelines/witch/Lvl4-Witch-04.wav" id="4_7pt4q"]
 
 [node name="WinScene" type="Control"]
 layout_mode = 3
@@ -11,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u7bdv")
+
+[node name="LevelVoiceLineManager" parent="." instance=ExtResource("2_m14gf")]
+_level_beginning_voice_lines = Array[AudioStream]([ExtResource("3_v6m3t"), ExtResource("4_7pt4q")])
 
 [node name="bc" type="ColorRect" parent="."]
 layout_mode = 1

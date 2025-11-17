@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ebwap5j0m8u"]
+[gd_scene load_steps=19 format=3 uid="uid://ebwap5j0m8u"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dd1l5"]
 [ext_resource type="PackedScene" uid="uid://c00jton8wqa8x" path="res://scenes/world/enviornment/environment_level_2.tscn" id="2_t0aw8"]
@@ -9,9 +9,13 @@
 [ext_resource type="Resource" uid="uid://ctw7pnyka6wju" path="res://scenes/world/decoration/tree/factories/tree_factory_level_2.tres" id="10_kkefh"]
 [ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="11_u6557"]
 [ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/environment_light.tscn" id="12_u6557"]
+[ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="13_w5duo"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="13_xhb0t"]
+[ext_resource type="AudioStream" uid="uid://dkurfvq3c5ni4" path="res://assets/audio/Voicelines/witch/Lvl2-Witch-01.wav" id="14_6wvkr"]
 [ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="14_bgw3j"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_py7lu"]
+[ext_resource type="AudioStream" uid="uid://bum5ohedxajlh" path="res://assets/audio/Voicelines/Radio Guy/level2_radio_01_fx.wav" id="15_krjmf"]
+[ext_resource type="AudioStream" uid="uid://dhnxcmlylsvoh" path="res://assets/audio/Voicelines/witch/Lvl2-Witch-03.wav" id="16_aa8rh"]
 [ext_resource type="PackedScene" uid="uid://4mplcxp2vl13" path="res://scenes/world/player_locator.tscn" id="17_w5duo"]
 
 [sub_resource type="Environment" id="Environment_frq16"]
@@ -45,5 +49,8 @@ environment = SubResource("Environment_frq16")
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_py7lu")]
 stream = ExtResource("11_u6557")
 volume_db = 7.0
+
+[node name="LevelVoiceLineManager" parent="." instance=ExtResource("13_w5duo")]
+_level_beginning_voice_lines = Array[AudioStream]([ExtResource("14_6wvkr"), ExtResource("15_krjmf"), ExtResource("16_aa8rh")])
 
 [node name="PlayerLocator" parent="." instance=ExtResource("17_w5duo")]

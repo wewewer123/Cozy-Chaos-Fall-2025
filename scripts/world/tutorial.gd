@@ -5,18 +5,27 @@ class_name Tutorial
 
 @export var tutorial_audio:TutorialAudioContainer
 
-var _spawner:Spawner
-var _audio_player:AudioStreamPlayer2D
-var _player:PlayerObject
+@onready var _spawner:Spawner = $LaneSpawner
+@onready var _audio_player:AudioStreamPlayer2D = $LevelVoiceLineManager
+@onready var _player:PlayerObject = $Player
+@onready var _player_locator:PlayerLocator = $PlayerLocator
+@onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
+@onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 
-func start_and_wait(audio_player:AudioStreamPlayer2D, spawner:Spawner, player:PlayerObject) -> void:
-	_audio_player = audio_player
-	_spawner = spawner
-	_player = player
+func _ready() -> void:
+	GameManager.player = _player
+	GameManager.curr_lane_spawner = _spawner
 	
-	await _play_tutorial()
+	hud.init()
+	_spawner.init(lane_object_parent, _player_locator)
+	_player.init(_spawner)
+	_player_locator.init(_player)
+	
+	add_child(hud)
+	
+	await _play_tutorial_async()
 
-func _play_tutorial() -> void:
+func _play_tutorial_async() -> void:
 	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_01) #where are you
 	await _wait_for_leaf_tutorial()
 	await _wait_for_tree_tutorial()
