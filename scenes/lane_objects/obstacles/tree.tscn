@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5fjd6vcxcjrp"]
+
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane_objects/obstacles/tree.gd" id="1_lrxmn"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/movement.tscn" id="2_4jnww"]
+[ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="3_c1ard"]
+[ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="4_5o1bh"]
+[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="6_y5xit"]
+[ext_resource type="AudioStream" uid="uid://ccp45bxb8x0x0" path="res://assets/audio/sounds/sound effect ojpe/woodpecker.mp3" id="7_m4c8x"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
+height = 5.4677734
+radius = 1.8818359
+
+[node name="Tree" type="Area3D" node_paths=PackedStringArray("textureSetter")]
+collision_layer = 8
+script = ExtResource("1_lrxmn")
+textureSetter = NodePath("Texture")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
+shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="Movement" parent="." instance=ExtResource("2_4jnww")]
+
+[node name="Texture" parent="." instance=ExtResource("3_c1ard")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("4_5o1bh")
+
+[node name="LaneEntityDirectionalAudio" parent="." instance=ExtResource("6_y5xit")]
+soundeffect = ExtResource("7_m4c8x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
