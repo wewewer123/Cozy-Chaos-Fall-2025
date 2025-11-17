@@ -22,7 +22,7 @@ func on_player_health_changed(change:int) -> void:
 		remove_hearth()
 
 func on_player_leaf_changed(new_leaf_count:int) -> void:
-	$Control/MarginContainer2/HBoxContainer/Label.text = str(new_leaf_count) + "/" + str(Globals.get_leaf_count())
+	$Control/MarginContainer2/HBoxContainer/Label.text = str(new_leaf_count) + "/" + str(Globals.get_max_leaf_count())
 
 func add_heart() -> void:
 	if empty_hearth_container.get_child_count() > 0:

@@ -23,5 +23,5 @@ func _ready() -> void:
 	player.leaf_changed.connect(on_player_leaf_changed)
 	
 func on_player_leaf_changed(new_leaf_count:int):
-	if new_leaf_count == Globals.get_leaf_count():
+	if new_leaf_count == Globals.get_max_leaf_count():
 		GameManager.next_level()
