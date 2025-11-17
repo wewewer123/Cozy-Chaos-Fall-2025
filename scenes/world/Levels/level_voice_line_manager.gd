@@ -23,3 +23,4 @@ func _play_voice_lines_async(voice_lines:Array[AudioStream]):
 		stream = line
 		play()
 		await AudioUtil.wait_audio_finished(self)
+		await get_tree().create_timer(0.5).timeout
