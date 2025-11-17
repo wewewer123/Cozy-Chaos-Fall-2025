@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://op0wbajenepu"]
+[gd_scene load_steps=4 format=3 uid="uid://op0wbajenepu"]
 
 [ext_resource type="PackedScene" uid="uid://cfqhcntydvi3q" path="res://assets/art/3D/Witch.glb" id="1_efjm4"]
 [ext_resource type="Script" uid="uid://bpi4tgmt1d56b" path="res://scripts/player/proceduralAnimation.gd" id="2_3vyn7"]
+[ext_resource type="Material" uid="uid://o00ekvnmsse7" path="res://assets/art/3D/M_Witch.tres" id="3_hvcnl"]
 
 [node name="Witch" instance=ExtResource("1_efjm4")]
 script = ExtResource("2_3vyn7")
@@ -41,6 +42,9 @@ bones/68/rotation = Quaternion(0.14468098, -0.06761796, -0.06573633, 0.98497415)
 bones/69/rotation = Quaternion(0.26995772, 0.03268657, -0.009156529, 0.9622737)
 bones/71/position = Vector3(0.020592768, 0.77598894, -0.115599655)
 bones/71/rotation = Quaternion(-0.69379294, -0.021934604, -0.052980743, 0.717888)
+
+[node name="Body" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_hvcnl")
 
 [node name="Broom" parent="." index="1"]
 transform = Transform3D(0.23562264, 0, 0, 0, 0, -0.23562264, 0, 0.23562264, 0, 0, 0.286, 0.041)
