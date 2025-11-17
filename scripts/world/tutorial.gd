@@ -58,7 +58,7 @@ func _wait_for_outro():
 	await get_tree().create_timer(4).timeout
 	_spawner.spawn_leaf()
 	await get_tree().create_timer(5).timeout
-	GameManager.set_state(GameManager.game_states.MENU)
+	GameManager.next_level()
 
 func _wait_for_tree_tutorial():
 	await get_tree().create_timer(1).timeout	

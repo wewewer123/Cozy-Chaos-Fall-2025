@@ -82,15 +82,15 @@ theme = ExtResource("3_hh8cs")
 
 [node name="Start" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../tutorial")
-focus_next = NodePath("../tutorial")
+focus_neighbor_bottom = NodePath("../Quickplay")
+focus_next = NodePath("../Quickplay")
 focus_previous = NodePath("../Exit")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
-text = "start"
+text = "story"
 flat = true
 
-[node name="tutorial" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
+[node name="Quickplay" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Start")
 focus_neighbor_bottom = NodePath("../Options")
@@ -98,7 +98,7 @@ focus_next = NodePath("../Options")
 focus_previous = NodePath("../Start")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
-text = "tutorial"
+text = "quickplay"
 flat = true
 
 [node name="Continue" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
@@ -112,10 +112,10 @@ flat = true
 
 [node name="Options" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../tutorial")
+focus_neighbor_top = NodePath("../Quickplay")
 focus_neighbor_bottom = NodePath("../Exit")
 focus_next = NodePath("../Exit")
-focus_previous = NodePath("../tutorial")
+focus_previous = NodePath("../Quickplay")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Options
@@ -477,7 +477,7 @@ layout_mode = 2
 
 [connection signal="visibility_changed" from="CenterContainer/Menu" to="CenterContainer/Menu" method="_on_visibility_changed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Start" to="CenterContainer/Menu" method="_on_start_pressed"]
-[connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/tutorial" to="CenterContainer/Menu" method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Quickplay" to="CenterContainer/Menu" method="_on_quickplay_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Continue" to="CenterContainer/Menu" method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Exit" to="CenterContainer/Menu" method="_on_exit_pressed"]

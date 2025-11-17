@@ -43,6 +43,7 @@ func on_player_leaf_changed(new_leaf_count:int):
 
 func _should_play_mid_level_voice_lines(new_leaf_count:int) -> bool:
 	return (
+		!GameManager.is_quickplay and
 		level_voice_line_manager.has_mid_level_voice_lines() and
 		new_leaf_count == roundi(Globals.get_max_leaf_count() / 2.0))
 

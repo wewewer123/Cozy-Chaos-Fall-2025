@@ -27,6 +27,8 @@ var curr_lane_spawner:Spawner = null
 var FIRST_LEVEL_INDEX = 1
 var current_level:int = FIRST_LEVEL_INDEX
 
+var is_quickplay = false
+
 func _ready() -> void:
 	var voices = DisplayServer.tts_get_voices()
 	if voices.size() > 0:
