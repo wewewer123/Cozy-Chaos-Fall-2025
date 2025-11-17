@@ -36,8 +36,7 @@ func _ready() -> void:
 		
 func _process(_delta: float) -> void:
 	if  Input.is_action_just_pressed("escape"):
-		_resetGameState()
-		set_state(game_states.MENU)
+		return_to_main_menu()
 	
 	if  Input.is_action_just_pressed("read_lives"):
 		var message = "You have "+str(player.curr_health)+" lives left."
@@ -50,7 +49,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("next level"):
 		GameManager.next_level()
 
-func _resetGameState():
+func return_to_main_menu():
+	set_state(game_states.MENU)
 	current_level = FIRST_LEVEL_INDEX
 
 func set_scene_container(scene_container:Node) -> void:
