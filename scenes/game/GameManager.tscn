@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvlf5mhwcncbc"]
+[gd_scene load_steps=10 format=3 uid="uid://dvlf5mhwcncbc"]
 
 [ext_resource type="Script" uid="uid://67adang6a16o" path="res://scripts/game/game_manager.gd" id="1_unqrf"]
 [ext_resource type="PackedScene" uid="uid://c5h0614qa13mh" path="res://scenes/ui/main_menu.tscn" id="7_mhx6a"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bs1cs7i43kjyp" path="res://scenes/ui/transition_leaf.tscn" id="11_0rt5h"]
 [ext_resource type="PackedScene" uid="uid://yl18bhn288tf" path="res://scenes/ui/win_scene.tscn" id="12_o1ahd"]
 [ext_resource type="PackedScene" uid="uid://cb2djpuc8jldn" path="res://scenes/world/Levels/tutorial.tscn" id="13_mydsw"]
-[ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_gvcca"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("transition")]
 script = ExtResource("1_unqrf")
@@ -25,6 +24,3 @@ winScene = ExtResource("12_o1ahd")
 [node name="CanvasLayer" parent="." instance=ExtResource("11_0rt5h")]
 
 [node name="Node" type="Node" parent="."]
-
-[node name="Backgroundmusic" parent="." instance=ExtResource("14_gvcca")]
-volume_db = -10.0

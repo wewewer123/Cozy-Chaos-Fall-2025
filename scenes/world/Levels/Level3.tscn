@@ -54,6 +54,9 @@ environment = SubResource("Environment_rd0oh")
 stream = ExtResource("15_s7s4a")
 volume_db = 0.0
 
+[node name="Ambience" parent="." instance=ExtResource("14_s7s4a")]
+volume_db = 0.0
+
 [node name="LevelVoiceLineManager" parent="." instance=ExtResource("13_yo7rt")]
 _level_beginning_voice_lines = Array[AudioStream]([ExtResource("14_ywetf"), ExtResource("15_q5lb2"), ExtResource("16_i6w8r")])
 _level_middle_voice_lines = Array[AudioStream]([ExtResource("17_qvwqt")])

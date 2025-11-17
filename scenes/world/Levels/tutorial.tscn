@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cb2djpuc8jldn"]
+[gd_scene load_steps=16 format=3 uid="uid://cb2djpuc8jldn"]
 
 [ext_resource type="Script" uid="uid://bb8dm3q1cd3ic" path="res://scripts/world/tutorial.gd" id="1_7n6eb"]
 [ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="2_y2v1s"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="9_fw7o5"]
 [ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="10_oqwej"]
 [ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="11_e5s77"]
+[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/ambience/Summer (1 and 2).mp3" id="13_4lt7a"]
 
 [sub_resource type="Environment" id="Environment_3602c"]
 background_mode = 1
@@ -47,6 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045776367, 0.9870453, -0.0
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("9_fw7o5")]
 stream = ExtResource("10_oqwej")
+volume_db = 1.0
+
+[node name="Ambience" parent="." instance=ExtResource("9_fw7o5")]
+stream = ExtResource("13_4lt7a")
 volume_db = 1.0
 
 [node name="LevelVoiceLineManager" parent="." instance=ExtResource("11_e5s77")]

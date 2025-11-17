@@ -54,6 +54,9 @@ environment = SubResource("Environment_dqfi3")
 stream = ExtResource("15_0p8ux")
 volume_db = -4.0
 
+[node name="Ambience" parent="." instance=ExtResource("14_lugpx")]
+volume_db = -4.0
+
 [node name="LevelVoiceLineManager" parent="." instance=ExtResource("13_5hjs0")]
 _level_beginning_voice_lines = Array[AudioStream]([ExtResource("14_umhxr"), ExtResource("15_g8xfw"), ExtResource("16_4ktme")])
 _level_end_voice_lines = Array[AudioStream]([ExtResource("17_osqid")])
