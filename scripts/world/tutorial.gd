@@ -64,14 +64,14 @@ func _wait_for_tree_tutorial():
 	await get_tree().create_timer(1).timeout	
 	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_08)
 	
-	_spawner.spawn_tree()
+	_spawner.spawn_tree_on_lane(0)
 	await get_tree().create_timer(4).timeout
 	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_09)
 	
 	var count = 0
 	while(count < 2):
 		_player.set_health_to_max()
-		_spawner.spawn_tree()
+		_spawner.spawn_tree_on_lane(count + 1)
 		await get_tree().create_timer(4).timeout
 		count = count + 1
 

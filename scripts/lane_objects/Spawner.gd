@@ -140,6 +140,13 @@ func spawn_leaf() -> void:
 func spawn_heart() -> void:
 	_spawn_packed_random(heart_inst)
 
+func spawn_tree_on_lane(lane:int) -> void:
+	_spawn_packed_on_lane(tree_inst, lane)
+
+func _spawn_packed_on_lane(packed: PackedScene, lane:int) -> void:
+	var lane_object = _spawn_packed_at(packed, object_parent, lane)
+	lane_object.fade_in(fade_in_time)
+
 func _spawn_packed_random(packed: PackedScene) -> void:
 	var lane_object = _spawn_packed_at(packed, object_parent, randi_range(0,len(lanes) - 1))
 	lane_object.fade_in(fade_in_time)
