@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dry5v5b61sduq"]
+[gd_scene load_steps=15 format=3 uid="uid://dry5v5b61sduq"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
+[ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_object_collection.tscn" id="4_dqfi3"]
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_mgf4m"]
 [ext_resource type="PackedScene" uid="uid://b617pcd1e87dk" path="res://scenes/world/enviornment/environment_level_4.tscn" id="8_v41oc"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_mvwpp"]
@@ -23,11 +24,9 @@ script = ExtResource("1_vt067")
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_bxbrp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
-[node name="Obstacles" type="Node3D" parent="."]
-
-[node name="Items" type="Node3D" parent="."]
-
 [node name="Ground" parent="." instance=ExtResource("8_v41oc")]
+
+[node name="LaneObjectCollection" parent="." instance=ExtResource("4_dqfi3")]
 
 [node name="LaneSpawner" parent="." instance=ExtResource("4_mgf4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
