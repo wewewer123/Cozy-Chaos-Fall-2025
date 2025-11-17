@@ -23,6 +23,14 @@ func _on_body_entered(body: Node3D) -> void:
 func is_player(body: Node3D) -> bool:
 	return body.is_in_group("Player")
 
+func fade_in(fade_in_time:float):
+	var t := 0.0
+	set_texture_alpha(0)
+	while t < fade_in_time:
+		t += get_process_delta_time()
+		set_texture_alpha(clamp(t / fade_in_time, 0.0, 1.0))
+		await get_tree().process_frame
+
 func apply_effect(player: Node3D) -> void:
 	#virtual method override
 	push_error("apply_effect not implemented")

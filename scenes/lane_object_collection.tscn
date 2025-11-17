@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv4wv6nlarpg"]
+
+[ext_resource type="Script" uid="uid://boggp2tiwjgl3" path="res://scenes/lane_object_collection.gd" id="1_4vdbm"]
+
+[node name="LaneObjectCollection" type="Node3D"]
+script = ExtResource("1_4vdbm")

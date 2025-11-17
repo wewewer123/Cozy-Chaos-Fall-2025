@@ -7,11 +7,8 @@ class_name Spawner
 @export var leaf_inst: PackedScene
 @export var heart_inst: PackedScene
 @export var fade_in_time := 1.0
-@export var spawn_strategie: SpawnStrategie = SpawnStrategie.Single
 
 @onready var lane_spawn_timer: LaneSpawnTimer = $LaneSpawnTimer
-
-enum SpawnStrategie { Single, Pair }
 
 var lanes: Array[Marker3D]
 var rng := RandomNumberGenerator.new()
@@ -85,11 +82,7 @@ func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) 
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.
 func spawn() -> void:
-	#if randi_range(0, 1) == 0:
 	spawn_single()
-	#else:
-			#spawn_pair()
-	
 	next_audio_bus_index = (next_audio_bus_index + 1) % audio_pan_effect_busses
 
 func spawn_single() -> void:
@@ -100,7 +93,7 @@ func spawn_single() -> void:
 	else:
 		lane_object = spawn_obstacle(object_parent, _pick_lane())
 	
-	await fade_in([lane_object])
+	lane_object.fade_in(fade_in_time)
 
 func spawn_pair() -> void:
 	var lane_object:CollisionObject
@@ -122,20 +115,8 @@ func spawn_pair() -> void:
 	else:
 		lane_object_2 = spawn_obstacle(object_parent, lane2)
 	
-	await fade_in([lane_object])
-	fade_in([lane_object_2])
-	
-func fade_in(objects : Array[CollisionObject]) -> void:
-	var t := 0.0
-	set_alpha_for_objects(objects,0)
-	while t < fade_in_time:
-		t += get_process_delta_time()
-		set_alpha_for_objects(objects, clamp(t / fade_in_time, 0.0, 1.0))
-		await get_tree().process_frame
-		
-func set_alpha_for_objects(objects:Array[CollisionObject], alpha:float):
-	for child in objects:
-		child.set_texture_alpha(alpha)
+	lane_object.fade_in(fade_in_time)
+	lane_object_2.fade_in(fade_in_time)
 
 func start_spawning() -> void:
 	spawn()

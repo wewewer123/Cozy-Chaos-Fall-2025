@@ -1,16 +1,17 @@
 extends Node3D
  
-func _ready() -> void:
-	var player: PlayerObject = $Player
-	var spawner:Spawner = $LaneSpawner
-	var player_locator:PlayerLocator = $PlayerLocator
-	var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
-	
+@onready var player:PlayerObject = $Player
+@onready var spawner:Spawner = $LaneSpawner
+@onready var player_locator:PlayerLocator = $PlayerLocator
+@onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
+@onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
+
+func _ready() -> void:	
 	GameManager.player = player
 	GameManager.curr_lane_spawner = spawner
 	
 	hud.init()
-	spawner.init($Items, player_locator)
+	spawner.init(lane_object_parent, player_locator)
 	player.init(spawner)
 	player_locator.init(player)
 	
@@ -24,4 +25,5 @@ func _ready() -> void:
 	
 func on_player_leaf_changed(new_leaf_count:int):
 	if new_leaf_count == Globals.get_max_leaf_count():
+		lane_object_parent.remove_all_lane_objects()	
 		GameManager.next_level()
