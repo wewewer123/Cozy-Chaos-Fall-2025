@@ -24,7 +24,7 @@ func get_leaf_count_for_level(value: GameManager.game_states) -> int:
 func get_max_leaf_count():
 	return get_leaf_count_for_level(GameManager._curren_game_state)
 
-var max_leaf_count_multiplier = 10
+var max_leaf_count_multiplier = 1
 
 var _base_leaf_counts := {
 	GameManager.game_states.TUTORIAL: 1,

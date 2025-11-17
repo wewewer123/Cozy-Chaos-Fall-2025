@@ -7,7 +7,6 @@ extends Node3D
 @onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
 @onready var level_voice_line_manager:LevelVoiceLineManager = $LevelVoiceLineManager
 
-#refactor - disconnect events
 func _ready() -> void:	
 	GameManager.player = player
 	GameManager.curr_lane_spawner = spawner

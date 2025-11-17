@@ -47,6 +47,8 @@ func _process(_delta: float) -> void:
 		var message = "You have collected "+str(player.leaf)+" leaves out of "+str(Globals.get_max_leaf_count())+"."
 		DisplayServer.tts_speak(message, ttsId)
 	
+	if Input.is_action_just_pressed("next level"):
+		GameManager.next_level()
 
 func _resetGameState():
 	current_level = FIRST_LEVEL_INDEX

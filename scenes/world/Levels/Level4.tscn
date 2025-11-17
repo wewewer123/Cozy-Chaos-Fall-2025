@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
 [ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_objects/lane_object_collection.tscn" id="4_dqfi3"]
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_mgf4m"]
-[ext_resource type="PackedScene" uid="uid://cc0p7c66st24n" path="res://scenes/lane_objects/obstacles/tree_level_4.tscn" id="6_umhxr"]
+[ext_resource type="PackedScene" uid="uid://c4ugrx3mr0m10" path="res://scenes/lane_objects/obstacles/tree_level_4.tscn" id="6_umhxr"]
 [ext_resource type="PackedScene" uid="uid://b617pcd1e87dk" path="res://scenes/world/enviornment/environment_level_4.tscn" id="8_v41oc"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_mvwpp"]
 [ext_resource type="Resource" uid="uid://wajewmi47mmq" path="res://scenes/world/decoration/tree/factories/tree_factory_level_4.tres" id="10_iwh7l"]
@@ -52,7 +52,7 @@ environment = SubResource("Environment_dqfi3")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_lugpx")]
 stream = ExtResource("15_0p8ux")
-volume_db = 3.0
+volume_db = -4.0
 
 [node name="LevelVoiceLineManager" parent="." instance=ExtResource("13_5hjs0")]
 _level_beginning_voice_lines = Array[AudioStream]([ExtResource("14_umhxr"), ExtResource("15_g8xfw"), ExtResource("16_4ktme")])
