@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2dpomit1kjw8"
-path.bptc="res://.godot/imported/citrus_orchard_road_puresky_2k.exr-8e8e577a7bbe47659a2283a967dfe2f8.bptc.ctex"
+path.bptc="res://.godot/imported/citrus_orchard_road_puresky_2k.exr-b481e71140c12b2acd4b8d965eadb599.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/world/Levels/citrus_orchard_road_puresky_2k.exr"
-dest_files=["res://.godot/imported/citrus_orchard_road_puresky_2k.exr-8e8e577a7bbe47659a2283a967dfe2f8.bptc.ctex"]
+source_file="res://assets/art/2D/world/citrus_orchard_road_puresky_2k.exr"
+dest_files=["res://.godot/imported/citrus_orchard_road_puresky_2k.exr-b481e71140c12b2acd4b8d965eadb599.bptc.ctex"]
 
 [params]
 

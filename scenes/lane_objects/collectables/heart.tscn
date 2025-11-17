@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://coalb7hr6m78d" path="res://scripts/lane_objects/collectables/heart.gd" id="1_bqvbl"]
 [ext_resource type="Texture2D" uid="uid://c6c7ttxr0r1yr" path="res://assets/art/2D/collectibles/heartcollectible.png" id="2_bqvbl"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="2_stgmx"]
-[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/movement.tscn" id="3_stgmx"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/movement.tscn" id="3_stgmx"]
 [ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="5_of6rk"]
 [ext_resource type="AudioStream" uid="uid://b6x58ka0h6o5x" path="res://assets/audio/sounds/sound effect ojpe/heart is ahead.mp3" id="6_of6rk"]
 

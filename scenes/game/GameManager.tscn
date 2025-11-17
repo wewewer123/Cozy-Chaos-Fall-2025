@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dry5v5b61sduq" path="res://scenes/world/Levels/Level4.tscn" id="10_qowum"]
 [ext_resource type="PackedScene" uid="uid://bs1cs7i43kjyp" path="res://scenes/ui/transition_leaf.tscn" id="11_0rt5h"]
 [ext_resource type="PackedScene" uid="uid://yl18bhn288tf" path="res://scenes/ui/win_scene.tscn" id="12_o1ahd"]
-[ext_resource type="PackedScene" uid="uid://cjqqr86ajhh1y" path="res://tutorial.tscn" id="13_mydsw"]
+[ext_resource type="PackedScene" uid="uid://cjqqr86ajhh1y" path="res://scenes/world/Levels/tutorial.tscn" id="13_mydsw"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_gvcca"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("transition", "radio_audio_source")]

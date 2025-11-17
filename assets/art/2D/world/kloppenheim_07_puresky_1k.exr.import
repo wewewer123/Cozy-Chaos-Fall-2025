@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2ogph73v8ryh"
-path="res://.godot/imported/kloppenheim_07_puresky_1k.exr-7bcbce2a754bae1ad34c39a216b5e143.ctex"
+path="res://.godot/imported/kloppenheim_07_puresky_1k.exr-3a877a7aa4b88c7da81f6d0d33846694.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/Levels/kloppenheim_07_puresky_1k.exr"
-dest_files=["res://.godot/imported/kloppenheim_07_puresky_1k.exr-7bcbce2a754bae1ad34c39a216b5e143.ctex"]
+source_file="res://assets/art/2D/world/kloppenheim_07_puresky_1k.exr"
+dest_files=["res://.godot/imported/kloppenheim_07_puresky_1k.exr-3a877a7aa4b88c7da81f6d0d33846694.ctex"]
 
 [params]
 
