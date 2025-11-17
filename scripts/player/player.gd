@@ -61,6 +61,9 @@ func decrementHealth() -> void:
 	_changeHealth(-1)
 
 func _changeHealth(value: int) -> void:
+	if value == 0:
+		return
+		
 	curr_health += value
 	
 	if(curr_health > Globals.max_player_health):

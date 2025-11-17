@@ -57,8 +57,11 @@ func _wait_for_leaf_tutorial():
 	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_07)
 
 func _wait_for_outro():
+	_player.set_health_to_max()
 	await _play_and_wait_witch_voice_line(tutorial_audio.Lvl1_Witch_10)
 	_spawner.spawn_leaf()
+	await get_tree().create_timer(4).timeout
+	_spawner.spawn_tree()
 	await get_tree().create_timer(4).timeout
 	_spawner.spawn_leaf()
 	await get_tree().create_timer(5).timeout

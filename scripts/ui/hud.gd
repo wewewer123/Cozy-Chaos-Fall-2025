@@ -18,7 +18,7 @@ func init(level_headline:String) -> void:
 func on_player_health_changed(change:int) -> void:
 	if change > 0:
 		add_heart()
-	else:
+	elif change < 0:
 		remove_hearth()
 
 func on_player_leaf_changed(new_leaf_count:int) -> void:
