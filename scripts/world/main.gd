@@ -6,6 +6,7 @@ extends Node3D
 @onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 @onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
 @onready var level_voice_line_manager:LevelVoiceLineManager = $LevelVoiceLineManager
+@onready var backgroundmusic:AudioStreamPlayer2D = $Backgroundmusic
 
 func _ready() -> void:	
 	GameManager.player = player
@@ -32,6 +33,8 @@ func on_player_leaf_changed(new_leaf_count:int):
 	if new_leaf_count == Globals.get_max_leaf_count():
 		lane_object_parent.remove_all_lane_objects()
 		spawner.stop_spawning()
+		if level_voice_line_manager.has_end_level_voice_lines():
+			await AudioUtil.fade_out_audio(backgroundmusic)
 		await level_voice_line_manager.play_ending_lines_async()
 		GameManager.next_level()
 	elif _should_play_mid_level_voice_lines(new_leaf_count):

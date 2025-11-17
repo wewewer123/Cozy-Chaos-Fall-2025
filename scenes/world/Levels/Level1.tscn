@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="5_2j2ko"]
 [ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_objects/lane_object_collection.tscn" id="5_3602c"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="5_muapc"]
-[ext_resource type="PackedScene" uid="uid://8vo64pascoag" path="res://scenes/lane_objects/obstacles/tree_level_1.tscn" id="7_k6s3k"]
+[ext_resource type="PackedScene" uid="uid://bhoq5wubacv03" path="res://scenes/lane_objects/obstacles/tree_level_1.tscn" id="7_k6s3k"]
 [ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="9_2j2ko"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="11_d7lc8"]
 [ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="11_k6s3k"]
