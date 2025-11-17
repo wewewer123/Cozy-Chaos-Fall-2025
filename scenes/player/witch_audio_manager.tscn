@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://6umufkp7vx8k" path="res://scripts/player/witch_sound_manager.gd" id="1_y6na0"]
 [ext_resource type="AudioStream" uid="uid://dank1wgo7ded7" path="res://assets/audio/sounds/witch/Swish-DOWN.wav" id="2_nar58"]
 [ext_resource type="AudioStream" uid="uid://ceuu8cri1bnum" path="res://assets/audio/sounds/sound effect ojpe/Bump-On-Edge-Trees.mp3" id="3_6n7l8"]
-[ext_resource type="AudioStream" uid="uid://dlkfh26khxa7t" path="res://assets/audio/sounds/sound effect ojpe/Tree-Hurts-Player-Louder.mp3" id="4_6n7l8"]
+[ext_resource type="AudioStream" uid="uid://s7uwpuc5uu4n" path="res://assets/audio/sounds/sound effect ojpe/bump forest adjusted with voice.mp3" id="4_wpnni"]
 [ext_resource type="AudioStream" uid="uid://cpunk5pfcqlwq" path="res://assets/audio/sounds/sound effect ojpe/pick up leaf.mp3" id="5_0o3r1"]
-[ext_resource type="AudioStream" uid="uid://cjkhiw3di4shf" path="res://assets/audio/sounds/sound effect ojpe/Ghost-Hurts-Player-Louder.mp3" id="5_wpnni"]
+[ext_resource type="AudioStream" uid="uid://bbugj2gcwscu6" path="res://assets/audio/sounds/sound effect ojpe/bump ghost adjusted with voice.mp3" id="5_fqvuj"]
 [ext_resource type="AudioStream" uid="uid://c8ehtn3cggfgy" path="res://assets/audio/sounds/sound effect ojpe/pick up heart.mp3" id="6_pbdrm"]
 [ext_resource type="AudioStream" uid="uid://d8xihgo4tfgn" path="res://assets/audio/sounds/sound effect ojpe/1 health left.mp3" id="7_0o3r1"]
 [ext_resource type="AudioStream" uid="uid://bwxhgiv6egt85" path="res://assets/audio/sounds/sound effect ojpe/player heal.mp3" id="8_pbdrm"]
@@ -16,8 +16,8 @@ script = ExtResource("1_y6na0")
 volume_db = 10.0
 switchLanesSound = ExtResource("2_nar58")
 wallOfTreeSound = ExtResource("3_6n7l8")
-hurtByTreeSound = ExtResource("4_6n7l8")
-hurtByGhostSound = ExtResource("5_wpnni")
+hurtByTreeSound = ExtResource("4_wpnni")
+hurtByGhostSound = ExtResource("5_fqvuj")
 pickUpLeafSound = ExtResource("5_0o3r1")
 pickUpHeartSound = ExtResource("6_pbdrm")
 oneHeartLeftSound = ExtResource("7_0o3r1")

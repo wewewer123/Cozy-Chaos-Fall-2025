@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Cozy Chaos Fall 2025"
+config/name="Finding Autumn"
+config/version="0.12"
 run/main_scene="uid://c1ikbrgeaqg0m"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://t4fifylo4k7p"
