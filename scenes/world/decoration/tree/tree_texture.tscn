@@ -6,12 +6,15 @@
 
 [node name="Sprite3D 4" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+alpha_cut = 1
 texture = ExtResource("2_3exsv")
 
 [node name="Sprite3D 5" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0.05)
+alpha_cut = 1
 texture = ExtResource("2_3exsv")
 
 [node name="Sprite3D 6" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0.1)
+alpha_cut = 1
 texture = ExtResource("2_3exsv")

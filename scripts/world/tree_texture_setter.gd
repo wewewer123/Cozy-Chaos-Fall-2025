@@ -20,3 +20,11 @@ func set_alpha(value:float) -> void:
 	for child in array:
 		if child is Sprite3D:
 			child.modulate.a = value
+
+func set_alpha_cut(value:SpriteBase3D.AlphaCutMode):
+	var array = get_children()
+	array.append(self)
+	
+	for child in array:
+		if child is Sprite3D:
+			child.alpha_cut = value

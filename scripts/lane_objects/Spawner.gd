@@ -141,4 +141,5 @@ func spawn_heart() -> void:
 	_spawn_packed_random(heart_inst)
 
 func _spawn_packed_random(packed: PackedScene) -> void:
-	_spawn_packed_at(packed, object_parent, randi_range(0,len(lanes) - 1))
+	var lane_object = _spawn_packed_at(packed, object_parent, randi_range(0,len(lanes) - 1))
+	lane_object.fade_in(fade_in_time)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb2djpuc8jldn"]
+[gd_scene load_steps=15 format=3 uid="uid://cb2djpuc8jldn"]
 
 [ext_resource type="Script" uid="uid://bb8dm3q1cd3ic" path="res://scripts/world/tutorial.gd" id="1_7n6eb"]
 [ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="2_y2v1s"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="6_vi65h"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="7_a05hh"]
 [ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="8_2r4xb"]
+[ext_resource type="PackedScene" uid="uid://bhoq5wubacv03" path="res://scenes/lane_objects/obstacles/tree_level_1.tscn" id="8_a7uam"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="9_fw7o5"]
 [ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="10_oqwej"]
 [ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="11_e5s77"]
@@ -36,7 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 [node name="LaneObjectCollection" parent="." instance=ExtResource("5_4lt7a")]
 
 [node name="LaneSpawner" parent="." instance=ExtResource("6_vi65h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+tree_inst = ExtResource("8_a7uam")
 
 [node name="TreeSpawner" parent="." instance=ExtResource("7_a05hh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
