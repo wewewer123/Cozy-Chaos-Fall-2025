@@ -10,5 +10,7 @@ class_name TreeFactory
 func create_random_tree() -> Node3D:
 	var tree : TreeDecoration = tree_scene.instantiate()
 	tree.set_texture(tree_textures.pick_random(),particles,amount)
-	return  tree
-	
+	return tree
+
+func get_random_tree_texture() -> Texture2D:
+	return tree_textures.pick_random()

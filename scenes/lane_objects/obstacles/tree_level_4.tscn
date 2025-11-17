@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ugrx3mr0m10"]
+
+[ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/lane_objects/obstacles/tree.tscn" id="1_sonu1"]
+[ext_resource type="Resource" uid="uid://wajewmi47mmq" path="res://scenes/world/decoration/tree/factories/tree_factory_level_4.tres" id="2_ma57r"]
+
+[node name="Tree" instance=ExtResource("1_sonu1")]
+tree_factory = ExtResource("2_ma57r")

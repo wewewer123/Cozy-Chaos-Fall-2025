@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dry5v5b61sduq"]
+[gd_scene load_steps=21 format=3 uid="uid://dry5v5b61sduq"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
 [ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_objects/lane_object_collection.tscn" id="4_dqfi3"]
 [ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_mgf4m"]
+[ext_resource type="PackedScene" uid="uid://cc0p7c66st24n" path="res://scenes/lane_objects/obstacles/tree_level_4.tscn" id="6_umhxr"]
 [ext_resource type="PackedScene" uid="uid://b617pcd1e87dk" path="res://scenes/world/enviornment/environment_level_4.tscn" id="8_v41oc"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_mvwpp"]
 [ext_resource type="Resource" uid="uid://wajewmi47mmq" path="res://scenes/world/decoration/tree/factories/tree_factory_level_4.tres" id="10_iwh7l"]
@@ -36,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 [node name="LaneSpawner" parent="." instance=ExtResource("4_mgf4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 level = 5
+tree_inst = ExtResource("6_umhxr")
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_mvwpp")]
 tree_collection = ExtResource("10_iwh7l")
