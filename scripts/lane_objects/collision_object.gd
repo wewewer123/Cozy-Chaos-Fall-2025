@@ -30,7 +30,6 @@ func fade_in(fade_in_time:float):
 		t += get_process_delta_time()
 		set_texture_alpha(clamp(t / fade_in_time, 0.0, 1.0))
 		await get_tree().process_frame
-	textureSetter.set_alpha_cut(SpriteBase3D.AlphaCutMode.ALPHA_CUT_DISCARD)
 
 func apply_effect(player: Node3D) -> void:
 	#virtual method override
