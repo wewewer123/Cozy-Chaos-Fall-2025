@@ -19,3 +19,9 @@ func _ready() -> void:
 	player.health_changed.connect(hud.on_player_health_changed)
 	player.leaf_changed.connect(hud.on_player_leaf_changed)
 	player.player_died.connect(hud.on_player_death)
+	
+	player.leaf_changed.connect(on_player_leaf_changed)
+	
+func on_player_leaf_changed(new_leaf_count:int):
+	if new_leaf_count == Globals.get_leaf_count():
+		GameManager.next_level()

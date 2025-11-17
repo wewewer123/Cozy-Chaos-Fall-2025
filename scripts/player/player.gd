@@ -20,7 +20,7 @@ var spawner: Spawner
 signal health_changed(newHealth : int)
 signal player_died()
 
-signal leaf_changed(change:int)
+signal leaf_changed(new_leaf_count:int)
 
 func init(s: Spawner) -> void:
 	$"Witch/AnimationPlayer".play("ArmatureAction")
@@ -51,7 +51,7 @@ func consume_movement(direction: int) -> void:
 
 func add_leaf(value:int) -> void:
 	leaf += value
-	leaf_changed.emit(value)
+	leaf_changed.emit(leaf)
 
 func incrementHealth() -> void:
 	_changeHealth(1)
