@@ -21,6 +21,10 @@ func _ready() -> void:
 	_player.init(_spawner)
 	_player_locator.init(_player)
 	
+	_player.health_changed.connect(hud.on_player_health_changed)
+	_player.leaf_changed.connect(hud.on_player_leaf_changed)
+	_player.player_died.connect(hud.on_player_death)
+	
 	add_child(hud)
 	
 	await _play_tutorial_async()
