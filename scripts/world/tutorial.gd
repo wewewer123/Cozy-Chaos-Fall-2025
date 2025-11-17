@@ -70,12 +70,8 @@ func _play_voiceline(audio_stream:AudioStream) -> void:
 	_audio_player.stream = audio_stream
 	_audio_player.play()
 
-func _wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
-	while audio_source.playing:
-		await get_tree().process_frame
-
 func _wait_for_witch_voice_line():
-	await _wait_audio_source_finished(_audio_player)
+	await AudioUtil.wait_audio_finished(_audio_player)
 
 func _play_and_wait_witch_voice_line(stream:AudioStream):
 	_play_voiceline(stream)

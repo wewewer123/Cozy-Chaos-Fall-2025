@@ -19,6 +19,7 @@ config/icon="uid://t4fifylo4k7p"
 
 GameManager="*res://scenes/game/GameManager.tscn"
 Globals="*res://scripts/game/globals.gd"
+AudioUtil="*res://audio_util.gd"
 
 [editor_plugins]
 
