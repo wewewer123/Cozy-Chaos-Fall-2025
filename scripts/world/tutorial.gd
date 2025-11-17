@@ -16,7 +16,7 @@ func _ready() -> void:
 	GameManager.player = _player
 	GameManager.curr_lane_spawner = _spawner
 	
-	hud.init()
+	hud.init("Tutorial")
 	_spawner.init(lane_object_parent, _player_locator)
 	_player.init(_spawner)
 	_player_locator.init(_player)

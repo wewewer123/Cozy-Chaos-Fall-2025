@@ -12,7 +12,7 @@ func _ready() -> void:
 	GameManager.player = player
 	GameManager.curr_lane_spawner = spawner
 	
-	hud.init()
+	hud.init("Level - " + str(GameManager.current_level) + "/4")
 	spawner.init(lane_object_parent, player_locator)
 	player.init(spawner)
 	player_locator.init(player)

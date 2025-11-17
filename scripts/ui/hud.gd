@@ -8,10 +8,10 @@ var hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_full.tscn")
 var empty_hear_res:PackedScene = load("res://scenes/ui/ingame hud/hearth_empty.tscn")
 
 func _ready() -> void:
-	$MarginContainer/CenterContainer/Label.text = "Level - " + str(GameManager.current_level) + "/4"
 	$Timer.start()
 
-func init() -> void:
+func init(level_headline:String) -> void:
+	$MarginContainer/CenterContainer/Label.text = level_headline
 	for x in range(Globals.max_player_health):
 		add_heart()
 
