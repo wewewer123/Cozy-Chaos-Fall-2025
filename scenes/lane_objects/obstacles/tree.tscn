@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5fjd6vcxcjrp"]
 
 [ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane_objects/obstacles/tree.gd" id="1_lrxmn"]
-[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/movement.tscn" id="2_4jnww"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/lane_object_movement.tscn" id="2_4jnww"]
 [ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="3_c1ard"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="4_5o1bh"]
 [ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="6_y5xit"]
