@@ -5,7 +5,9 @@ extends Node3D
 @onready var player_locator:PlayerLocator = $PlayerLocator
 @onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 @onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
+@onready var level_voice_line_manager:LevelVoiceLineManager = $LevelVoiceLineManager
 
+#refactor - disconnect events
 func _ready() -> void:	
 	GameManager.player = player
 	GameManager.curr_lane_spawner = spawner
@@ -24,9 +26,17 @@ func _ready() -> void:
 	player.leaf_changed.connect(on_player_leaf_changed)
 	player.player_died.connect(on_player_death)
 	
+	await level_voice_line_manager.play_beginnging_lines_async()
+	spawner.start_spawning()
+
 func on_player_leaf_changed(new_leaf_count:int):
-	if new_leaf_count == Globals.get_max_leaf_count():
+	if new_leaf_count == roundi(Globals.get_max_leaf_count() / 2.0):
+		spawner.stop_spawning()
+		await level_voice_line_manager.play_middle_lines_async()
+		spawner.start_spawning()
+	elif new_leaf_count == Globals.get_max_leaf_count():
 		lane_object_parent.remove_all_lane_objects()
+		await level_voice_line_manager.play_ending_lines_async()
 		GameManager.next_level()
 
 func on_player_death() -> void:

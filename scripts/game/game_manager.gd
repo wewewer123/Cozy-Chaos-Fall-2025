@@ -92,31 +92,16 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 			_set_tutorial()
 		game_states.LEVEL1:
 			_set_level()
-			_playStream(radioLevel1)
-			await wait_audio_source_finished(radio_audio_source)
-			await get_tree().process_frame
-			curr_lane_spawner.start_spawning()
 		game_states.LEVEL2:
 			_set_level2()
-			_playStream(radioLevel2)
-			await wait_audio_source_finished(radio_audio_source)
-			curr_lane_spawner.start_spawning()
 		game_states.LEVEL3:
 			_set_level3()
-			_playStream(radioLevel3)
-			await wait_audio_source_finished(radio_audio_source)
-			curr_lane_spawner.start_spawning()
 		game_states.LEVEL4:
 			_set_level4()
-			_playStream(radioLevel4)
-			await wait_audio_source_finished(radio_audio_source)
 			curr_lane_spawner.start_spawning()
 		game_states.WIN:
 			_set_win()
-			_playStream(radioEnd)
-			await wait_audio_source_finished(radio_audio_source)
 
-	
 func _set_tutorial():
 	var tutorialObject = tutorial.instantiate()
 	add_child(tutorialObject)
