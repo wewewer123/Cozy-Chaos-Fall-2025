@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_dpppr"]
 [ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="2_40x7k"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="2_estr2"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="3_8671u"]
-[ext_resource type="PackedScene" uid="uid://b7kvvc8waf021" path="res://scenes/obstacles/summerTrees.tscn" id="4_f0icx"]
-[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="5_8dw8u"]
+[ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="5_2j2ko"]
+[ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_objects/lane_object_collection.tscn" id="5_3602c"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="5_muapc"]
-[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="6_kmdbv"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="7_0t3xx"]
-[ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="11_d7lc8"]
+[ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="9_2j2ko"]
+[ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="11_d7lc8"]
+[ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="11_k6s3k"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="11_xtfam"]
-[ext_resource type="AudioStream" uid="uid://b7k0lpe44nelp" path="res://assets/audio/Ambience SFX/Summer (1 and 2).mp3" id="12_k6s3k"]
+[ext_resource type="AudioStream" uid="uid://ccgcv367au3un" path="res://assets/audio/Voicelines/Radio Guy/level1_radio_01_fx.wav" id="12_xtfam"]
+[ext_resource type="PackedScene" uid="uid://4mplcxp2vl13" path="res://scenes/world/player_locator.tscn" id="14_uvtmw"]
 
 [sub_resource type="Environment" id="Environment_3602c"]
 background_mode = 1
@@ -27,44 +27,28 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 light_energy = 0.05
 shadow_enabled = true
 
+[node name="PlayerLocator" parent="." instance=ExtResource("14_uvtmw")]
+
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_estr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
+[node name="LaneObjectCollection" parent="." instance=ExtResource("5_3602c")]
 
-[node name="Obstacles" type="Node3D" parent="."]
-
-[node name="Items" type="Node3D" parent="."]
+[node name="LaneSpawner" parent="." instance=ExtResource("5_2j2ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 
 [node name="TreeSpawner" parent="." instance=ExtResource("5_muapc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
-
-[node name="Spawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
-script = ExtResource("3_8671u")
-tree_inst = ExtResource("4_f0icx")
-ghost_inst = ExtResource("5_8dw8u")
-leaf_inst = ExtResource("6_kmdbv")
-heart_inst = ExtResource("7_0t3xx")
-
-[node name="Lane0" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
-
-[node name="Lane1" type="Marker3D" parent="Spawner"]
-
-[node name="Lane2" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="TreesStatic" parent="." instance=ExtResource("11_d7lc8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045776367, 0.9870453, -0.021865845)
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("11_xtfam")]
-stream = ExtResource("12_k6s3k")
-volume_db = -10.0
+stream = ExtResource("9_2j2ko")
+volume_db = 1.0
+
+[node name="LevelVoiceLineManager" parent="." instance=ExtResource("11_k6s3k")]
+_level_beginning_voice_lines = Array[AudioStream]([ExtResource("12_xtfam")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3602c")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

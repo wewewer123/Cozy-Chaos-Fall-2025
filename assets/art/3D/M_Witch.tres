@@ -1,7 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://o00ekvnmsse7"]
 
-[ext_resource type="Texture2D" uid="uid://pjanvcch55ga" path="res://assets/art/3D/Witch (1)_Atlas_00001.png" id="1_fwp1b"]
+[ext_resource type="Texture2D" uid="uid://b67000vh7l3pp" path="res://assets/art/3D/Witch_Atlas_00001.png" id="1_fwp1b"]
 
 [resource]
+cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("1_fwp1b")

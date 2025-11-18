@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cikhnrmajljah"]
 
-[ext_resource type="AudioStream" uid="uid://hjlkns1dvcyy" path="res://assets/audio/music/Tea and Tiny Charms (summer).wav" id="1_syabp"]
+[ext_resource type="AudioStream" uid="uid://dbqvy8xq56bvv" path="res://assets/audio/ambience/Fall (3 and 4).mp3" id="1_bj4un"]
 
 [node name="Backgroundmusic" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_syabp")
+stream = ExtResource("1_bj4un")
+volume_db = 10.0
 autoplay = true

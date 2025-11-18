@@ -1,0 +1,55 @@
+[gd_scene load_steps=27 format=3 uid="uid://b7kvvc8waf021"]
+
+[ext_resource type="Script" uid="uid://ccn5l2kfiih63" path="res://scripts/lane_objects/obstacles/tree.gd" id="1_16g3y"]
+[ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/trees/trees_green/t111.png" id="2_ynx4y"]
+[ext_resource type="Texture2D" uid="uid://d2p88kguf874h" path="res://assets/art/2D/trees/trees_green/t222.png" id="3_v72n4"]
+[ext_resource type="Texture2D" uid="uid://c14kgw3dywa0w" path="res://assets/art/2D/trees/trees_green/t333.png" id="4_56e16"]
+[ext_resource type="Texture2D" uid="uid://b8g0kfielnnu" path="res://assets/art/2D/trees/trees_green/t444.png" id="5_f7hvq"]
+[ext_resource type="Texture2D" uid="uid://bye5ca73mbnoe" path="res://assets/art/2D/trees/trees_green/t555.png" id="6_74qlo"]
+[ext_resource type="Texture2D" uid="uid://y0oedotpuuvl" path="res://assets/art/2D/trees/trees_red_dark/ta1.png" id="7_xfeij"]
+[ext_resource type="Texture2D" uid="uid://dlyrrlqgp43vh" path="res://assets/art/2D/trees/trees_red_dark/ta2.png" id="8_g3qcl"]
+[ext_resource type="Texture2D" uid="uid://c3jfj14nocr8k" path="res://assets/art/2D/trees/trees_red_dark/ta3.png" id="9_813ct"]
+[ext_resource type="Texture2D" uid="uid://ct4bly3e0bfgl" path="res://assets/art/2D/trees/trees_red_dark/ta4.png" id="10_k48cq"]
+[ext_resource type="Texture2D" uid="uid://d08314civhxj1" path="res://assets/art/2D/trees/trees_red_dark/ta5.png" id="11_q0a85"]
+[ext_resource type="Texture2D" uid="uid://t7rayi1myxm2" path="res://assets/art/2D/trees/trees_yellow/ta111.png" id="12_xq58d"]
+[ext_resource type="Texture2D" uid="uid://crucks8tw0bxc" path="res://assets/art/2D/trees/trees_orange/ta1111.png" id="13_rc20p"]
+[ext_resource type="Texture2D" uid="uid://ctvofsuwpt834" path="res://assets/art/2D/trees/trees_red/ta11111.png" id="14_5qrco"]
+[ext_resource type="Texture2D" uid="uid://b3rhmkpin2sx6" path="res://assets/art/2D/trees/trees_yellow/ta222.png" id="15_l22nm"]
+[ext_resource type="Texture2D" uid="uid://cathc2sqso0tc" path="res://assets/art/2D/trees/trees_orange/ta2222.png" id="16_hau7w"]
+[ext_resource type="Texture2D" uid="uid://5tg33ylh18kc" path="res://assets/art/2D/trees/trees_red/ta22222.png" id="17_6foml"]
+[ext_resource type="Texture2D" uid="uid://oedkuq583pd4" path="res://assets/art/2D/trees/trees_yellow/ta333.png" id="18_ibjvk"]
+[ext_resource type="Texture2D" uid="uid://cj15gaj72kcpe" path="res://assets/art/2D/trees/trees_orange/ta3333.png" id="19_8mo3q"]
+[ext_resource type="Texture2D" uid="uid://qvvcms4qrral" path="res://assets/art/2D/trees/trees_red/ta44444.png" id="20_lt72m"]
+[ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="21_jrq22"]
+[ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/movement.tscn" id="22_0vcm1"]
+[ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="22_fqlab"]
+[ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="24_8o7y0"]
+[ext_resource type="AudioStream" uid="uid://ccp45bxb8x0x0" path="res://assets/audio/sounds/sound effect ojpe/woodpecker.mp3" id="25_l3hrv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
+height = 5.4677734
+radius = 1.8818359
+
+[node name="Heart" type="Area3D" node_paths=PackedStringArray("textureSetter")]
+collision_layer = 8
+script = ExtResource("1_16g3y")
+summer_textures = Array[Texture2D]([ExtResource("2_ynx4y"), ExtResource("3_v72n4"), ExtResource("4_56e16"), ExtResource("5_f7hvq"), ExtResource("6_74qlo")])
+semi_autumn_textures = Array[Texture2D]([ExtResource("7_xfeij"), ExtResource("8_g3qcl"), ExtResource("9_813ct"), ExtResource("10_k48cq"), ExtResource("11_q0a85")])
+autumn_textures = Array[Texture2D]([ExtResource("12_xq58d"), ExtResource("13_rc20p"), ExtResource("14_5qrco"), ExtResource("15_l22nm"), ExtResource("16_hau7w"), ExtResource("17_6foml"), ExtResource("18_ibjvk"), ExtResource("19_8mo3q"), ExtResource("20_lt72m")])
+textureSetter = NodePath("Texture")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
+shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="Texture" parent="." instance=ExtResource("21_jrq22")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("22_fqlab")
+texture = ExtResource("5_f7hvq")
+
+[node name="Movement" parent="." instance=ExtResource("22_0vcm1")]
+
+[node name="LaneEntityDirectionalAudio" parent="." instance=ExtResource("24_8o7y0")]
+soundeffect = ExtResource("25_l3hrv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u4quwxir4rnm"
+uid="uid://b67000vh7l3pp"
 path.s3tc="res://.godot/imported/Witch_Atlas_00001.png-8ce1ad700cad4c490db2cc075e82dbb4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "da53daebec23cf7554b7a5dc19f22a85"
+"md5": "8056453b735f8903d1dd5f3fa8c92019"
 }
 
 [deps]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnmtli76vybq5"
+path="res://.godot/imported/Ghost-Hurts-Player.mp3-137377ec33f294d261ea3ca3e1bef718.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/sound effect ojpe/Ghost-Hurts-Player.mp3"
+dest_files=["res://.godot/imported/Ghost-Hurts-Player.mp3-137377ec33f294d261ea3ca3e1bef718.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
