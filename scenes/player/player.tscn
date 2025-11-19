@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://jkp5gvu52u1o"]
+[gd_scene load_steps=7 format=3 uid="uid://jkp5gvu52u1o"]
 
 [ext_resource type="Script" uid="uid://ccvgk5a0aacet" path="res://scripts/player/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://op0wbajenepu" path="res://scenes/player/witch.tscn" id="2_g2els"]
+[ext_resource type="Script" uid="uid://on75iih88hii" path="res://scenes/player/camera_manager.gd" id="3_p47bc"]
 [ext_resource type="PackedScene" uid="uid://f8842u8jr5o6" path="res://scenes/player/witch_audio_manager.tscn" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://dmtgic684lmxk" path="res://scenes/player/missed_objects_collider_player.tscn" id="4_lvxji"]
 
@@ -17,8 +18,9 @@ shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="WitchAudioManager" parent="." instance=ExtResource("4_dqkch")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
+script = ExtResource("3_p47bc")
 
 [node name="Witch" parent="." instance=ExtResource("2_g2els")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.6, 0)

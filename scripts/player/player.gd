@@ -3,6 +3,8 @@ class_name PlayerObject
 
 var curr_health:int = Globals.max_player_health
 
+@onready var camera_manager:CameraManager = $Camera
+
 @export var leaf:int = 0
 @export var witch_audio_manager:Node
 @export var max_velocity = 10
@@ -48,6 +50,7 @@ func consume_movement(direction: int) -> void:
 		witch_audio_manager.playSwitchLaneSound()
 	else:
 		witch_audio_manager.playWallOfTrees()
+		camera_manager.shake(0.1, 0.3)
 
 func add_leaf(value:int) -> void:
 	leaf += value
@@ -58,6 +61,7 @@ func incrementHealth() -> void:
 	witch_audio_manager.playHealSound()
 
 func decrementHealth() -> void:
+	camera_manager.shake()
 	_changeHealth(-1)
 
 func _changeHealth(value: int) -> void:
