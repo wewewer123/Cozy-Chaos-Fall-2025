@@ -15,6 +15,7 @@ height = 4.751953
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dx42m"]
 render_priority = 0
 shader = ExtResource("3_xnq1e")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_bqvbl")
