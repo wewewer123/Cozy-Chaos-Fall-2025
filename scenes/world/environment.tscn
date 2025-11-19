@@ -153,6 +153,20 @@ mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
 
+[node name="Wall 9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, -50, 0, 50, -2.1855694e-06, 0, 0, 0, 50, 80, 0, -299)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
+[node name="Wall 10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, -50, 0, 50, -2.1855694e-06, 0, 0, 0, 50, 80, 0, -351)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
 [node name="Wall 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -80, 0, -100)
 layers = 2
@@ -162,6 +176,20 @@ surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
 
 [node name="Wall 8" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -80, 0, -200)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
+[node name="Wall 11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -80, 0, -291)
+layers = 2
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_muapc")
+
+[node name="Wall 12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.1855694e-06, 50, 0, -50, -2.1855694e-06, 0, 0, 0, 50, -80, 0, -371)
 layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
