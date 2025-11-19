@@ -41,10 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 tree_inst = ExtResource("8_a7uam")
 
 [node name="TreeSpawner" parent="." instance=ExtResource("7_a05hh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141.05586)
 
 [node name="TreesStatic" parent="." instance=ExtResource("8_2r4xb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045776367, 0.9870453, -0.021865845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045776367, 0.9870453, -125.37875)
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("9_fw7o5")]
 stream = ExtResource("10_oqwej")
