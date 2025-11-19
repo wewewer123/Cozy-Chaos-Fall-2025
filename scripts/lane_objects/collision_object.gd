@@ -6,6 +6,8 @@ enum CollisionType { TREE, GHOST, LEAF, HEART }
 @export var textureSetter : TreeTextureSetter
 @onready var directionalAudio : DirectionalAudioManager = $LaneEntityDirectionalAudio
 
+var applied_collision_effect:bool = false
+
 signal collided_with_player(colisions_type: int, player: Node)
 
 func init(player_locator:PlayerLocator, next_audio_bus_index:int):
@@ -32,9 +34,11 @@ func fade_in(fade_in_time:float):
 		await get_tree().process_frame
 
 func apply_effect(_player: Node3D) -> void:
+	if applied_collision_effect:
+		return
+	
 	textureSetter.queue_free()
 	directionalAudio.stop()
-	create_tween().tween_method(set_move_speed, 0, Globals.max_move_speed, 1.5)
 
 func set_move_speed(value:float):
 	Globals.cur_move_speed = value

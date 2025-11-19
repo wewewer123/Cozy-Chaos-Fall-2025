@@ -12,5 +12,11 @@ func _process(delta: float) -> void:
 	rotation_degrees.z = sin(t) * amplitude
 
 func apply_effect(player: Node3D) -> void:
+	super.apply_effect(player)
+	
+	if applied_collision_effect:
+		return
+	
+	applied_collision_effect = true
 	player.add_leaf(1)
 	player.witch_audio_manager.playPickUpLeaf()

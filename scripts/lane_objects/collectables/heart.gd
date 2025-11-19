@@ -15,6 +15,11 @@ func _process(delta: float) -> void:
 	scale = Vector3(dynamic_scale, dynamic_scale, dynamic_scale)
 
 func apply_effect(player: Node3D) -> void:
-	queue_free()
+	super.apply_effect(player)
+
+	if applied_collision_effect:
+		return
+	
+	applied_collision_effect = true
 	player.incrementHealth()
 	player.witch_audio_manager.playpickUpHeartSound()
