@@ -1,6 +1,6 @@
 extends CollisionObject
 
-var amplitude:float = 3
+var amplitude:float = 2
 var speed = 5
 var t = 0
 

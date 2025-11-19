@@ -1,23 +1,17 @@
 extends CollisionObject
 
-var cur_offset:float = 0
-var max_offset:float = 0.75
-var multiplier:float = 1
-var move_speed = 0.75
+var amplitude:float = 0.75
+var t:float = 0
+var move_speed = 2
+var start_y:float
 
 func _ready():
 	type = CollisionType.GHOST
+	start_y = global_position.y
 
 func _process(delta: float) -> void:
-	cur_offset += delta * move_speed * multiplier
-	global_position.y = cur_offset
-	
-	if cur_offset > max_offset:
-		cur_offset = max_offset
-		multiplier *= -1
-	elif cur_offset < 0:
-		cur_offset = 0
-		multiplier *= -1
+	t += delta * move_speed
+	global_position.y = start_y + sin(t) * amplitude
 
 func apply_effect(player: Node3D) -> void:
 	super.apply_effect(player)
