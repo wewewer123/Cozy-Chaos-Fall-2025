@@ -3,9 +3,9 @@ class_name LaneSpawnTimer
 
 signal costum_timeout
 
-var t = time
 var time = 1
-var is_stopped = false
+var t = time
+var is_stopped = true
 
 func _process(delta: float) -> void:
 	if is_stopped:
