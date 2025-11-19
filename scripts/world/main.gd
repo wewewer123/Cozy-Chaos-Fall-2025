@@ -1,57 +1,53 @@
 extends Node3D
-@export var max_lanes = 3
+ 
+@onready var player:PlayerObject = $Player
+@onready var spawner:Spawner = $LaneSpawner
+@onready var player_locator:PlayerLocator = $PlayerLocator
+@onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
+@onready var lane_object_parent:LaneObjectCollection = $LaneObjectCollection
+@onready var level_voice_line_manager:LevelVoiceLineManager = $LevelVoiceLineManager
+@onready var backgroundmusic:AudioStreamPlayer2D = $Backgroundmusic
 
-@onready var spawner: Spawner = $Spawner
-@onready var player: PlayerObject = $Player
-
-var _hud:HUD
-
-func _ready() -> void:
-	spawner.init()
-	player.init(spawner)
-	
+func _ready() -> void:	
 	GameManager.player = player
-	_hud = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
-	_hud.init() # spawns hearts needs player to be set in GameManager
-	add_child(_hud)
+	GameManager.curr_lane_spawner = spawner
 	
-	player.health_changed.connect(_hud.on_player_health_changed)
-	player.leaf_changed.connect(_hud.on_player_leaf_changed)
-	player.player_died.connect(_hud.on_player_death)
+	hud.init("Level - " + str(GameManager.current_level) + "/4")
+	spawner.init(lane_object_parent, player_locator)
+	player.init(spawner)
+	player_locator.init(player)
+	
+	add_child(hud)
+	
+	player.health_changed.connect(hud.on_player_health_changed)
+	player.leaf_changed.connect(hud.on_player_leaf_changed)
+	player.player_died.connect(hud.on_player_death)
+	
+	player.leaf_changed.connect(on_player_leaf_changed)
+	player.player_died.connect(on_player_death)
+	
+	await level_voice_line_manager.play_beginnging_lines_async()
+	spawner.start_spawning()
 
-func _on_timer_timeout() -> void:
-	var result := spawner.spawn_pair($Items, $Obstacles)
-	var item : CollisionObject = result["item"]
-	var obstacle : CollisionObject = result["obstacle"]
-	
-	item.connect("collided_with_player", self._on_collision)
-	obstacle.connect("collided_with_player", self._on_collision)
+func on_player_leaf_changed(new_leaf_count:int):
+	if new_leaf_count == Globals.get_max_leaf_count():
+		lane_object_parent.remove_all_lane_objects()
+		spawner.stop_spawning()
+		if level_voice_line_manager.has_end_level_voice_lines():
+			await AudioUtil.fade_out_audio(backgroundmusic)
+		await level_voice_line_manager.play_ending_lines_async()
+		GameManager.next_level()
+	elif _should_play_mid_level_voice_lines(new_leaf_count):
+		spawner.stop_spawning()
+		lane_object_parent.remove_all_lane_objects()
+		await level_voice_line_manager.play_middle_lines_async()
+		spawner.start_spawning()
 
-func _on_collision(collision_type: int, player: Node3D) -> void:
-	# You don’t touch player stats here — that’s handled in apply_effect().
-	# This is just for cross-cutting concerns like sound, particles, UI.
-	pass
-	
-#func _on_timer_timeout() -> void:
-	#var rng:= RandomNumberGenerator.new() 
-	#
-	#var tree = tree_inst.instantiate()
-	#var ghost = ghost_inst.instantiate()
-	#var leaf = leaf_inst.instantiate()
-	#var heart = heart_inst.instantiate()
-	#
-	#tree.connect("player_collision", func(): $Player.curr_health -= 1)
-	#ghost.connect("player_collision", func(): $Player.curr_health -= 1)
-	#leaf.connect("player_collision", func(): $Player.leaf += 1)
-	#heart.connect("player_collision", func(): $Player.heart += 1)
-	#
-	#if rng.randi_range(0, 3) == 0:
-		#$Items.add_child(heart)
-	#else:
-		#$Items.add_child(leaf)
-	#
-	#if rng.randi_range(0, 1) == 0:
-		#$Obstacles.add_child(tree)
-	#else:
-		#$Obstacles.add_child(ghost)
-	
+func _should_play_mid_level_voice_lines(new_leaf_count:int) -> bool:
+	return (
+		!GameManager.is_quickplay and
+		level_voice_line_manager.has_mid_level_voice_lines() and
+		new_leaf_count == roundi(Globals.get_max_leaf_count() / 2.0))
+
+func on_player_death() -> void:
+	lane_object_parent.remove_all_lane_objects()

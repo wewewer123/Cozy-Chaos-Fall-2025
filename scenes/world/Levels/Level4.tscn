@@ -1,20 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://dry5v5b61sduq"]
+[gd_scene load_steps=21 format=3 uid="uid://dry5v5b61sduq"]
 
 [ext_resource type="Script" uid="uid://bmmhbr22iup2d" path="res://scripts/world/main.gd" id="1_vt067"]
 [ext_resource type="PackedScene" uid="uid://jkp5gvu52u1o" path="res://scenes/player/player.tscn" id="4_bxbrp"]
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane objects/Spawner.gd" id="5_5h0pq"]
-[ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/obstacles/autumnTrees.tscn" id="6_vt067"]
-[ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/obstacles/ghost.tscn" id="7_ks2a8"]
-[ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/collectables/leaf.tscn" id="8_gxasn"]
+[ext_resource type="PackedScene" uid="uid://cv4wv6nlarpg" path="res://scenes/lane_objects/lane_object_collection.tscn" id="4_dqfi3"]
+[ext_resource type="PackedScene" uid="uid://cktfpcvhahrcj" path="res://scenes/lane_objects/lane_spawner.tscn" id="4_mgf4m"]
+[ext_resource type="PackedScene" uid="uid://c4ugrx3mr0m10" path="res://scenes/lane_objects/obstacles/tree_level_4.tscn" id="6_umhxr"]
 [ext_resource type="PackedScene" uid="uid://b617pcd1e87dk" path="res://scenes/world/enviornment/environment_level_4.tscn" id="8_v41oc"]
-[ext_resource type="PackedScene" uid="uid://bo3apvyv0kqo2" path="res://scenes/collectables/heart.tscn" id="9_hpx1p"]
 [ext_resource type="PackedScene" uid="uid://7v0ou44u3gdb" path="res://scenes/world/decoration/tree_spawner.tscn" id="9_mvwpp"]
 [ext_resource type="Resource" uid="uid://wajewmi47mmq" path="res://scenes/world/decoration/tree/factories/tree_factory_level_4.tres" id="10_iwh7l"]
-[ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/Levels/environment_light.tscn" id="12_mgf4m"]
-[ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/Levels/trees_static.tscn" id="13_qoiiw"]
+[ext_resource type="PackedScene" uid="uid://bfa4mxrqb63dw" path="res://scenes/world/environment_light.tscn" id="12_mgf4m"]
+[ext_resource type="PackedScene" uid="uid://cum7wm2g5hphj" path="res://scenes/world/Levels/level_voice_line_manager.tscn" id="13_5hjs0"]
+[ext_resource type="PackedScene" uid="uid://bdkni105yimiq" path="res://scenes/world/enviornment/trees_static.tscn" id="13_qoiiw"]
 [ext_resource type="Texture2D" uid="uid://y0oedotpuuvl" path="res://assets/art/2D/trees/trees_red_dark/ta1.png" id="14_0p8ux"]
 [ext_resource type="PackedScene" uid="uid://cikhnrmajljah" path="res://scenes/world/BackgroundMusic.tscn" id="14_lugpx"]
-[ext_resource type="AudioStream" uid="uid://dbqvy8xq56bvv" path="res://assets/audio/Ambience SFX/Fall (3 and 4).mp3" id="15_7i75j"]
+[ext_resource type="AudioStream" uid="uid://dwbsg0gww8yg5" path="res://assets/audio/Voicelines/Radio Guy/level4_radio_01_fx.wav" id="14_umhxr"]
+[ext_resource type="AudioStream" uid="uid://bh1ue02vocmme" path="res://assets/audio/music/Go you, Witch Girl!.mp3" id="15_0p8ux"]
+[ext_resource type="AudioStream" uid="uid://d1edvqdwpyaww" path="res://assets/audio/Voicelines/witch/Lvl4-Witch-01.wav" id="15_g8xfw"]
+[ext_resource type="AudioStream" uid="uid://dgbdd6j0j2m3x" path="res://assets/audio/Voicelines/witch/Lvl4-Witch-02.wav" id="16_4ktme"]
+[ext_resource type="PackedScene" uid="uid://4mplcxp2vl13" path="res://scenes/world/player_locator.tscn" id="17_7i75j"]
+[ext_resource type="AudioStream" uid="uid://cngk4lxl88ipt" path="res://assets/audio/Voicelines/witch/Lvl4-Witch-03.wav" id="17_osqid"]
 
 [sub_resource type="Environment" id="Environment_dqfi3"]
 background_mode = 1
@@ -24,33 +28,16 @@ background_color = Color(0.8776157, 0.8776158, 0.87761563, 1)
 script = ExtResource("1_vt067")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("4_bxbrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.339999, 19.610004)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="Obstacles" type="Node3D" parent="."]
-
-[node name="Items" type="Node3D" parent="."]
-
-[node name="Spawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.817741)
-script = ExtResource("5_5h0pq")
-tree_inst = ExtResource("6_vt067")
-ghost_inst = ExtResource("7_ks2a8")
-leaf_inst = ExtResource("8_gxasn")
-heart_inst = ExtResource("9_hpx1p")
-
-[node name="Lane0" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
-
-[node name="Lane1" type="Marker3D" parent="Spawner"]
-
-[node name="Lane2" type="Marker3D" parent="Spawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.34, 0)
 
 [node name="Ground" parent="." instance=ExtResource("8_v41oc")]
+
+[node name="LaneObjectCollection" parent="." instance=ExtResource("4_dqfi3")]
+
+[node name="LaneSpawner" parent="." instance=ExtResource("4_mgf4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+level = 5
+tree_inst = ExtResource("6_umhxr")
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_mvwpp")]
 tree_collection = ExtResource("10_iwh7l")
@@ -64,7 +51,14 @@ texture = ExtResource("14_0p8ux")
 environment = SubResource("Environment_dqfi3")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_lugpx")]
-stream = ExtResource("15_7i75j")
-volume_db = -10.0
+stream = ExtResource("15_0p8ux")
+volume_db = -4.0
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Ambience" parent="." instance=ExtResource("14_lugpx")]
+volume_db = -4.0
+
+[node name="LevelVoiceLineManager" parent="." instance=ExtResource("13_5hjs0")]
+_level_beginning_voice_lines = Array[AudioStream]([ExtResource("14_umhxr"), ExtResource("15_g8xfw"), ExtResource("16_4ktme")])
+_level_end_voice_lines = Array[AudioStream]([ExtResource("17_osqid")])
+
+[node name="PlayerLocator" parent="." instance=ExtResource("17_7i75j")]

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgkpidnm3mt6j"]
+[gd_scene load_steps=4 format=3 uid="uid://op0wbajenepu"]
 
-[ext_resource type="PackedScene" uid="uid://cfqhcntydvi3q" path="res://assets/art/3D/Witch (1).glb" id="1_efjm4"]
-[ext_resource type="Material" uid="uid://o00ekvnmsse7" path="res://assets/art/3D/M_Witch.tres" id="2_3vyn7"]
+[ext_resource type="PackedScene" uid="uid://cfqhcntydvi3q" path="res://assets/art/3D/Witch.glb" id="1_efjm4"]
+[ext_resource type="Script" uid="uid://bpi4tgmt1d56b" path="res://scripts/player/proceduralAnimation.gd" id="2_3vyn7"]
+[ext_resource type="Material" uid="uid://o00ekvnmsse7" path="res://assets/art/3D/M_Witch.tres" id="3_hvcnl"]
 
-[node name="Witch (1)" instance=ExtResource("1_efjm4")]
+[node name="Witch" instance=ExtResource("1_efjm4")]
+script = ExtResource("2_3vyn7")
+amplitude = 0.02
+frequency = 1.025
+lean_amount = 50.0
+lean_smooth = 0.1
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-0.00037782066, 0.3967957, -0.19221355)
@@ -13,12 +19,13 @@ bones/1/rotation = Quaternion(0.11727581, -0.018442025, -0.005999047, 0.9929101)
 bones/2/rotation = Quaternion(-0.21483389, 0.0017639691, 0.02710478, 0.9762728)
 bones/3/rotation = Quaternion(-0.00922805, 7.576638e-05, 0.0011642597, 0.9999567)
 bones/5/rotation = Quaternion(-0.32827002, 0.0023224307, 0.041439183, 0.94367164)
-bones/7/rotation = Quaternion(0.9035502, 0.011681771, 0.08170922, -0.42045715)
-bones/8/rotation = Quaternion(0.112540096, 0.041276585, -0.035500545, 0.9921546)
-bones/9/rotation = Quaternion(0.11082253, 0.016918926, -0.031810887, 0.9931869)
-bones/10/rotation = Quaternion(-0.69505864, -0.0009320753, 0.0011041631, 0.71895164)
-bones/11/rotation = Quaternion(-0.3153584, 0.042938784, -0.11055167, 0.9415326)
-bones/12/rotation = Quaternion(-0.20608623, 0.06966297, -0.0810699, 0.97267836)
+bones/7/rotation = Quaternion(0.8425099, -0.030125871, 0.011542341, -0.53771394)
+bones/8/rotation = Quaternion(0.25516498, 0.020179778, 0.025170824, 0.9663592)
+bones/9/rotation = Quaternion(0.25516546, 0.020179775, 0.025170831, 0.966359)
+bones/10/position = Vector3(0.02926725, 0.44908234, -0.13850646)
+bones/10/rotation = Quaternion(-0.66151327, 0.041483797, 0.0007451344, 0.7487849)
+bones/11/rotation = Quaternion(-0.2808436, 0.02849229, -0.008639191, 0.9592917)
+bones/12/rotation = Quaternion(-0.02101502, 0.029745309, -0.00091120636, 0.9993362)
 bones/14/rotation = Quaternion(0.3860984, 0.08778332, 0.40364465, 0.82479894)
 bones/15/rotation = Quaternion(-6.335636e-05, -5.9989947e-05, 0.4782652, 0.87821555)
 bones/16/rotation = Quaternion(-0.283176, -0.2871619, -0.34087604, 0.84920716)
@@ -34,10 +41,10 @@ bones/67/rotation = Quaternion(-0.8772079, -8.191123e-05, -0.00014891817, 0.4801
 bones/68/rotation = Quaternion(0.14468098, -0.06761796, -0.06573633, 0.98497415)
 bones/69/rotation = Quaternion(0.26995772, 0.03268657, -0.009156529, 0.9622737)
 bones/71/position = Vector3(0.020592768, 0.77598894, -0.115599655)
-bones/71/rotation = Quaternion(-0.7343613, -0.042539265, -0.08742619, 0.6717594)
+bones/71/rotation = Quaternion(-0.69379294, -0.021934604, -0.052980743, 0.717888)
 
 [node name="Body" parent="Armature/Skeleton3D" index="0"]
-material_override = ExtResource("2_3vyn7")
+surface_material_override/0 = ExtResource("3_hvcnl")
 
 [node name="Broom" parent="." index="1"]
-material_override = ExtResource("2_3vyn7")
+transform = Transform3D(0.23562264, 0, 0, 0, 0, -0.23562264, 0, 0.23562264, 0, 0, 0.286, 0.041)
