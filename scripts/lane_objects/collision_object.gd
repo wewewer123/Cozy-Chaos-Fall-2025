@@ -33,6 +33,7 @@ func fade_in(fade_in_time:float):
 
 func apply_effect(_player: Node3D) -> void:
 	textureSetter.queue_free()
+	directionalAudio.stop()
 	create_tween().tween_method(set_move_speed, 0, Globals.max_move_speed, 1.5)
 
 func set_move_speed(value:float):

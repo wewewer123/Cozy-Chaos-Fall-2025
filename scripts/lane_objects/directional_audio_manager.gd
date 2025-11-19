@@ -17,6 +17,10 @@ func init(playerLocator:PlayerLocator, next_audio_bus_index:int):
 	await get_tree().create_timer(start_delay_seconds).timeout
 	_playDirectionalSound(next_audio_bus_index)
 
+func stop():
+	for stream in audio_streams:
+		stream.stop()
+
 func _ready() -> void:
 	for i in range(len(audio_streams)):
 		audio_streams[i].stream = soundeffect
