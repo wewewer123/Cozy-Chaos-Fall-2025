@@ -1,20 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm2tki6bw81f"]
+[gd_scene load_steps=6 format=3 uid="uid://dm2tki6bw81f"]
 
+[ext_resource type="Shader" uid="uid://qhjbuihn5ief" path="res://assets/shader/Warped.tres" id="1_abvqd"]
 [ext_resource type="Texture2D" uid="uid://mwi64omduxte" path="res://assets/art/2D/trees/trees_green/t111.png" id="2_3exsv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uw12p"]
+render_priority = 0
+shader = ExtResource("1_abvqd")
+shader_parameter/ScrollSpeedMultiplier = 0.0
+shader_parameter/tiling = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abvqd"]
+render_priority = 0
+shader = ExtResource("1_abvqd")
+shader_parameter/ScrollSpeedMultiplier = 0.0
+shader_parameter/tiling = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3iw3"]
+render_priority = 0
+shader = ExtResource("1_abvqd")
+shader_parameter/ScrollSpeedMultiplier = 0.0
+shader_parameter/tiling = 1.0
 
 [node name="Texture" type="Node3D"]
 
 [node name="Sprite3D 4" type="Sprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.6, 0)
+material_override = SubResource("ShaderMaterial_uw12p")
 alpha_cut = 1
 texture = ExtResource("2_3exsv")
 
 [node name="Sprite3D 5" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142134, 0, -1.4142134, 0, 2, 0, 1.4142134, 0, 1.4142134, 0, 2.6, 0.05)
+material_override = SubResource("ShaderMaterial_abvqd")
 alpha_cut = 1
 texture = ExtResource("2_3exsv")
 
 [node name="Sprite3D 6" type="Sprite3D" parent="."]
 transform = Transform3D(1.4142135, 0, 1.4142135, 0, 2, 0, -1.4142135, 0, 1.4142135, 0, 2.6, 0.1)
+material_override = SubResource("ShaderMaterial_c3iw3")
 alpha_cut = 1
 texture = ExtResource("2_3exsv")

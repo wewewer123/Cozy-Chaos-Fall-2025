@@ -21,6 +21,7 @@ config/icon="uid://t4fifylo4k7p"
 GameManager="*res://scenes/game/GameManager.tscn"
 Globals="*res://scripts/game/globals.gd"
 AudioUtil="*res://audio_util.gd"
+GlobalWarp="*res://GlobalWarp.gd"
 
 [editor_plugins]
 
@@ -72,3 +73,10 @@ read_leaf={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+WarpAmount={
+"type": "float",
+"value": 0.0
+}

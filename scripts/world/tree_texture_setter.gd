@@ -11,6 +11,9 @@ func _ready() -> void:
 func set_texture(value:Texture2D) -> void:
 	for child in get_children():
 		if child is Sprite3D:
+			var mat = child.material_override.duplicate()
+			child.material_override = mat
+			mat.set_shader_parameter("albedo_texture", value)
 			child.texture = value
 			
 func set_alpha(value:float) -> void:
