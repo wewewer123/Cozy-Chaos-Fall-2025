@@ -17,7 +17,7 @@ script = ExtResource("1_lrxmn")
 textureSetter = NodePath("Texture")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06652832, 2.6157901, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.06652832, 1.7595909, 0)
 shape = SubResource("CylinderShape3D_avsvi")
 
 [node name="Movement" parent="." instance=ExtResource("2_4jnww")]
