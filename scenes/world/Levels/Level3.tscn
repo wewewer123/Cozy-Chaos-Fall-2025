@@ -54,7 +54,7 @@ environment = SubResource("Environment_rd0oh")
 
 [node name="Backgroundmusic" parent="." instance=ExtResource("14_s7s4a")]
 stream = ExtResource("15_s7s4a")
-volume_db = 0.0
+volume_db = -4.0
 
 [node name="Ambience" parent="." instance=ExtResource("14_s7s4a")]
 volume_db = 0.0
