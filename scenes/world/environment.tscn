@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8hnbwt0gfqgx"]
+[gd_scene load_steps=9 format=3 uid="uid://b8hnbwt0gfqgx"]
 
 [ext_resource type="Shader" uid="uid://qhjbuihn5ief" path="res://assets/shader/Warped.tres" id="1_i6vpw"]
 [ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/world/summer path resize400.png" id="2_i6vpw"]
+[ext_resource type="Script" uid="uid://ddfkwae8o128n" path="res://scenes/world/floor_speed_setter.gd" id="3_d3vhr"]
 [ext_resource type="PackedScene" uid="uid://c00oliy8q63pj" path="res://assets/art/2D/ui/Vignette.tscn" id="3_i6vpw"]
 
 [sub_resource type="Environment" id="Environment_bv2si"]
@@ -30,6 +31,7 @@ subdivide_depth = 20
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_i6vpw")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 1.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_i6vpw")
@@ -47,6 +49,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, -100)
@@ -54,6 +57,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, -200)
@@ -61,6 +65,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 11" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, -300)
@@ -68,6 +73,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 52, 0, 0)
@@ -75,6 +81,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 5" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -52, 0, 0)
@@ -82,6 +89,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 6" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -52, 0, -100)
@@ -89,6 +97,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 7" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 52, 0, -100)
@@ -96,6 +105,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 8" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -52, 0, -200)
@@ -103,6 +113,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 12" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -52, 0, -300)
@@ -110,6 +121,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 9" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 52, 0, -200)
@@ -117,6 +129,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Floor 10" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 52, 0, -300)
@@ -124,6 +137,7 @@ layers = 2
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_gie0j")
+script = ExtResource("3_d3vhr")
 
 [node name="Wall 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.1855694e-06, -50, 0, 50, -2.1855694e-06, 0, 0, 0, 50, 80, 0, 0)

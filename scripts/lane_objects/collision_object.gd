@@ -31,6 +31,9 @@ func fade_in(fade_in_time:float):
 		set_texture_alpha(clamp(t / fade_in_time, 0.0, 1.0))
 		await get_tree().process_frame
 
-func apply_effect(player: Node3D) -> void:
-	#virtual method override
-	push_error("apply_effect not implemented")
+func apply_effect(_player: Node3D) -> void:
+	textureSetter.queue_free()
+	create_tween().tween_method(set_move_speed, 0, Globals.max_move_speed, 1.5)
+
+func set_move_speed(value:float):
+	Globals.cur_move_speed = value

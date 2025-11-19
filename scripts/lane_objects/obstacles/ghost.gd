@@ -5,5 +5,6 @@ func _ready():
 	type = CollisionType.GHOST
 
 func apply_effect(player: Node3D) -> void:
+	super.apply_effect(player)
 	player.decrementHealth()
 	player.witch_audio_manager.playHurtByGhost()
