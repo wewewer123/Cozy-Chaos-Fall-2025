@@ -11,6 +11,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4uyvt"]
 render_priority = 0
 shader = ExtResource("2_v243u")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_aoq6d")
