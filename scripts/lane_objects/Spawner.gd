@@ -27,6 +27,7 @@ func init(spawned_object_parent: Node, player_locator:PlayerLocator) -> void:
 	self.object_parent = spawned_object_parent
 	var timer:LaneSpawnTimer = $LaneSpawnTimer
 	timer.init(Globals.get_spawn_time_for_level(level))
+	timer.costum_timeout.connect(spawn)
 	
 	rng.randomize()
 	lanes = []
@@ -119,14 +120,10 @@ func spawn_pair() -> void:
 	lane_object_2.fade_in(fade_in_time)
 
 func start_spawning() -> void:
-	spawn()
 	lane_spawn_timer.start_timer()
 
 func stop_spawning() -> void:
 	lane_spawn_timer.stop_timer()
-
-func _on_lane_spawn_timer_timeout() -> void:
-	spawn()
 
 func spawn_tree() -> void:
 	_spawn_packed_random(tree_inst)

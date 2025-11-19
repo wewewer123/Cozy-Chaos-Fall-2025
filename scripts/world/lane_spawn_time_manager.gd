@@ -1,11 +1,27 @@
-extends Timer
+extends Node
 class_name LaneSpawnTimer
 
-func init(_wait_time:float):
-	wait_time = _wait_time
+signal costum_timeout
+
+var t = time
+var time = 1
+var is_stopped = false
+
+func _process(delta: float) -> void:
+	if is_stopped:
+		return
+	
+	t -= delta * (Globals.cur_move_speed / Globals.max_move_speed)
+	
+	if t <= 0:
+		t = time
+		costum_timeout.emit()
+
+func init(_wait_t:float):
+	time = _wait_t
 	
 func start_timer() -> void:
-	start()
+	is_stopped = false
 	
 func stop_timer() -> void:
-	stop()
+	is_stopped = true
