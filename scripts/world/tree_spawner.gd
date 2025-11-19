@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 	
 	if(timer <= 0):
 		timer = spawnInterval
-		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, rightSpawnPoint.position, 1)
-		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, leftSpawnPoint.position, -1)
+		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, rightSpawnPoint.global_position, 1)
+		_spawnTrees(randi() % maxTreesPerSpawn + minTreesPerSpawn, leftSpawnPoint.global_position, -1)
 
 # TODO: Group all trees together into a node and move it
 #		and not move all trees independently 

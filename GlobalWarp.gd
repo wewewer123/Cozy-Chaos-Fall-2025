@@ -1,19 +1,28 @@
 extends Node
 
 var current_value := 0.0
+var x = 0
+var noise := FastNoiseLite.new()
+
+func get_small_noise(value):
+	var n = noise.get_noise_1d(value) # -1 to 1
+	return n * 0.01   # -0.01 to 0.01
 
 func _ready():
+	x = 0
+	noise.seed = randi()
+	noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	set_next_warp()
 
 func set_next_warp():
-	var next_value = randf_range(-0.01, 0.01)
-
+	var next_value = get_small_noise(x)
+	x = x + 1
 	var tween = create_tween()
 	tween.tween_method(
 		Callable(self, "_set_warp"),
 		current_value,
 		next_value,
-		10.0
+		3
 	)
 
 	tween.finished.connect(set_next_warp)

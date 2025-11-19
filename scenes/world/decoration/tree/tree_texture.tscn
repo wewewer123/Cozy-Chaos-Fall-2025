@@ -8,18 +8,21 @@ render_priority = 0
 shader = ExtResource("1_abvqd")
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
+shader_parameter/albedo_texture = ExtResource("2_3exsv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abvqd"]
 render_priority = 0
 shader = ExtResource("1_abvqd")
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
+shader_parameter/albedo_texture = ExtResource("2_3exsv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c3iw3"]
 render_priority = 0
 shader = ExtResource("1_abvqd")
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
+shader_parameter/albedo_texture = ExtResource("2_3exsv")
 
 [node name="Texture" type="Node3D"]
 

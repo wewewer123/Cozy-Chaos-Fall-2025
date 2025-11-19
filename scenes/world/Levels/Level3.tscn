@@ -40,11 +40,13 @@ tree_inst = ExtResource("5_ywetf")
 [node name="LaneObjectCollection" parent="." instance=ExtResource("5_rd0oh")]
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_h7hjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -158.20697)
 tree_collection = ExtResource("10_hna0g")
 
 [node name="Environment Light" parent="." instance=ExtResource("12_vy503")]
 
 [node name="TreesStatic" parent="." instance=ExtResource("13_rd0oh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -129.17932)
 texture = ExtResource("14_rqcwb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

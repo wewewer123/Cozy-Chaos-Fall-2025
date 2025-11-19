@@ -40,11 +40,13 @@ level = 5
 tree_inst = ExtResource("6_umhxr")
 
 [node name="TreeSpawner" parent="." instance=ExtResource("9_mvwpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -151.48416)
 tree_collection = ExtResource("10_iwh7l")
 
 [node name="Environment Light" parent="." instance=ExtResource("12_mgf4m")]
 
 [node name="TreesStatic" parent="." instance=ExtResource("13_qoiiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -127.82582)
 texture = ExtResource("14_0p8ux")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
