@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://de3qirf75qivg"]
 
-[ext_resource type="Texture2D" uid="uid://b421r0ehwsa45" path="res://assets/art/2D/ui/heartui_full.png" id="1_dd4xp"]
+[ext_resource type="Texture2D" uid="uid://b421r0ehwsa45" path="res://assets/ui/heartui_full.png" id="1_dd4xp"]
 
 [node name="HearthFull" type="TextureRect"]
 anchors_preset = 8

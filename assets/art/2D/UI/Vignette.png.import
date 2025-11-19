@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dypj7cgrxbxat"
-path="res://.godot/imported/Vignette.png-19c39a309bc3034c3288020534160454.ctex"
+path="res://.godot/imported/Vignette.png-a4a642edc22fbad308d43c9be9b0fade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/2D/UI/Vignette.png"
-dest_files=["res://.godot/imported/Vignette.png-19c39a309bc3034c3288020534160454.ctex"]
+source_file="res://assets/art/2D/ui/Vignette.png"
+dest_files=["res://.godot/imported/Vignette.png-a4a642edc22fbad308d43c9be9b0fade.ctex"]
 
 [params]
 

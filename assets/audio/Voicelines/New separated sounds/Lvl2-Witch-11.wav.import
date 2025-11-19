@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7g2l5g2885bs"
+path="res://.godot/imported/Lvl2-Witch-11.wav-d8e15bc0a5ff8dd031fb54ed2be0c6e6.sample"
+
+[deps]
+
+source_file="res://assets/audio/Voicelines/New separated sounds/Lvl2-Witch-11.wav"
+dest_files=["res://.godot/imported/Lvl2-Witch-11.wav-d8e15bc0a5ff8dd031fb54ed2be0c6e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

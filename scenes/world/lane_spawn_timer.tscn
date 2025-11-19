@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfgyqhgaajthv"]
-
-[ext_resource type="Script" uid="uid://ci7c63ptv8ykr" path="res://scripts/world/lane_spawn_time_manager.gd" id="1_yehfy"]
-
-[node name="LaneSpawnTimer" type="Timer"]
-script = ExtResource("1_yehfy")

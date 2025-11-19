@@ -1,16 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://c00jton8wqa8x"]
 
 [ext_resource type="PackedScene" uid="uid://b8hnbwt0gfqgx" path="res://scenes/world/environment.tscn" id="1_oyt1c"]
-[ext_resource type="Shader" uid="uid://qhjbuihn5ief" path="res://assets/shader/Warped.tres" id="2_2ao2y"]
+[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="2_6k2au"]
 [ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/world/summer path resize400.png" id="3_17lts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ipf5i"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("2_2ao2y")
-shader_parameter/ScrollSpeedMultiplier = 1.0
-shader_parameter/tiling = 1.0
+shader = ExtResource("2_6k2au")
 shader_parameter/albedo_texture = ExtResource("3_17lts")
+shader_parameter/tiling = 1.0
 
 [node name="Ground" instance=ExtResource("1_oyt1c")]
 

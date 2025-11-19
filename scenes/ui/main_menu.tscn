@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5h0614qa13mh"]
+[gd_scene load_steps=9 format=3 uid="uid://c5h0614qa13mh"]
 
 [ext_resource type="Script" uid="uid://36la5hxulw6c" path="res://scripts/ui/main_menu.gd" id="1_c67eb"]
-[ext_resource type="Texture2D" uid="uid://hom8qcbm0v3m" path="res://assets/art/2D/ui/menu start resize 400.png" id="2_btxxm"]
 [ext_resource type="Theme" uid="uid://dvmur811eqaun" path="res://assets/themes/menu_button_list.tres" id="3_hh8cs"]
 [ext_resource type="Script" uid="uid://dpkek3ls343it" path="res://scripts/ui/menu.gd" id="3_rdx8w"]
 [ext_resource type="FontFile" uid="uid://5g0c1fwbh4w5" path="res://assets/fonts/AtlantisText-Bold.ttf" id="5_b6xvh"]
@@ -43,14 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.627451, 0.6117647, 0.4509804, 1)
-
-[node name="TextureRect" type="TextureRect" parent="bc"]
-layout_mode = 0
-offset_top = -152.0
-offset_right = 800.0
-offset_bottom = 648.0
-texture = ExtResource("2_btxxm")
+color = Color(0.8499292, 0.54589653, 0.26820412, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -82,23 +74,9 @@ theme = ExtResource("3_hh8cs")
 
 [node name="Start" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Quickplay")
-focus_next = NodePath("../Quickplay")
-focus_previous = NodePath("../Exit")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
-text = "story"
-flat = true
-
-[node name="Quickplay" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Start")
-focus_neighbor_bottom = NodePath("../Options")
-focus_next = NodePath("../Options")
-focus_previous = NodePath("../Start")
-theme = ExtResource("3_hh8cs")
-theme_type_variation = &"FlatButton"
-text = "quickplay"
+text = "start"
 flat = true
 
 [node name="Continue" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
@@ -112,10 +90,6 @@ flat = true
 
 [node name="Options" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Quickplay")
-focus_neighbor_bottom = NodePath("../Exit")
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Quickplay")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "Options
@@ -124,28 +98,23 @@ flat = true
 
 [node name="Exit" type="Button" parent="CenterContainer/Menu/CenterContainer/MenuButtonList"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Options")
-focus_next = NodePath("../Start")
-focus_previous = NodePath("../Options")
 theme = ExtResource("3_hh8cs")
 theme_type_variation = &"FlatButton"
 text = "exit
 "
 flat = true
 
-[node name="Options" type="MarginContainer" parent="CenterContainer" node_paths=PackedStringArray("master_val", "music_val", "sfx_val", "diff_val", "slider_master_val", "slider_music_val", "slider_sfx_val", "slider_difficulty_val")]
+[node name="Options" type="MarginContainer" parent="CenterContainer" node_paths=PackedStringArray("master_val", "music_val", "sfx_val", "slider_master_val", "slider_music_val", "slider_sfx_val")]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("5_cwgiw")
-master_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer/MasterVal")
-music_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2/MusicVal")
-sfx_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3/SFXVal")
-diff_val = NodePath("MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/DifficultyVal")
-slider_master_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer/MasterVolSlider")
-slider_music_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2/MusicVolSlider")
-slider_sfx_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3/SFXVolSlider")
-slider_difficulty_val = NodePath("MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/DifficultySlider")
+master_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVal")
+music_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MusicVal")
+sfx_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/SFXVal")
+slider_master_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVolSlider")
+slider_music_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MusicVolSlider")
+slider_sfx_val = NodePath("MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/SFXVolSlider")
 
 [node name="Panel" type="Panel" parent="CenterContainer/Options"]
 visible = false
@@ -258,72 +227,6 @@ popup/item_1/id = 1
 popup/item_2/text = "Exclusive Full Screen"
 popup/item_2/id = 2
 
-[node name="Speed" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer"]
-layout_mode = 2
-focus_mode = 2
-accessibility_description = "Options Section"
-theme_override_fonts/font = ExtResource("5_b6xvh")
-theme_override_font_sizes/font_size = 32
-text = "Speed"
-horizontal_alignment = 1
-
-[node name="MarginContainer4" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_right = 5
-
-[node name="ColorRect" type="ColorRect" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer4"]
-custom_minimum_size = Vector2(0, 2)
-layout_mode = 2
-theme = SubResource("Theme_pdh6n")
-
-[node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("6_ohy3q")
-theme_override_constants/margin_left = 9
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(60, 30)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_b6xvh")
-theme_override_font_sizes/font_size = 34
-text = "Spawn Speed"
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/margin_left = 41
-
-[node name="DifficultySlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_vertical = 1
-min_value = 0.5
-max_value = 5.0
-step = 0.1
-value = 1.0
-
-[node name="DifficultyVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(60, 30)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_b6xvh")
-theme_override_font_sizes/font_size = 34
-text = "100%"
-
 [node name="Audio" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -353,58 +256,58 @@ custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 theme = SubResource("Theme_pdh6n")
 
-[node name="MarginContainer4" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("6_ohy3q")
 theme_override_constants/margin_left = 9
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "Master"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 
-[node name="MasterVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+[node name="MasterVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
 accessibility_description = "Master volume"
-value = 10.0
+value = 40.0
 rounded = true
 
-[node name="MasterVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer"]
+[node name="MasterVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "100%"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "Music   "
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 41
 
-[node name="MusicVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+[node name="MusicVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -412,28 +315,28 @@ accessibility_description = "Music volume"
 value = 50.0
 rounded = true
 
-[node name="MusicVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2"]
+[node name="MusicVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "100%"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
 theme_override_font_sizes/font_size = 34
 text = "SFX       "
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_constants/margin_left = 44
 
-[node name="SFXVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+[node name="SFXVolSlider" type="HSlider" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -441,7 +344,7 @@ accessibility_description = "SFX volume"
 value = 100.0
 rounded = true
 
-[node name="SFXVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3"]
+[node name="SFXVal" type="Label" parent="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_b6xvh")
@@ -477,16 +380,14 @@ layout_mode = 2
 
 [connection signal="visibility_changed" from="CenterContainer/Menu" to="CenterContainer/Menu" method="_on_visibility_changed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Start" to="CenterContainer/Menu" method="_on_start_pressed"]
-[connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Quickplay" to="CenterContainer/Menu" method="_on_quickplay_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Continue" to="CenterContainer/Menu" method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/Menu/CenterContainer/MenuButtonList/Exit" to="CenterContainer/Menu" method="_on_exit_pressed"]
 [connection signal="visibility_changed" from="CenterContainer/Options" to="CenterContainer/Options" method="_on_visibility_changed"]
 [connection signal="toggled" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/CheckBox" to="CenterContainer/Options" method="_on_check_box_toggled"]
 [connection signal="item_selected" from="CenterContainer/Options/MarginContainer/VBoxContainer/Graphic/VBoxContainer/MarginContainer3/GridContainer/MarginContainer/OptionButton" to="CenterContainer/Options" method="_on_option_button_item_selected"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Speed/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/DifficultySlider" to="CenterContainer/Options" method="_on_difficulty_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer/MasterVolSlider" to="CenterContainer/Options" method="_on_master_vol_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer2/MusicVolSlider" to="CenterContainer/Options" method="_on_music_vol_slider_value_changed"]
-[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer4/VBoxContainer/HBoxContainer3/SFXVolSlider" to="CenterContainer/Options" method="_on_sfx_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer/MasterVolSlider" to="CenterContainer/Options" method="_on_master_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MusicVolSlider" to="CenterContainer/Options" method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/MarginContainer/VBoxContainer/Audio/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/SFXVolSlider" to="CenterContainer/Options" method="_on_sfx_vol_slider_value_changed"]
 [connection signal="pressed" from="CenterContainer/Options/MarginContainer/VBoxContainer/MenuBack" to="." method="_on_menu_back_pressed"]
 [connection signal="pressed" from="MarginContainer/TextureButton" to="CenterContainer/Menu" method="_on_texture_button_pressed"]

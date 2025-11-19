@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://jkp5gvu52u1o"]
+[gd_scene load_steps=7 format=3 uid="uid://jkp5gvu52u1o"]
 
 [ext_resource type="Script" uid="uid://ccvgk5a0aacet" path="res://scripts/player/player.gd" id="1_3vyb7"]
-[ext_resource type="PackedScene" uid="uid://op0wbajenepu" path="res://scenes/player/witch.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://bgkpidnm3mt6j" path="res://scenes/player/witch.tscn" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bpi4tgmt1d56b" path="res://scripts/player/proceduralAnimation.gd" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://f8842u8jr5o6" path="res://scenes/player/witch_audio_manager.tscn" id="4_dqkch"]
-[ext_resource type="PackedScene" uid="uid://dmtgic684lmxk" path="res://scenes/player/missed_objects_collider_player.tscn" id="4_lvxji"]
+[ext_resource type="PackedScene" uid="uid://d31bx1rfffxnc" path="res://scenes/player/witch_voice_line_manager.tscn" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -15,14 +16,32 @@ witch_audio_manager = NodePath("WitchAudioManager")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")
 
+[node name="Witch (1)" parent="." instance=ExtResource("2_g2els")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.6, 0)
+script = ExtResource("3_qhqgy")
+amplitude = 0.02
+frequency = 1.025
+lean_amount = 50.0
+lean_smooth = 0.1
+
+[node name="Skeleton3D" parent="Witch (1)/Armature" index="0"]
+bones/7/rotation = Quaternion(0.8425099, -0.030125871, 0.011542341, -0.53771394)
+bones/8/rotation = Quaternion(0.25516498, 0.020179778, 0.025170824, 0.9663592)
+bones/9/rotation = Quaternion(0.25516546, 0.020179775, 0.025170831, 0.966359)
+bones/10/position = Vector3(0.02926725, 0.44908234, -0.13850646)
+bones/10/rotation = Quaternion(-0.66151327, 0.041483797, 0.0007451344, 0.7487849)
+bones/11/rotation = Quaternion(-0.2808436, 0.02849229, -0.008639191, 0.9592917)
+bones/12/rotation = Quaternion(-0.02101502, 0.029745309, -0.00091120636, 0.9993362)
+bones/71/rotation = Quaternion(-0.69379294, -0.021934604, -0.052980743, 0.717888)
+
+[node name="AnimationPlayer" parent="Witch (1)" index="2"]
+reset_on_save = false
+
 [node name="WitchAudioManager" parent="." instance=ExtResource("4_dqkch")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9800666, 0.19866937, 0, -0.19866937, 0.9800666, 0, 0.7070003, 1.3999999)
 
-[node name="Witch" parent="." instance=ExtResource("2_g2els")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.6, 0)
+[node name="WitchVoiceLineManager" parent="." instance=ExtResource("6_tuyoq")]
 
-[node name="MissedObjectsCollider" parent="." instance=ExtResource("4_lvxji")]
-
-[connection signal="area_entered" from="MissedObjectsCollider" to="." method="_on_missed_objects_collider_area_entered"]
+[editable path="Witch (1)"]

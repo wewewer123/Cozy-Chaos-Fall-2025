@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8hnbwt0gfqgx"]
 
-[ext_resource type="Shader" uid="uid://qhjbuihn5ief" path="res://assets/shader/Warped.tres" id="1_i6vpw"]
+[ext_resource type="Shader" uid="uid://bdk58dpnk38ui" path="res://assets/shader/LevelOne.gdshader" id="1_bv2si"]
 [ext_resource type="Texture2D" uid="uid://dhgg5f1ja4wnq" path="res://assets/art/2D/world/summer path resize400.png" id="2_i6vpw"]
-[ext_resource type="PackedScene" uid="uid://c00oliy8q63pj" path="res://assets/art/2D/UI/Vignette.tscn" id="3_i6vpw"]
+[ext_resource type="PackedScene" uid="uid://c00oliy8q63pj" path="res://assets/ui/Vignette.tscn" id="3_i6vpw"]
 
 [sub_resource type="Environment" id="Environment_bv2si"]
 background_mode = 1
@@ -23,16 +23,13 @@ adjustment_saturation = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
 size = Vector2(1.24, 2)
-subdivide_width = 20
-subdivide_depth = 20
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gie0j"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("1_i6vpw")
-shader_parameter/ScrollSpeedMultiplier = 1.0
-shader_parameter/tiling = 1.0
+shader = ExtResource("1_bv2si")
 shader_parameter/albedo_texture = ExtResource("2_i6vpw")
+shader_parameter/tiling = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muapc"]
 shading_mode = 0
