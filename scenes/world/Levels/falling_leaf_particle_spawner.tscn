@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw7urwyrdubvq"]
+
+[ext_resource type="Script" uid="uid://ww14a00nds7j" path="res://scenes/world/Levels/falling_leaf_particle_spawner.gd" id="1_i03m2"]
+[ext_resource type="PackedScene" uid="uid://pjpq7c6xvo6d" path="res://scenes/world/decoration/tree/falling_leaf_particles.tscn" id="2_erv65"]
+
+[node name="FallingLeafParticleSpawner" type="Node3D" node_paths=PackedStringArray("spawn_point_left", "spawn_point_right", "spawn_timer")]
+script = ExtResource("1_i03m2")
+particle_system_scene = ExtResource("2_erv65")
+spawn_point_left = NodePath("SpawnLeft")
+spawn_point_right = NodePath("SpawnRight")
+spawn_timer = NodePath("Timer")
+
+[node name="SpawnLeft" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 12, 0)
+
+[node name="SpawnRight" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 12, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

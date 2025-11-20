@@ -5,4 +5,4 @@ extends Node3D
 func _ready() -> void:
 	for child in get_children():
 		if child is TreeDecoration:
-			child.set_texture(texture,false,0)
+			child.set_texture(texture)
