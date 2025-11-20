@@ -6,7 +6,6 @@ var move_speed = 2
 var start_y:float
 
 func _ready():
-	type = CollisionType.GHOST
 	start_y = global_position.y
 
 func _process(delta: float) -> void:

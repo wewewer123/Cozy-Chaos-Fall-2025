@@ -4,9 +4,6 @@ var amplitude:float = 2
 var speed = 5
 var t = 0
 
-func _ready():
-	type = CollisionType.LEAF
-
 func _process(delta: float) -> void:
 	t += delta * speed
 	rotation_degrees.z = sin(t) * amplitude

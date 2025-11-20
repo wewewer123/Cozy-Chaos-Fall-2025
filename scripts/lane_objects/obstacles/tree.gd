@@ -3,7 +3,6 @@ extends CollisionObject
 @export var tree_factory:TreeFactory
 
 func _ready():
-	type = CollisionType.TREE
 	textureSetter.set_texture(tree_factory.get_random_tree_texture())
 	textureSetter.set_alpha_cut(SpriteBase3D.AlphaCutMode.ALPHA_CUT_DISABLED)
 

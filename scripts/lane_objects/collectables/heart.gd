@@ -6,7 +6,6 @@ var base_y:float
 var speed:float = 9
 
 func _ready():
-	type = CollisionType.HEART
 	base_y = scale.x - amplitude
 	
 func _process(delta: float) -> void:
