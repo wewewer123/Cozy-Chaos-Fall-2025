@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cktfpcvhahrcj"]
 
-[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane_objects/spawner.gd" id="1_iv1uh"]
+[ext_resource type="Script" uid="uid://dhjvv4781r048" path="res://scripts/lane_objects/Spawner.gd" id="1_iv1uh"]
 [ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/lane_objects/obstacles/tree.tscn" id="2_23yn0"]
 [ext_resource type="PackedScene" uid="uid://cqcmrldguya81" path="res://scenes/lane_objects/obstacles/ghost.tscn" id="3_wg0tn"]
 [ext_resource type="PackedScene" uid="uid://db86y3xlsmqhs" path="res://scenes/lane_objects/collectables/leaf.tscn" id="4_k5lyl"]

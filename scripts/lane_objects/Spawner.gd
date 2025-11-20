@@ -78,7 +78,13 @@ func spawn_item(parent: Node, lane_index: int = -1, exclude_lane: int = -1) -> C
 
 func spawn_obstacle(parent: Node, lane_index: int = -1, exclude_lane: int = -1) -> CollisionObject:
 	var index := lane_index if lane_index >= 0 else _pick_lane(exclude_lane)
-	var packed: PackedScene = tree_inst if rng.randi_range(0, 1) == 0 else ghost_inst
+	var packed:PackedScene
+	
+	if !GameManager.is_level_1() and randi_range(0, 1) == 0:
+		packed = ghost_inst
+	else:
+		packed = tree_inst
+		
 	return _spawn_packed_at(packed, parent, index)
 
 # One-call convenience: spawns an item and an obstacle on DISTINCT lanes.

@@ -163,3 +163,6 @@ func on_player_death():
 			set_state(GameManager.game_states.LEVEL3, true)
 		4:
 			set_state(GameManager.game_states.LEVEL4, true)
+
+func is_level_1() -> bool:
+	return _curren_game_state == game_states.LEVEL1
