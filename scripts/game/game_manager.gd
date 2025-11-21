@@ -1,13 +1,9 @@
 extends Node
 
-signal on_state_transition(new_state:game_states)
-
-# state related code
 enum game_states { NULL, TUTORIAL, MENU, LEVEL1, LEVEL2, LEVEL3, LEVEL4, WIN }
 var _curren_game_state:game_states = game_states.NULL
 
 @export var transition:ITransition
-
 @export var mainMenuScene:PackedScene
 @export var tutorial:PackedScene
 @export var levelScene1:PackedScene
@@ -15,9 +11,10 @@ var _curren_game_state:game_states = game_states.NULL
 @export var levelScene3:PackedScene
 @export var levelScene4:PackedScene
 @export var winScene:PackedScene
-
 @export var ttsId:String
 
+var game_states_to_level 
+	
 # scene related code
 var active_scene = null
 var _scene_container:Node = null
@@ -33,6 +30,16 @@ func _ready() -> void:
 	var voices = DisplayServer.tts_get_voices()
 	if voices.size() > 0:
 		ttsId = voices[0].id
+		
+	game_states_to_level = {
+		game_states.NULL: null, 
+		game_states.TUTORIAL: tutorial,
+		game_states.MENU: mainMenuScene,
+		game_states.LEVEL1: levelScene1,
+		game_states.LEVEL2: levelScene2,
+		game_states.LEVEL3: levelScene3,
+		game_states.LEVEL4: levelScene4,
+		game_states.WIN: winScene}
 		
 func _process(_delta: float) -> void:
 	if  Input.is_action_just_pressed("escape"):
@@ -61,70 +68,13 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	if _curren_game_state == new_state and not force:
 		return
 	
-	assert( _scene_container != null, "GameManager : _scene_container needs to be set call set_scene_container") 
-	
-	if curr_lane_spawner != null:
-		curr_lane_spawner.stop_spawning()
-	on_state_transition.emit(new_state)
 	transition.fade_out()
 	_curren_game_state = new_state
 	
 	await transition.faded_out
 	
-	match new_state:
-		game_states.MENU:
-			_set_menu()
-		game_states.TUTORIAL:
-			_set_tutorial()
-		game_states.LEVEL1:
-			_set_level()
-		game_states.LEVEL2:
-			_set_level2()
-		game_states.LEVEL3:
-			_set_level3()
-		game_states.LEVEL4:
-			_set_level4()
-			curr_lane_spawner.start_spawning()
-		game_states.WIN:
-			_set_win()
-
-func _set_tutorial():
-	var tutorial_scene = tutorial.instantiate()
-	call_deferred("_set_new_scene", tutorial_scene)
-		
-func wait_audio_source_finished(audio_source:AudioStreamPlayer2D) -> void:
-	while audio_source.playing:
-		await get_tree().process_frame
-
-func _set_menu() -> void:
-	var res:PackedScene = mainMenuScene
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
-
-func _set_level() -> void:
-	var res:PackedScene = levelScene1
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
-
-func _set_level2() -> void:
-	var res:PackedScene = levelScene2
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
-
-func _set_level3() -> void:
-	var res:PackedScene = levelScene3
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
-	
-func _set_level4() -> void:
-	var res:PackedScene = levelScene4
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
-
-func _set_win() -> void:
-	var res:PackedScene = winScene
-	var new_scene = res.instantiate()
-	call_deferred("_set_new_scene", new_scene)
+	var nextScene = game_states_to_level[new_state].instantiate()
+	_set_new_scene.call_deferred(nextScene)
 
 func _set_new_scene(new_scene) -> void:
 	if active_scene != null:
@@ -148,7 +98,6 @@ func next_level():
 				set_state(GameManager.game_states.LEVEL3)
 			4: 
 				set_state(GameManager.game_states.LEVEL4)
-		
 	else:
 		set_state(GameManager.game_states.WIN)
 
