@@ -36,6 +36,12 @@ func _process(_delta: float) -> void:
 		consume_movement(-1)
 	if Input.is_action_just_pressed("right"):
 		consume_movement(1)
+	if  Input.is_action_just_pressed("read_lives"):
+		var message = "You have "+str(curr_health)+" lives left."
+		DisplayServer.tts_speak(message, GameManager.ttsId)
+	if  Input.is_action_just_pressed("read_leaf"):
+		var message = "You have collected "+str(leaf)+" leaves out of "+str(Globals.get_max_leaf_count())+"."
+		DisplayServer.tts_speak(message, GameManager.ttsId)
 
 func consume_movement(direction: int) -> void:
 	var new_lane = curr_lane + sign(direction)

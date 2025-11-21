@@ -10,11 +10,9 @@ class_name LevelManager
 @onready var level_voice_line_manager:LevelVoiceLineManager = $LevelVoiceLineManager
 @onready var backgroundmusic:AudioStreamPlayer2D = $Backgroundmusic
 
-func _ready() -> void:	
-	GameManager.player = player
-	GameManager.curr_lane_spawner = spawner
+func _ready() -> void:
 	
-	hud.init("Level - " + str(GameManager.current_level) + "/4")
+	hud.init("Level - " + str(GameManager.current_level_index) + "/4")
 	spawner.init(lane_object_parent, player_locator)
 	player.init(spawner)
 	player_locator.init(player)

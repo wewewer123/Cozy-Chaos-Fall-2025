@@ -11,14 +11,11 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_pressed() -> void:
-	GameManager.current_level = 0
-	GameManager.is_quickplay = false
-	GameManager.set_state(GameManager.game_states.TUTORIAL)
+	GameManager.start_story_mode()
 	
 func _on_visibility_changed() -> void:
 	$CenterContainer/MenuButtonList/Start.grab_focus()
 
 func _on_quickplay_pressed() -> void:
-	GameManager.current_level = 1
-	GameManager.is_quickplay = true
-	GameManager.set_state(GameManager.game_states.LEVEL1)
+	GameManager.start_quickplay_mode()
+	

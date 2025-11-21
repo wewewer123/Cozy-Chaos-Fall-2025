@@ -13,8 +13,6 @@ class_name Tutorial
 @onready var hud:HUD = load("res://scenes/ui/ingame hud/HUD.tscn").instantiate()
 
 func _ready() -> void:
-	GameManager.player = _player
-	GameManager.curr_lane_spawner = _spawner
 	
 	hud.init("Tutorial")
 	_spawner.init(lane_object_parent, _player_locator)
