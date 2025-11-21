@@ -68,13 +68,20 @@ func set_state(new_state:game_states, force: bool = false) -> void:
 	if _curren_game_state == new_state and not force:
 		return
 	
-	transition.fade_out()
 	_curren_game_state = new_state
 	
-	await transition.faded_out
+	await play_transition_fade_out_async()
 	
 	var nextScene = game_states_to_level[new_state].instantiate()
 	_set_new_scene.call_deferred(nextScene)
+
+func play_transition_fade_out_async():
+	transition.fade_out()
+	await transition.faded_out
+
+func play_transition_fade_in_async():
+	transition.fade_in()
+	await transition.faded_in
 
 func _set_new_scene(new_scene) -> void:
 	if active_scene != null:
@@ -83,7 +90,8 @@ func _set_new_scene(new_scene) -> void:
 	
 	active_scene = new_scene
 	_scene_container.add_child(active_scene)
-	transition.fade_in()
+	
+	await play_transition_fade_in_async()
 
 func next_level():
 	if current_level <= 3:
@@ -100,18 +108,6 @@ func next_level():
 				set_state(GameManager.game_states.LEVEL4)
 	else:
 		set_state(GameManager.game_states.WIN)
-
-func on_player_death():
-	curr_lane_spawner.stop_spawning()
-	match  current_level:
-		1:
-			set_state(GameManager.game_states.LEVEL1, true)
-		2:
-			set_state(GameManager.game_states.LEVEL2, true)
-		3:
-			set_state(GameManager.game_states.LEVEL3, true)
-		4:
-			set_state(GameManager.game_states.LEVEL4, true)
 
 func is_level_1() -> bool:
 	return _curren_game_state == game_states.LEVEL1

@@ -82,10 +82,13 @@ func _changeHealth(value: int) -> void:
 	else:
 		witch_audio_manager.playDeathSound()
 		player_died.emit()
-		GameManager.on_player_death()
 
 func set_health_to_max():
 	_changeHealth(Globals.max_player_health - curr_health)
+
+func reset_stats():
+	set_health_to_max()
+	add_leaf(-leaf)
 
 func has_max_health() -> bool:
 	return curr_health >= Globals.max_player_health

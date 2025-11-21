@@ -1,5 +1,7 @@
 extends Node3D
  
+class_name LevelManager
+
 @onready var player:PlayerObject = $Player
 @onready var spawner:Spawner = $LaneSpawner
 @onready var player_locator:PlayerLocator = $PlayerLocator
@@ -49,5 +51,18 @@ func _should_play_mid_level_voice_lines(new_leaf_count:int) -> bool:
 		level_voice_line_manager.has_mid_level_voice_lines() and
 		new_leaf_count == roundi(Globals.get_max_leaf_count() / 2.0))
 
+func skip_voice_lines():
+	level_voice_line_manager.enable_skip_voicelines()
+
 func on_player_death() -> void:
 	lane_object_parent.remove_all_lane_objects()
+	spawner.stop_spawning()
+	player.reset_stats()
+	backgroundmusic.stop()
+	
+	await GameManager.play_transition_fade_out_async()
+	GameManager.play_transition_fade_in_async()
+	
+	backgroundmusic.play()
+	spawner.start_spawning()
+	hud.show_hud()

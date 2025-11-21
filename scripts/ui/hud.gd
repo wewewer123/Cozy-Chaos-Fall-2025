@@ -37,6 +37,9 @@ func remove_hearth() -> void:
 
 func on_player_death() -> void:
 	hide()
+	
+func show_hud():
+	show()
 
 func _on_timer_timeout() -> void:
 	$MarginContainer/CenterContainer/Label.hide()
