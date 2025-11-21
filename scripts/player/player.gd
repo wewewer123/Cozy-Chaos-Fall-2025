@@ -77,9 +77,9 @@ func _changeHealth(value: int) -> void:
 	if(curr_health == 1):
 		witch_audio_manager.playOnHealthLeftSound()
 	
-	if(curr_health > 0):
-		health_changed.emit(value)
-	else:
+	health_changed.emit(value)
+	
+	if curr_health <= 0:
 		witch_audio_manager.playDeathSound()
 		player_died.emit()
 

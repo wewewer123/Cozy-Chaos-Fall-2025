@@ -12,14 +12,23 @@ func _ready() -> void:
 
 func init(level_headline:String) -> void:
 	$MarginContainer/CenterContainer/Label.text = level_headline
-	for x in range(Globals.max_player_health):
-		add_heart()
+	reset()
 
 func on_player_health_changed(change:int) -> void:
 	if change > 0:
 		add_heart()
 	elif change < 0:
 		remove_hearth()
+
+func reset():
+	for child in hearth_container.get_children():
+		child.queue_free()
+	
+	for child in empty_hearth_container.get_children():
+		child.queue_free()
+	
+	for x in range(Globals.max_player_health):
+		add_heart()
 
 func on_player_leaf_changed(new_leaf_count:int) -> void:
 	$Control/MarginContainer2/HBoxContainer/Label.text = str(new_leaf_count) + "/" + str(Globals.get_max_leaf_count())

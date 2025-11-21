@@ -59,6 +59,7 @@ func on_player_death() -> void:
 	spawner.stop_spawning()
 	player.reset_stats()
 	backgroundmusic.stop()
+	hud.reset()
 	
 	await GameManager.play_transition_fade_out_async()
 	GameManager.play_transition_fade_in_async()
