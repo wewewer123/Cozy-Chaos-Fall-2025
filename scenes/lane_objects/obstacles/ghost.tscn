@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o1641o4dkfsy" path="res://scripts/lane_objects/obstacles/ghost.gd" id="1_i3suy"]
 [ext_resource type="Texture2D" uid="uid://ikg6wf18rcyc" path="res://assets/art/2D/obstacles/ghost.png" id="2_aoq6d"]
-[ext_resource type="Shader" uid="uid://qhjbuihn5ief" path="res://assets/shader/Warped.tres" id="2_v243u"]
+[ext_resource type="Shader" uid="uid://dgrvdg47qrnqo" path="res://assets/shader/Warped_no_alpha_cutting.tres" id="2_v243u"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="3_v243u"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/lane_object_movement.tscn" id="4_4uyvt"]
 [ext_resource type="PackedScene" uid="uid://big6ghvxhq5pr" path="res://scenes/lane_objects/directional_audio_manager.tscn" id="5_piuvc"]
@@ -15,6 +15,7 @@ shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_aoq6d")
+shader_parameter/alpha = 0.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5lq6"]
 radius = 1.5371094
@@ -23,7 +24,6 @@ height = 4.751953
 [node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter")]
 collision_layer = 8
 script = ExtResource("1_i3suy")
-type = 1
 textureSetter = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

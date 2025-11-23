@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhoq5wubacv03"]
+[gd_scene load_steps=5 format=3 uid="uid://bhoq5wubacv03"]
 
 [ext_resource type="PackedScene" uid="uid://b5fjd6vcxcjrp" path="res://scenes/lane_objects/obstacles/tree.tscn" id="1_hn7lm"]
 [ext_resource type="Resource" uid="uid://6km3wljid3ry" path="res://scenes/world/decoration/tree/factories/tree_factory_level_1.tres" id="2_gfmi2"]
+[ext_resource type="Shader" uid="uid://dgrvdg47qrnqo" path="res://assets/shader/Warped_no_alpha_cutting.tres" id="3_t5iy6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2wkv"]
+render_priority = 0
+shader = ExtResource("3_t5iy6")
+shader_parameter/move_speed = Vector2(0, 0)
+shader_parameter/ScrollSpeedMultiplier = 1.0
+shader_parameter/tiling = 1.0
+shader_parameter/alpha = 0.0
 
 [node name="Tree" instance=ExtResource("1_hn7lm")]
 tree_factory = ExtResource("2_gfmi2")
+material = SubResource("ShaderMaterial_i2wkv")

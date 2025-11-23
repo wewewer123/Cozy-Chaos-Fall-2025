@@ -6,6 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uw12p"]
 render_priority = 0
 shader = ExtResource("1_abvqd")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_3exsv")
@@ -13,6 +14,7 @@ shader_parameter/albedo_texture = ExtResource("2_3exsv")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_abvqd"]
 render_priority = 0
 shader = ExtResource("1_abvqd")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_3exsv")
@@ -20,6 +22,7 @@ shader_parameter/albedo_texture = ExtResource("2_3exsv")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c3iw3"]
 render_priority = 0
 shader = ExtResource("1_abvqd")
+shader_parameter/move_speed = Vector2(0, 0)
 shader_parameter/ScrollSpeedMultiplier = 0.0
 shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_3exsv")
