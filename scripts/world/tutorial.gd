@@ -1,8 +1,6 @@
 extends Node
 class_name Tutorial
 
-#TODO: Stop all coroutines if user goes back to main menu via escape
-
 @export var tutorial_audio:TutorialAudioContainer
 
 @onready var _spawner:Spawner = $LaneSpawner
