@@ -8,12 +8,10 @@ extends Node3D
 @export var maxTreesPerSpawn : int = 3
 @export var minTreesPerSpawn : int = 3
 
-var tree_object_pool := []
+var timer = spawnInterval;
 
-var max_tree_pool_count = 200
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	tree_collection.instantiate_trees(999)
 	var spawn_z = leftSpawnPoint.global_position.z
 	var tempLeft =  leftSpawnPoint.position
 	var tempRight =  rightSpawnPoint.position
@@ -23,8 +21,6 @@ func _ready() -> void:
 		spawn_z += (spawnInterval * 20)
 		tempLeft.z = spawn_z
 		tempRight.z = spawn_z
-
-var timer = spawnInterval;
 
 func _process(delta: float) -> void:
 	timer -= delta
@@ -38,12 +34,18 @@ func _process(delta: float) -> void:
 #		and not move all trees independently 
 func _spawnTrees(count:int, pos:Vector3, spawn_direction:int):
 	for i in range(count):
-		var tree:Node3D = tree_collection.create_random_tree()
+		var tree:TreeDecoration = tree_collection.get_tree()
+		tree.tree_despawned.connect(despawn_tree)
 		add_child(tree)	
 		tree.global_position = pos
 		tree.global_position.x += i * 4 * spawn_direction + rand_range_float(-4, 4)
 		tree.global_position.z += randf() * 2
 		tree.scale = scale * (randf() * 4 + 2) 
+
+func despawn_tree(tree:TreeDecoration) -> void:
+	remove_child(tree)
+	tree.tree_despawned.disconnect(despawn_tree)	
+	tree_collection.return_tree_to_queue(tree)
 
 func rand_range_float(minF: float, maxF: float) -> float:
 	return randf() * (maxF - minF) + minF

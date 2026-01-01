@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dm2tki6bw81f" path="res://scenes/world/decoration/tree/tree_texture.tscn" id="2_cfqu1"]
 [ext_resource type="Script" uid="uid://swufmobnrt5n" path="res://scripts/world/tree_texture_setter.gd" id="3_6lbe6"]
 
-[node name="Tree" type="Node3D" node_paths=PackedStringArray("texture_setter")]
+[node name="Tree" type="Node3D" node_paths=PackedStringArray("node_mover", "texture_setter")]
 script = ExtResource("1_cfqu1")
+node_mover = NodePath("Movement")
 texture_setter = NodePath("Texture")
 
 [node name="Movement" parent="." instance=ExtResource("1_1sskc")]

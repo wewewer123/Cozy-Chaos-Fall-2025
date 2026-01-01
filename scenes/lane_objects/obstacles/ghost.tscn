@@ -21,9 +21,10 @@ shader_parameter/alpha = 0.0
 radius = 1.5371094
 height = 4.751953
 
-[node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter")]
+[node name="Ghost" type="Area3D" node_paths=PackedStringArray("node_mover", "textureSetter")]
 collision_layer = 8
 script = ExtResource("1_i3suy")
+node_mover = NodePath("Movement")
 textureSetter = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

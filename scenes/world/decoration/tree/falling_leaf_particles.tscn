@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://pjpq7c6xvo6d"]
+[gd_scene load_steps=8 format=3 uid="uid://pjpq7c6xvo6d"]
 
 [ext_resource type="Texture2D" uid="uid://0m4e23dpbpqw" path="res://assets/art/2D/trees/Leafs.png" id="1_huysv"]
 [ext_resource type="PackedScene" uid="uid://cmse7wm7o0tm3" path="res://scenes/lane_objects/lane_object_movement.tscn" id="2_8fecl"]
+[ext_resource type="Script" uid="uid://bbmsggj3vug3v" path="res://scenes/world/decoration/tree/falling_leaf_particles.gd" id="2_xp57c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ne0o8"]
 transparency = 1
@@ -23,7 +24,7 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_27vjf"]
 colors = PackedColorArray(0.66337353, 0.23878598, 0.21541789, 1, 0.86, 0.4070667, 0.18059999, 1)
 
-[node name="FallingLeafParticles" type="CPUParticles3D"]
+[node name="FallingLeafParticles" type="CPUParticles3D" node_paths=PackedStringArray("node_mover")]
 material_override = SubResource("StandardMaterial3D_ne0o8")
 amount = 10
 lifetime = 4.57
@@ -47,5 +48,7 @@ color_ramp = SubResource("Gradient_aile5")
 color_initial_ramp = SubResource("Gradient_27vjf")
 hue_variation_min = -0.07
 hue_variation_max = 0.08
+script = ExtResource("2_xp57c")
+node_mover = NodePath("Movement")
 
 [node name="Movement" parent="." instance=ExtResource("2_8fecl")]

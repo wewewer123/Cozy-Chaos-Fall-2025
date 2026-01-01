@@ -10,159 +10,212 @@ texture = ExtResource("2_o7qe7")
 
 [node name="Tree11" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -14.885241, 0, -239.85973)
+script = null
 
 [node name="Tree12" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -12.462839, 0, -244.54248)
+script = null
 
 [node name="Tree14" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 0, -216.724)
+script = null
 
 [node name="Tree19" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.032055, 0, -216.724)
+script = null
 
 [node name="Tree20" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.9679451, 0, -216.724)
+script = null
 
 [node name="Tree22" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -16.323666, 0, -216.724)
+script = null
 
 [node name="Tree26" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -14.037681, 0, -224.25433)
+script = null
 
 [node name="Tree28" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -7.6659265, 0, -224.25433)
+script = null
 
 [node name="Tree29" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -1.2903032, 0, -224.25433)
+script = null
 
 [node name="Tree30" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 4.679961, 0, -224.25433)
+script = null
 
 [node name="Tree42" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 11.390422, 0, -224.25433)
+script = null
 
 [node name="Tree47" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 7.20996, 0, -224.25433)
+script = null
 
 [node name="Tree48" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 2.2272968, 0, -224.25433)
+script = null
 
 [node name="Tree49" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -3.2190008, 0, -224.25433)
+script = null
 
 [node name="Tree50" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -9.957205, 0, -224.25433)
+script = null
 
 [node name="Tree51" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -16.759312, 0, -224.25433)
+script = null
 
 [node name="Tree52" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -22.467812, 0, -224.25433)
+script = null
 
 [node name="Tree53" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -29.388094, 0, -224.25433)
+script = null
 
 [node name="Tree54" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, -33.525112, 0, -224.25433)
+script = null
 
 [node name="Tree55" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 24.466618, 0, -224.25433)
+script = null
 
 [node name="Tree56" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 36.61864, 0, -228.58888)
+script = null
 
 [node name="Tree43" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 17.285671, 0, -230.04625)
+script = null
 
 [node name="Tree44" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 14.190674, 0, -230.04625)
+script = null
 
 [node name="Tree45" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4.1162977, 0, 0, 0, 3.5100672, 0, 0, 0, 5, 11.190674, 0, -230.04625)
+script = null
 
 [node name="Tree23" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -24.323666, 0, -216.724)
+script = null
 
 [node name="Tree24" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 4.6763344, 0, -216.724)
+script = null
 
 [node name="Tree25" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 19.676334, 0, -216.724)
+script = null
 
 [node name="Tree38" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10, 0, -216.723)
+script = null
 
 [node name="Tree15" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, 1.9886515, -0.13189986, -249.99493)
+script = null
 
 [node name="Tree39" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2, -0.184, -250)
+script = null
 
 [node name="Tree40" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.7020125, 0, -247.55072)
+script = null
 
 [node name="Tree41" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.7020125, 0, -247.55072)
+script = null
 
 [node name="Tree16" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.667448, 0, -232.72878)
+script = null
 
 [node name="Tree18" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14.667448, 0, -224.48157)
+script = null
 
 [node name="Tree21" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.667448, 0, -215.40416)
+script = null
 
 [node name="Tree27" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 22.281992, 0, -230.13872)
+script = null
 
 [node name="Tree17" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.676052, 0, -232.72878)
+script = null
 
 [node name="Tree2" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.63745, 0.0057883263, -247.92732)
+script = null
 
 [node name="Tree3" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.263855, 0, -242.34578)
+script = null
 
 [node name="Tree4" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.96266, 0, -248.63463)
+script = null
 
 [node name="Tree9" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -6.0136337, 0, -246.95723)
+script = null
 
 [node name="Tree5" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.158781, 0.015114784, -238.1096)
+script = null
 
 [node name="Tree10" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.561897, 0, -238.0904)
+script = null
 
 [node name="Tree31" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.561897, 0, -234.0904)
+script = null
 
 [node name="Tree32" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 10.561897, 0, -244.73103)
+script = null
 
 [node name="Tree33" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.614515, 0.0056684017, -244.73482)
+script = null
 
 [node name="Tree34" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.213855, 0.018414497, -244.71104)
+script = null
 
 [node name="Tree35" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.9368, 0, -249.84233)
+script = null
 
 [node name="Tree36" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -14.9909935, 0, -244.23604)
+script = null
 
 [node name="Tree37" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.990993, 0, -240.16525)
+script = null
 
 [node name="Tree6" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 13.160427, 0, -238.0904)
+script = null
 
 [node name="Tree7" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 17.606289, 0, -243.737)
+script = null
 
 [node name="Tree8" parent="." instance=ExtResource("3_kw3b3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.8893223, 0, -243.737)
+script = null

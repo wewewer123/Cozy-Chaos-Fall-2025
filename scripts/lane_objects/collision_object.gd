@@ -1,14 +1,20 @@
 extends Area3D
 class_name CollisionObject
 
+@export var node_mover : NodeMover
 @export var textureSetter : TreeTextureSetter
 @onready var directionalAudio : DirectionalAudioManager = $LaneEntityDirectionalAudio
 
 var applied_collision_effect:bool = false
 
 func init(player_locator:PlayerLocator, next_audio_bus_index:int):
+	node_mover.moved_out_of_sight.connect(_on_object_out_of_sight)
+	
 	if(directionalAudio != null):
 		directionalAudio.init(player_locator, next_audio_bus_index)
+
+func _on_object_out_of_sight() -> void:
+	queue_free()
 
 func set_texture_alpha(value : float) -> void:
 	textureSetter.set_alpha(value)

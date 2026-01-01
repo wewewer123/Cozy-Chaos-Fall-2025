@@ -21,9 +21,10 @@ shader_parameter/tiling = 1.0
 shader_parameter/albedo_texture = ExtResource("2_bqvbl")
 shader_parameter/alpha = 0.0
 
-[node name="Ghost" type="Area3D" node_paths=PackedStringArray("textureSetter")]
+[node name="Ghost" type="Area3D" node_paths=PackedStringArray("node_mover", "textureSetter")]
 collision_layer = 8
 script = ExtResource("1_bqvbl")
+node_mover = NodePath("Movement")
 textureSetter = NodePath("Sprite3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

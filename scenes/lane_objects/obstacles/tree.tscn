@@ -20,10 +20,11 @@ shader_parameter/alpha = 0.0
 height = 5.4677734
 radius = 1.8818359
 
-[node name="Tree" type="Area3D" node_paths=PackedStringArray("textureSetter")]
+[node name="Tree" type="Area3D" node_paths=PackedStringArray("node_mover", "textureSetter")]
 collision_layer = 8
 script = ExtResource("1_lrxmn")
 material = SubResource("ShaderMaterial_4jnww")
+node_mover = NodePath("Movement")
 textureSetter = NodePath("Texture")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
